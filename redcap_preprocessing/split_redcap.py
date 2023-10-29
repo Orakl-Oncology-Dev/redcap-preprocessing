@@ -116,6 +116,6 @@ def split_clinical_data_from_redcap_directory(redcap_filepath: str,
     column_map = column_names.set_index('redcap_name').to_dict()['orakloncology_name']
 
     # split the clinical data
-    split_clinical_data_from_redcap(redcap, column_map, output_dir)
+    utils_split_clinical_data_from_redcap(redcap, column_map, output_dir)
 
     return

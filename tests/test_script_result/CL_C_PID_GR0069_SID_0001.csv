@@ -1,0 +1,34 @@
+,0
+sex,2.0
+date_birth,1989-09-29
+date_diagnosis,2020-06-30
+age_diagnosis,31.0
+weight_diagnosis,66.0
+size_diagnosis,169.0
+medical_history_breast,0.0
+medical_history_prostate,0.0
+medical_history_pancreas,0.0
+medical_history_stomach,0.0
+medical_history_ovary,0.0
+medical_history_endometriosis,0.0
+medical_history_lung,0.0
+medical_history_leukemia,0.0
+medical_history_lymphoma,0.0
+medical_history_none,1.0
+medical_history_other_cancer,0.0
+patient_fate,1.0
+date_death,2022-05-18
+cause_death,1.0
+patients_characteristics_complete ,2.0
+ecog_at_diag ,2.0
+stage_at_diagnosis,2.0
+metastasis_at_diagnosis_adenopathy,1.0
+metastasis_at_diagnosis_lung,0.0
+metastasis_at_diagnosis_liver,1.0
+metastasis_at_diagnosis_suprarenalglands,0.0
+metastasis_at_diagnosis_peritoneal,1.0
+metastasis_at_diagnosis_bone,0.0
+metastasis_at_diagnosis_ovary,1.0
+metastasis_at_diagnosis_other,0.0
+cell_line_code,GR0069
+date_cell_line,2023-05-25

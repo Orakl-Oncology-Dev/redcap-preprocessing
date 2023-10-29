@@ -1,162 +1,162 @@
-redcap_name		orakloncology_name	orakloncology_options	data_type	
-sexe	1	sex	man	clinical-profile	
-sexe	2	sex	woman		
-dob		date_birth		clinical-profile	
-dod		date_diagnosis		clinical-profile	
-age_diagnosis		age_diagnosis		clinical-profile	
-poids_diag		weight_diagnosis		clinical-profile	
-taille_diag		size_diagnosis		clinical-profile	
-atcd_onco___1		medical_history_breast		clinical-profile	
-atcd_onco___2		medical_history_prostate		clinical-profile	
-atcd_onco___3		medical_history_pancreas		clinical-profile	
-atcd_onco___4		medical_history_stomach		clinical-profile	
-atcd_onco___5		medical_history_ovary		clinical-profile	
-atcd_onco___6		medical_history_endometriosis		clinical-profile	
-atcd_onco___7		medical_history_lung		clinical-profile	
-atcd_onco___8		medical_history_leukemia		clinical-profile	
-atcd_onco___9		medical_history_lymphoma		clinical-profile	
-atcd_onco___10		medical_history_none		clinical-profile	
-atcd_onco___99		medical_history_other_cancer		clinical-profile	
-deces_ou_perte_de_vue		patient_fate		clinical-profile	
-dodeath		date_death		clinical-profile	
-cause_death	1	cause_death	progression	clinical-profile	
-cause_death	2	cause_death	complication_treatment		
-cause_death	3	cause_death	intercurrent_cause		
-cause_death	999	cause_death	not_reported		
-patients_characteristics_complete		patients_characteristics_complete 		clinical-profile	
-ecog_diag	0	ecog_at_diag 	0	clinical-profile	
-ecog_diag	1	ecog_at_diag 	1		
-ecog_diag	2	ecog_at_diag 	2		
-ecog_diag	3	ecog_at_diag 	3		
-ecog_diag	4	ecog_at_diag 	4		
-ecog_diag	999	ecog_at_diag 	not_reported		
-stade	1	stage_at_diagnosis	non_metastatic	clinical-profile	
-stade	2	stage_at_diagnosis	metastatic		
-site_metastatique_diag___1		metastasis_at_diagnosis_adenopathy		clinical-profile	
-site_metastatique_diag___2		metastasis_at_diagnosis_lung		clinical-profile	
-site_metastatique_diag___3		metastasis_at_diagnosis_liver		clinical-profile	
-site_metastatique_diag___4		metastasis_at_diagnosis_suprarenalglands		clinical-profile	
-site_metastatique_diag___5		metastasis_at_diagnosis_peritoneal		clinical-profile	
-site_metastatique_diag___6		metastasis_at_diagnosis_bone		clinical-profile	
-site_metastatique_diag___7		metastasis_at_diagnosis_ovary		clinical-profile	
-site_metastatique_diag___8		metastasis_at_diagnosis_other		clinical-profile	insert name included in variable spe_site_met
-tum_site	1	tumor_site	right		
-tum_site	2	tumor_site	left		
-tum_site	3	tumor_site	rectum		
-tum_site	999	tumor_site	not_reported		
-redcap_repeat_instrument		redcap_repeat_instrument		treatment	
-date_sample		date_cell_line			
-nom_lign_e		cell_line_code			
-line_num		line_number		treatment	
-ind_line	1	line_indication	induction_or_perioperative	treatment	
-ind_line	2	line_indication	metastatic	treatment	
-ind_line	3	line_indication	intensification	treatment	
-ind_line	999	line_indication	unkown	treatment	
-ciah_yes_non		CIAH		treatment	
-chimioip_assoc 		associated_chip		treatment	
-chemo_type	0	chemotherapy_type	none	treatment	
-chemo_type	1	chemotherapy_type	folfox	treatment	
-chemo_type	2	chemotherapy_type	folfiri	treatment	
-chemo_type	3	chemotherapy_type	folfirinox	treatment	
-chemo_type	4	chemotherapy_type	lv5fu	treatment	
-chemo_type	5	chemotherapy_type	capecitabine	treatment	
-chemo_type	6	chemotherapy_type	regorafenib	treatment	
-chemo_type	7	chemotherapy_type	lonsurf	treatment	
-chemo_type	8	chemotherapy_type	clinical_trial	treatment	
-chemo_type	9	chemotherapy_type	other	treatment	
-chemo_type	10	chemotherapy_type	folfiri3	treatment	
-chemo_type	11	chemotherapy_type	xelox	treatment	
-chemo_type	12	chemotherapy_type	xeliri	treatment	
-chemo_type	13	chemotherapy_type	irinotecan	treatment	
-chemo_type	999	chemotherapy_type	not_reported	treatment	
-therapieciblee 	0	targeted_therapy_type	none	treatment	
-therapieciblee 	1	targeted_therapy_type	bevacizumab	treatment	
-therapieciblee 	2	targeted_therapy_type	cetuximab	treatment	
-therapieciblee 	3	targeted_therapy_type	panitumumab	treatment	
-therapieciblee 	4	targeted_therapy_type	aflibercept	treatment	
-therapieciblee 	5	targeted_therapy_type	other	treatment	
-therapieciblee 	999	targeted_therapy_type	not_reported	treatment	
-chimioip_type 		chip_type		treatment	
-immuno	1	immunotherapy_type	nivolumab	treatment	
-immuno	2	immunotherapy_type	pembrolizumab	treatment	
-immuno	3	immunotherapy_type	ipilimumab	treatment	
-immuno	4	immunotherapy_type	other	treatment	
-immuno	5	immunotherapy_type	none	treatment	
-j1c1_met 		first_dose_date		treatment	
-date_dernier_cycle 		last_dose_date		treatment	
-arret_chimio___1 		stop_chemotherapy_cause	stop_chemotherapy_cause_progression	treatment	
-arret_chimio___2		stop_chemotherapy_cause	stop_chemotherapy_cause_instensification	treatment	
-arret_chimio___3		stop_chemotherapy_cause	stop_chemotherapy_cause_toxicity	treatment	
-arret_chimio___4		stop_chemotherapy_cause	stop_chemotherapy_cause_death	treatment	
-arret_chimio___5		stop_chemotherapy_cause	stop_chemotherapy_cause_curative	treatment	
-arret_chimio___6		stop_chemotherapy_cause	stop_chemotherapy_cause_lost_patient	treatment	
-arret_chimio___7		stop_chemotherapy_cause	stop_chemotherapy_cause_AEG	treatment	
-arret_chimio___8		stop_chemotherapy_cause	stop_chemotherapy_cause_pause	treatment	
-arret_chimio___9		stop_chemotherapy_cause	stop_chemotherapy_cause_other	treatment	
-arret_chimio___10		stop_chemotherapy_cause	stop_chemotherapy_cause_in_progress	treatment	
-arret_chimio___11		stop_chemotherapy_cause	stop_chemotherapy_cause_maintenance	treatment	
-arret_chimio___12		stop_chemotherapy_cause	stop_chemotherapy_cause_planned_stop	treatment	
-neurotox	0	neurotoxicity	grade_0	treatment	
-neurotox	1	neurotoxicity	grade_1	treatment	
-neurotox	2	neurotoxicity	grade_2	treatment	
-neurotox	3	neurotoxicity	grade_3	treatment	
-neurotox	4	neurotoxicity	grade_4	treatment	
-neurotox	5	neurotoxicity	grade_5	treatment	
-dop		progression_date		treatment	
-progression_type__1		progression_type	progression_local	treatment	
-progression_type__2		progression_type	progression_metastasis	treatment	
-progression_type__3		progression_type	progression_biologic	treatment	
-progression_type__4		progression_type	progression_line_in_progress	treatment	
-progression_type__5		progression_type	progression_none	treatment	
-progression_type__999		progression_type	progression_not_specified	treatment	
-reponse_chimio_nadir 	1	chemotherapy_RECIST_response	stable_disease	treatment	
-reponse_chimio_nadir 	2	chemotherapy_RECIST_response	progressive_disease	treatment	
-reponse_chimio_nadir 	3	chemotherapy_RECIST_response	partial_response	treatment	
-reponse_chimio_nadir 	4	chemotherapy_RECIST_response	complete_response	treatment	
-reponse_chimio_nadir 	5	chemotherapy_RECIST_response	no_evaluation	treatment	
-pfs_met		PFS		treatment	
-ia 		intra_arterial_chemotherapy		treatment	
-lumciah		line_ia_number		treatment	
-neurotox_before_ia		neurotoxicity_before_ia		treatment	
-chemoiv_ia___1		chemotherapy_iv_ia_irinotecan	irinotecan	treatment	
-chemoiv_ia___2		chemotherapy_iv_ia_5FU	5FU	treatment	
-chemoiv_ia___3		chemotherapy_iv_ia_other	other	treatment	
-chemoiv_ia___4		chemotherapy_iv_ia_none	none	treatment	
-chemoiv_ia___999		chemotherapy_iv_ia_unknown	not_reported	treatment	
-datein_ia 		first_dose_date		treatment	
-datefin_ia		last_dose_date		treatment	
-datepd_ia		progression_date		treatment	
-chemo_ia 	1	chemotherapy_type	oxaliplatine	treatment	
-chemo_ia 	2	chemotherapy_type	mitomycine	treatment	
-chemo_ia 	3	chemotherapy_type	optiliv	treatment	
-chemo_ia 	4	chemotherapy_type	fudr	treatment	
-chemo_ia 	5	chemotherapy_type	other	treatment	
-chemo_ia 	999	chemotherapy_type	not_reported	treatment	
-recist_ia 	1	chemotherapy_RECIST_response	partial_response	treatment	
-recist_ia 	2	chemotherapy_RECIST_response	stable_disease	treatment	
-recist_ia 	3	chemotherapy_RECIST_response	progressive_disease	treatment	
-recist_ia 	4	chemotherapy_RECIST_response	complete_response	treatment	
-recist_ia 	999	chemotherapy_RECIST_response	no_evaluation	treatment	
-dmolprof		date_molecular_profile		molecular_profile	
-type_echantillon	1	sample_type	tumor_tissue		
-type_echantillon	2	sample_type	liquid_biopsy		
-type_echantillon	3	sample_type	tumor_and_liquid_biopsy		
-sitebiopsie	1	biopsy_site	liver		
-sitebiopsie	2	biopsy_site	lung		
-sitebiopsie	3	biopsy_site	bone		
-sitebiopsie	4	biopsy_site	carcinosous		
-sitebiopsie	5	biopsy_site	primitive		
-sitebiopsie	6	biopsy_site	ganglion		
-sitebiopsie	7	biopsy_site	ovary		
-sitebiopsie	8	biopsy_site	other		
-kras	1	kras	G12A		
-kras	2	kras	G12C		
-kras	3	kras	G12D		
-kras	4	kras	G12L		
-kras	5	kras	G12R		
-kras	6	kras	G12V		
-kras	7	kras	G13D		
-kras	8	kras	Q61H		
-kras	9	kras	Q61R		
-kras	10	kras	P34L		
-kras	11	kras	other		
+﻿redcap_name;;orakloncology_name;orakloncology_options;data_type;
+sexe;1;sex;man;clinical-profile;
+sexe;2;sex;woman;;
+dob;;date_birth;;clinical-profile;
+dod;;date_diagnosis;;clinical-profile;
+age_diagnosis;;age_diagnosis;;clinical-profile;
+poids_diag;;weight_diagnosis;;clinical-profile;
+taille_diag;;size_diagnosis;;clinical-profile;
+atcd_onco___1;;medical_history_breast;;clinical-profile;
+atcd_onco___2;;medical_history_prostate;;clinical-profile;
+atcd_onco___3;;medical_history_pancreas;;clinical-profile;
+atcd_onco___4;;medical_history_stomach;;clinical-profile;
+atcd_onco___5;;medical_history_ovary;;clinical-profile;
+atcd_onco___6;;medical_history_endometriosis;;clinical-profile;
+atcd_onco___7;;medical_history_lung;;clinical-profile;
+atcd_onco___8;;medical_history_leukemia;;clinical-profile;
+atcd_onco___9;;medical_history_lymphoma;;clinical-profile;
+atcd_onco___10;;medical_history_none;;clinical-profile;
+atcd_onco___99;;medical_history_other_cancer;;clinical-profile;
+deces_ou_perte_de_vue;;patient_fate;;clinical-profile;
+dodeath;;date_death;;clinical-profile;
+cause_death;1;cause_death;progression;clinical-profile;
+cause_death;2;cause_death;complication_treatment;;
+cause_death;3;cause_death;intercurrent_cause;;
+cause_death;999;cause_death;not_reported;;
+patients_characteristics_complete;;patients_characteristics_complete ;;clinical-profile;
+ecog_diag;0;ecog_at_diag ;0;clinical-profile;
+ecog_diag;1;ecog_at_diag ;1;;
+ecog_diag;2;ecog_at_diag ;2;;
+ecog_diag;3;ecog_at_diag ;3;;
+ecog_diag;4;ecog_at_diag ;4;;
+ecog_diag;999;ecog_at_diag ;not_reported;;
+stade;1;stage_at_diagnosis;non_metastatic;clinical-profile;
+stade;2;stage_at_diagnosis;metastatic;;
+site_metastatique_diag___1;;metastasis_at_diagnosis_adenopathy;;clinical-profile;
+site_metastatique_diag___2;;metastasis_at_diagnosis_lung;;clinical-profile;
+site_metastatique_diag___3;;metastasis_at_diagnosis_liver;;clinical-profile;
+site_metastatique_diag___4;;metastasis_at_diagnosis_suprarenalglands;;clinical-profile;
+site_metastatique_diag___5;;metastasis_at_diagnosis_peritoneal;;clinical-profile;
+site_metastatique_diag___6;;metastasis_at_diagnosis_bone;;clinical-profile;
+site_metastatique_diag___7;;metastasis_at_diagnosis_ovary;;clinical-profile;
+site_metastatique_diag___8;;metastasis_at_diagnosis_other;;clinical-profile;insert name included in variable spe_site_met
+tum_site;1;tumor_site;right;;
+tum_site;2;tumor_site;left;;
+tum_site;3;tumor_site;rectum;;
+tum_site;999;tumor_site;not_reported;;
+redcap_repeat_instrument;;redcap_repeat_instrument;;treatment;
+date_sample;;date_cell_line;;;
+nom_lign_e;;cell_line_code;;;
+line_num;;line_number;;treatment;
+ind_line;1;line_indication;induction_or_perioperative;treatment;
+ind_line;2;line_indication;metastatic;treatment;
+ind_line;3;line_indication;intensification;treatment;
+ind_line;999;line_indication;unkown;treatment;
+ciah_yes_non;;CIAH;;treatment;
+chimioip_assoc ;;associated_chip;;treatment;
+chemo_type;0;chemotherapy_type;none;treatment;
+chemo_type;1;chemotherapy_type;folfox;treatment;
+chemo_type;2;chemotherapy_type;folfiri;treatment;
+chemo_type;3;chemotherapy_type;folfirinox;treatment;
+chemo_type;4;chemotherapy_type;lv5fu;treatment;
+chemo_type;5;chemotherapy_type;capecitabine;treatment;
+chemo_type;6;chemotherapy_type;regorafenib;treatment;
+chemo_type;7;chemotherapy_type;lonsurf;treatment;
+chemo_type;8;chemotherapy_type;clinical_trial;treatment;
+chemo_type;9;chemotherapy_type;other;treatment;
+chemo_type;10;chemotherapy_type;folfiri3;treatment;
+chemo_type;11;chemotherapy_type;xelox;treatment;
+chemo_type;12;chemotherapy_type;xeliri;treatment;
+chemo_type;13;chemotherapy_type;irinotecan;treatment;
+chemo_type;999;chemotherapy_type;not_reported;treatment;
+therapieciblee ;0;targeted_therapy_type;none;treatment;
+therapieciblee ;1;targeted_therapy_type;bevacizumab;treatment;
+therapieciblee ;2;targeted_therapy_type;cetuximab;treatment;
+therapieciblee ;3;targeted_therapy_type;panitumumab;treatment;
+therapieciblee ;4;targeted_therapy_type;aflibercept;treatment;
+therapieciblee ;5;targeted_therapy_type;other;treatment;
+therapieciblee ;999;targeted_therapy_type;not_reported;treatment;
+chimioip_type ;;chip_type;;treatment;
+immuno;1;immunotherapy_type;nivolumab;treatment;
+immuno;2;immunotherapy_type;pembrolizumab;treatment;
+immuno;3;immunotherapy_type;ipilimumab;treatment;
+immuno;4;immunotherapy_type;other;treatment;
+immuno;5;immunotherapy_type;none;treatment;
+j1c1_met ;;first_dose_date;;treatment;
+date_dernier_cycle ;;last_dose_date;;treatment;
+arret_chimio___1 ;;stop_chemotherapy_cause;stop_chemotherapy_cause_progression;treatment;
+arret_chimio___2;;stop_chemotherapy_cause;stop_chemotherapy_cause_instensification;treatment;
+arret_chimio___3;;stop_chemotherapy_cause;stop_chemotherapy_cause_toxicity;treatment;
+arret_chimio___4;;stop_chemotherapy_cause;stop_chemotherapy_cause_death;treatment;
+arret_chimio___5;;stop_chemotherapy_cause;stop_chemotherapy_cause_curative;treatment;
+arret_chimio___6;;stop_chemotherapy_cause;stop_chemotherapy_cause_lost_patient;treatment;
+arret_chimio___7;;stop_chemotherapy_cause;stop_chemotherapy_cause_AEG;treatment;
+arret_chimio___8;;stop_chemotherapy_cause;stop_chemotherapy_cause_pause;treatment;
+arret_chimio___9;;stop_chemotherapy_cause;stop_chemotherapy_cause_other;treatment;
+arret_chimio___10;;stop_chemotherapy_cause;stop_chemotherapy_cause_in_progress;treatment;
+arret_chimio___11;;stop_chemotherapy_cause;stop_chemotherapy_cause_maintenance;treatment;
+arret_chimio___12;;stop_chemotherapy_cause;stop_chemotherapy_cause_planned_stop;treatment;
+neurotox;0;neurotoxicity;grade_0;treatment;
+neurotox;1;neurotoxicity;grade_1;treatment;
+neurotox;2;neurotoxicity;grade_2;treatment;
+neurotox;3;neurotoxicity;grade_3;treatment;
+neurotox;4;neurotoxicity;grade_4;treatment;
+neurotox;5;neurotoxicity;grade_5;treatment;
+dop;;progression_date;;treatment;
+progression_type__1;;progression_type;progression_local;treatment;
+progression_type__2;;progression_type;progression_metastasis;treatment;
+progression_type__3;;progression_type;progression_biologic;treatment;
+progression_type__4;;progression_type;progression_line_in_progress;treatment;
+progression_type__5;;progression_type;progression_none;treatment;
+progression_type__999;;progression_type;progression_not_specified;treatment;
+reponse_chimio_nadir ;1;chemotherapy_RECIST_response;stable_disease;treatment;
+reponse_chimio_nadir ;2;chemotherapy_RECIST_response;progressive_disease;treatment;
+reponse_chimio_nadir ;3;chemotherapy_RECIST_response;partial_response;treatment;
+reponse_chimio_nadir ;4;chemotherapy_RECIST_response;complete_response;treatment;
+reponse_chimio_nadir ;5;chemotherapy_RECIST_response;no_evaluation;treatment;
+pfs_met;;PFS;;treatment;
+ia ;;intra_arterial_chemotherapy;;treatment;
+lumciah;;line_ia_number;;treatment;
+neurotox_before_ia;;neurotoxicity_before_ia;;treatment;
+chemoiv_ia___1;;chemotherapy_iv_ia_irinotecan;irinotecan;treatment;
+chemoiv_ia___2;;chemotherapy_iv_ia_5FU;5FU;treatment;
+chemoiv_ia___3;;chemotherapy_iv_ia_other;other;treatment;
+chemoiv_ia___4;;chemotherapy_iv_ia_none;none;treatment;
+chemoiv_ia___999;;chemotherapy_iv_ia_unknown;not_reported;treatment;
+datein_ia ;;first_dose_date;;treatment;
+datefin_ia;;last_dose_date;;treatment;
+datepd_ia;;progression_date;;treatment;
+chemo_ia ;1;chemotherapy_type;oxaliplatine;treatment;
+chemo_ia ;2;chemotherapy_type;mitomycine;treatment;
+chemo_ia ;3;chemotherapy_type;optiliv;treatment;
+chemo_ia ;4;chemotherapy_type;fudr;treatment;
+chemo_ia ;5;chemotherapy_type;other;treatment;
+chemo_ia ;999;chemotherapy_type;not_reported;treatment;
+recist_ia ;1;chemotherapy_RECIST_response;partial_response;treatment;
+recist_ia ;2;chemotherapy_RECIST_response;stable_disease;treatment;
+recist_ia ;3;chemotherapy_RECIST_response;progressive_disease;treatment;
+recist_ia ;4;chemotherapy_RECIST_response;complete_response;treatment;
+recist_ia ;999;chemotherapy_RECIST_response;no_evaluation;treatment;
+dmolprof;;date_molecular_profile;;molecular_profile;
+type_echantillon;1;sample_type;tumor_tissue;;
+type_echantillon;2;sample_type;liquid_biopsy;;
+type_echantillon;3;sample_type;tumor_and_liquid_biopsy;;
+sitebiopsie;1;biopsy_site;liver;;
+sitebiopsie;2;biopsy_site;lung;;
+sitebiopsie;3;biopsy_site;bone;;
+sitebiopsie;4;biopsy_site;carcinosous;;
+sitebiopsie;5;biopsy_site;primitive;;
+sitebiopsie;6;biopsy_site;ganglion;;
+sitebiopsie;7;biopsy_site;ovary;;
+sitebiopsie;8;biopsy_site;other;;
+kras;1;kras;G12A;;
+kras;2;kras;G12C;;
+kras;3;kras;G12D;;
+kras;4;kras;G12L;;
+kras;5;kras;G12R;;
+kras;6;kras;G12V;;
+kras;7;kras;G13D;;
+kras;8;kras;Q61H;;
+kras;9;kras;Q61R;;
+kras;10;kras;P34L;;
+kras;11;kras;other;;
