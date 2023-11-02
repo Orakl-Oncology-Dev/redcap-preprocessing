@@ -1,0 +1,2 @@
+;redcap_repeat_instrument;line_number;line_indication;CIAH;associated_chip;chemotherapy_type;targeted_therapy_type;chip_type;immunotherapy_type;first_dose_date;last_dose_date;stop_chemotherapy_cause;neurotoxicity;progression_date;progression_type;chemotherapy_RECIST_response;PFS;intra_arterial_chemotherapy;line_ia_number;chemotherapy_iv_ia;record_id
+1;;;;;;folfox;none;;;;;stop_chemotherapy_cause_instensification;;;progression_local;progressive_disease;;;;;38.0
