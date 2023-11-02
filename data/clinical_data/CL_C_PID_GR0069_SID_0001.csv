@@ -1,6 +1,6 @@
 ,0
-sex,2.0
-date_birth,29/09/1989
+sex,woman
+date_birth,1989-09-29 00:00:00
 date_diagnosis,30/06/2020
 age_diagnosis,31.0
 weight_diagnosis,66.0
@@ -18,10 +18,10 @@ medical_history_none,1.0
 medical_history_other_cancer,0.0
 patient_fate,1.0
 date_death,18/05/2022
-cause_death,1.0
+cause_death,progression
 patients_characteristics_complete ,2.0
-ecog_at_diag ,2.0
-stage_at_diagnosis,2.0
+ecog_at_diag ,2
+stage_at_diagnosis,metastatic
 metastasis_at_diagnosis_adenopathy,1.0
 metastasis_at_diagnosis_lung,0.0
 metastasis_at_diagnosis_liver,1.0

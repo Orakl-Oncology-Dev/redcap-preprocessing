@@ -1,4 +1,4 @@
-﻿redcap_name;;orakloncology_name;orakloncology_options;data_type;
+﻿redcap_name;redcap_options;orakloncology_name;orakloncology_options;data_type;
 sexe;1;sex;man;clinical-profile;
 sexe;2;sex;woman;;
 dob;;date_birth;;clinical-profile;

@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import numpy as np
+import datetime
 
 
 def utils_get_cell_line_code(redcap: pd.DataFrame,
@@ -32,7 +33,23 @@ def utils_get_cell_line_code(redcap: pd.DataFrame,
 
 def utils_preprocess_single_patient_clinical_data(redcap: pd.DataFrame,
                                             row: pd.Series,
-                                            column_map: dict,):
+                                            column_map: dict,
+                                            redcap_CRC_conversion_table: pd.DataFrame):
+    
+    """
+    Preprocess a single patient clinical data row from the redcap data set.
+
+    Parameters
+    ----------
+    redcap: pd.DataFrame
+        redcap data for all patients
+    row: pd.Series
+        row of the redcap data set
+    column_map: dict
+        mapping of the column names between redcap and orakloncology
+    redcap_CRC_conversion_table: pd.DataFrame
+        conversion table between redcap and orakloncology
+    """
 
 
     # get the cell line code
@@ -40,15 +57,49 @@ def utils_preprocess_single_patient_clinical_data(redcap: pd.DataFrame,
     cell_line_code = cell_line_code[1:]
     
     clinical_data_row = row.copy()
+
+    # if relevant, change the content of each row
+    for column_name in clinical_data_row.index:
+        if column_name in redcap_CRC_conversion_table['redcap_name'].values:
+
+            # limit the conversion table to the rows relative to the variable
+            restricted_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table['redcap_name'] == column_name]
+
+            # get the value in the clinical data row
+            row_value = clinical_data_row[column_name]
+
+            if len(restricted_conversion_table) > 1:
+
+                # get the conversion table row
+                converted_row_value = restricted_conversion_table[restricted_conversion_table['redcap_options'] == row_value]['orakloncology_options']
+                
+                # check that there is only one value
+                if len(converted_row_value) > 1:
+                    raise ValueError(f'There are {len(converted_row_value)} values for {column_name}.')
+                elif len(converted_row_value) == 0:
+                    clinical_data_row[column_name] = np.nan
+                else:
+                    # replace the value in clinical_data_row
+                    clinical_data_row[column_name] = converted_row_value.values[0]
+
+
+    # rename the columns to match target mapping
     clinical_data_row = clinical_data_row.rename(index=column_map)
     clinical_data_row = clinical_data_row.loc[list(column_map.values())]
+    
+
+    # add the cell line code and date
     clinical_data_row['cell_line_code'] = cell_line_code
     clinical_data_row['date_cell_line'] = date_cell_line
+
+    # normalize date format
+    clinical_data_row['date_birth'] = datetime.datetime.strptime(clinical_data_row['date_birth'], '%Y-%m-%d')
 
     return clinical_data_row
 
 def utils_split_clinical_data_from_redcap(redcap: pd.DataFrame,
                  column_map: dict,
+                 redcap_CRC_conversion_table: pd.DataFrame,
                  output_dir: str):
     """
     Split the redcap data set into individual clinical data files.
@@ -74,7 +125,7 @@ def utils_split_clinical_data_from_redcap(redcap: pd.DataFrame,
     # and find the PDO-related information
     for index, row in redcap_clinical_data.iterrows():
 
-        clinical_data_row = utils_preprocess_single_patient_clinical_data(redcap, row, column_map)
+        clinical_data_row = utils_preprocess_single_patient_clinical_data(redcap, row, column_map, redcap_CRC_conversion_table)
         cell_line_code = clinical_data_row['cell_line_code']
 
         # create a file name
@@ -84,7 +135,7 @@ def utils_split_clinical_data_from_redcap(redcap: pd.DataFrame,
         clinical_data_row.to_csv(filename, index=True)
         print(f'Saved {filename}')
 
-    return
+    return 
 
 def split_clinical_data_from_redcap_directory(redcap_filepath: str,
                                               conversion_table_filepath: str,
@@ -104,18 +155,18 @@ def split_clinical_data_from_redcap_directory(redcap_filepath: str,
         raise ValueError('The redcap table is empty.')
     
     # column name mapping
-    column_names = pd.read_csv(conversion_table_filepath, sep=';')
+    redcap_CRC_conversion_table = pd.read_csv(conversion_table_filepath, sep=';')
 
     # check that the conversion table is correct
-    if len(column_names) == 0:
+    if len(redcap_CRC_conversion_table) == 0:
         raise ValueError('The conversion table is empty.')
     else:
         pass
 
-    column_names = column_names[column_names.data_type == 'clinical-profile'][['redcap_name', 'orakloncology_name']]
+    column_names = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'clinical-profile'][['redcap_name', 'orakloncology_name']]
     column_map = column_names.set_index('redcap_name').to_dict()['orakloncology_name']
 
     # split the clinical data
-    utils_split_clinical_data_from_redcap(redcap, column_map, output_dir)
+    utils_split_clinical_data_from_redcap(redcap, column_map, redcap_CRC_conversion_table, output_dir)
 
     return

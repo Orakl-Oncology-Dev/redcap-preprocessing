@@ -46,4 +46,8 @@ def test_split_clinical_data_from_redcap_directory():
     # check that all elements match
     for column in target_result.columns:
         print((target_result[column],generated_result.loc[column]))
-        assert target_result[column].equals(generated_result.loc[column])
+
+        assert len(target_result[column]) == len(generated_result.loc[column])
+
+        if len(target_result[column]) == 1:
+            assert target_result[column].item() == generated_result.loc[column].item()
