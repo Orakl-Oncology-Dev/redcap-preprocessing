@@ -2,7 +2,7 @@ import pytest
 import pandas as pd
 import os 
 
-from redcap_preprocessing import split_redcap
+from redcap_preprocessing import split_clinical_data_from_redcap
 
 
 def test_split_clinical_data_from_redcap_directory():
@@ -27,7 +27,7 @@ def test_split_clinical_data_from_redcap_directory():
         pass
 
     # generate test data
-    split_redcap.split_clinical_data_from_redcap_directory(redcap_filepath,
+    split_clinical_data_from_redcap.split_clinical_data_from_redcap_directory(redcap_filepath,
                                                            conversion_table_filepath,
                                                            output_dir)
     
