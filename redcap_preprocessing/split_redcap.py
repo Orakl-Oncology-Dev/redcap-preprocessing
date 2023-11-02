@@ -92,8 +92,11 @@ def utils_preprocess_single_patient_clinical_data(redcap: pd.DataFrame,
     clinical_data_row['cell_line_code'] = cell_line_code
     clinical_data_row['date_cell_line'] = date_cell_line
 
+    # normalize the formats
+    clinical_data_row['age_diagnosis'] = float(clinical_data_row['age_diagnosis'])
+
     # normalize date format
-    clinical_data_row['date_birth'] = datetime.datetime.strptime(clinical_data_row['date_birth'], '%Y-%m-%d')
+    clinical_data_row['date_birth'] = datetime.datetime.strptime(clinical_data_row['date_birth'], '%Y-%m-%d').date()
 
     return clinical_data_row
 
