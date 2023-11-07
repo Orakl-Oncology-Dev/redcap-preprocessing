@@ -1,0 +1,2 @@
+;redcap_repeat_instrument;line_number;line_indication;CIAH;associated_chip;chemotherapy_type;targeted_therapy_type;chip_type;immunotherapy_type;first_dose_date;last_dose_date;stop_chemotherapy_cause;neurotoxicity;progression_date;progression_type;chemotherapy_RECIST_response;PFS;cell_line_code;date_cell_line
+15;ligne_mtastatique_de_traitement;1.0;;;;folfox;none;;;22/11/2018;05/03/2019;"progression;instensification";;06/03/2019;progression_local;progressive_disease;3.4;CGR0001;24/06/2019

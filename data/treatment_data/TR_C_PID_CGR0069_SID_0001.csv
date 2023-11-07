@@ -1,0 +1,6 @@
+;redcap_repeat_instrument;line_number;line_indication;CIAH;associated_chip;chemotherapy_type;targeted_therapy_type;chip_type;immunotherapy_type;first_dose_date;last_dose_date;stop_chemotherapy_cause;neurotoxicity;progression_date;progression_type;chemotherapy_RECIST_response;PFS;cell_line_code;date_cell_line
+1;ligne_mtastatique_de_traitement;1.0;induction_or_perioperative;0.0;0.0;folfirinox;none;;none;29/07/2020;28/01/2021;"curative;maintenance";grade_2;28/04/2021;progression_metastasis;partial_response;9.0;CGR0069;25/05/2023
+2;ligne_mtastatique_de_traitement;1.0;induction_or_perioperative;0.0;0.0;folfiri;bevacizumab;;none;30/12/2020;05/05/2021;"progression;instensification";grade_0;28/04/2021;progression_metastasis;partial_response;3.9;CGR0069;25/05/2023
+3;ligne_mtastatique_de_traitement;2.0;intensification;1.0;0.0;folfirinox;bevacizumab;;none;30/09/2021;13/01/2022;progression;grade_1;18/01/2022;progression_metastasis;stable_disease;3.6;CGR0069;25/05/2023
+4;ligne_mtastatique_de_traitement;3.0;metastatic;0.0;0.0;folfiri3;aflibercept;;none;26/01/2022;23/03/2022;"progression;AEG";grade_1;01/04/2022;progression_metastasis;progressive_disease;2.1;CGR0069;25/05/2023
+5;hai_chemotherapy;;;;;"oxaliplatine;folfiri";bevacizumab;;;25/06/2021;06/08/2021;;;31/08/2021;;stable_disease;;CGR0069;25/05/2023
