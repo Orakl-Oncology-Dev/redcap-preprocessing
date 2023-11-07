@@ -18,16 +18,12 @@ def utils_get_cell_line_code(redcap: pd.DataFrame,
 
     selected_row = redcap[(redcap['record_id'] == record_id) & 
                           (redcap['redcap_repeat_instrument'] == 'organoides')]
-    
-    # check that there is only one PDO cell line
-    if len(selected_row) > 1:
-        raise ValueError(f'There are {len(selected_row)} PDO cell lines for record_id {record_id}.')
-    elif len(selected_row) == 0:
+        
+    if len(selected_row) == 0:
         raise ValueError(f'There are no PDO cell lines for record_id {record_id}.')
     else:
-    
-        cell_line_code = selected_row['nom_lign_e'].values[0]
-        date_cell_line = selected_row['date_sample'].values[0]
+        cell_line_code = ';'.join(selected_row['nom_lign_e'].unique())
+        date_cell_line = ';'.join(selected_row['date_sample'].unique())
 
     return cell_line_code, date_cell_line
 
@@ -128,15 +124,19 @@ def utils_split_clinical_data_from_redcap(redcap: pd.DataFrame,
     # and find the PDO-related information
     for index, row in redcap_clinical_data.iterrows():
 
-        clinical_data_row = utils_preprocess_single_patient_clinical_data(redcap, row, column_map, redcap_CRC_conversion_table)
-        cell_line_code = clinical_data_row['cell_line_code']
+        try:
 
-        # create a file name
-        filename = f'{output_dir}/CL_C_PID_{cell_line_code}_SID_0001.csv'
+            clinical_data_row = utils_preprocess_single_patient_clinical_data(redcap, row, column_map, redcap_CRC_conversion_table)
+            cell_line_code = clinical_data_row['cell_line_code']
 
-        # save the row as a csv file
-        clinical_data_row.to_csv(filename, index=True)
-        print(f'Saved {filename}')
+            # create a file name
+            filename = f'{output_dir}/CL_C_PID_{cell_line_code}_SID_0001.csv'
+
+            # save the row as a csv file
+            clinical_data_row.to_csv(filename, index=True)
+
+        except:
+            print(f'Error for {row["record_id"]}')
 
     return 
 

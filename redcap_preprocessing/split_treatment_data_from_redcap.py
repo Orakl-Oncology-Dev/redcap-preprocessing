@@ -16,16 +16,12 @@ def get_cell_line_code(redcap: pd.DataFrame,
 
     selected_row = redcap[(redcap['record_id'] == record_id) & 
                           (redcap['redcap_repeat_instrument'] == 'organoides')]
-    
-    # check that there is only one PDO cell line
-    if len(selected_row) > 1:
-        raise ValueError(f'There are {len(selected_row)} PDO cell lines for record_id {record_id}.')
-    elif len(selected_row) == 0:
+        
+    if len(selected_row) == 0:
         raise ValueError(f'There are no PDO cell lines for record_id {record_id}.')
     else:
-    
-        cell_line_code = selected_row['nom_lign_e'].values[0]
-        date_cell_line = selected_row['date_sample'].values[0]
+        cell_line_code = ';'.join(selected_row['nom_lign_e'].unique())
+        date_cell_line = ';'.join(selected_row['date_sample'].unique())
 
     return cell_line_code, date_cell_line
 
@@ -198,25 +194,30 @@ def split_treatment_data_from_redcap(redcap_path: str,
     # loop through all the record ids
     for record_id in record_ids:
 
-        # get the cell line code
-        cell_line_code, date_cell_line = get_cell_line_code(redcap, record_id)
+        try:
 
-        # select the patient data
-        patient_treatment_data = redcap[(redcap.record_id == record_id) &
-                                        (redcap['redcap_repeat_instrument'].isin(['ligne_mtastatique_de_traitement', 'hai_chemotherapy']))]
+            # get the cell line code
+            cell_line_code, date_cell_line = get_cell_line_code(redcap, record_id)
 
-        # get the single patient treatment data
-        cleaned_patient_treatment_data = get_single_patient_treatment_data(patient_treatment_data,
-                                                                            redcap_CRC_conversion_table)
+            # select the patient data
+            patient_treatment_data = redcap[(redcap.record_id == record_id) &
+                                            (redcap['redcap_repeat_instrument'].isin(['ligne_mtastatique_de_traitement', 'hai_chemotherapy']))]
 
-        # add the cell line code and date
-        cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
-        cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
+            # get the single patient treatment data
+            cleaned_patient_treatment_data = get_single_patient_treatment_data(patient_treatment_data,
+                                                                                redcap_CRC_conversion_table)
 
-        # create a file name
-        filename = f'{output_dir}/TR_C_PID_{cell_line_code}_SID_0001.csv'   
+            # add the cell line code and date
+            cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
+            cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
 
-        # save the data
-        cleaned_patient_treatment_data.to_csv(filename, sep=';')
+            # create a file name
+            filename = f'{output_dir}/TR_C_PID_{cell_line_code}_SID_0001.csv'   
+
+            # save the data
+            cleaned_patient_treatment_data.to_csv(filename, sep=';')
+
+        except:
+            print(f'Error for {record_id}')
 
     return None
