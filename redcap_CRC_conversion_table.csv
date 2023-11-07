@@ -1,4 +1,4 @@
-﻿matching_type;;redcap_options;orakloncology_name;orakloncology_options;data_type;
+﻿matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_options;data_type;
 3;sexe;1;sex;man;clinical-profile;
 3;sexe;2;sex;woman;clinical-profile;
 1;dob;;date_birth;;clinical-profile;
@@ -115,13 +115,11 @@
 3;reponse_chimio_nadir ;4;chemotherapy_RECIST_response;complete_response;treatment;
 3;reponse_chimio_nadir ;5;chemotherapy_RECIST_response;no_evaluation;treatment;
 1;pfs_met;;PFS;;treatment;
-1;ia ;;intra_arterial_chemotherapy;;treatment;
-1;lumciah;;line_ia_number;;treatment;
-2;chemoiv_ia___1;;chemotherapy_iv_ia;irinotecan;treatment;
-2;chemoiv_ia___2;;chemotherapy_iv_ia;5FU;treatment;
-2;chemoiv_ia___3;;chemotherapy_iv_ia;other;treatment;
-2;chemoiv_ia___4;;chemotherapy_iv_ia;none;treatment;
-2;chemoiv_ia___999;;chemotherapy_iv_ia;not_reported;treatment;
+2;chemoiv_ia___1;;chemotherapy_type;irinotecan;treatment;
+2;chemoiv_ia___2;;chemotherapy_type;5FU;treatment;
+2;chemoiv_ia___3;;chemotherapy_type;other;treatment;
+2;chemoiv_ia___4;;chemotherapy_type;none;treatment;
+2;chemoiv_ia___999;;chemotherapy_type;not_reported;treatment;
 4;datein_ia ;;first_dose_date;;treatment;
 4;datefin_ia;;last_dose_date;;treatment;
 4;datepd_ia;;progression_date;;treatment;
@@ -136,6 +134,7 @@
 3;recist_ia ;3;chemotherapy_RECIST_response;progressive_disease;treatment;
 3;recist_ia ;4;chemotherapy_RECIST_response;complete_response;treatment;
 3;recist_ia ;999;chemotherapy_RECIST_response;no_evaluation;treatment;
+1;tgtxt_ia;;targeted_therapy_type;;treatment;
 1;dmolprof;;date_molecular_profile;;molecular_profile;
 3;type_echantillon;1;sample_type;tumor_tissue;;
 3;type_echantillon;2;sample_type;liquid_biopsy;;
