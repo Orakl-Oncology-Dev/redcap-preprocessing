@@ -207,15 +207,17 @@ def split_treatment_data_from_redcap(redcap_path: str,
             cleaned_patient_treatment_data = get_single_patient_treatment_data(patient_treatment_data,
                                                                                 redcap_CRC_conversion_table)
 
-            # add the cell line code and date
-            cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
-            cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
+            if len(cleaned_patient_treatment_data) > 0:
 
-            # create a file name
-            filename = f'{output_dir}/TR_C_PID_{cell_line_code}_SID_0001.csv'   
+                # add the cell line code and date
+                cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
+                cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
 
-            # save the data
-            cleaned_patient_treatment_data.to_csv(filename, sep=';')
+                # create a file name
+                filename = f'{output_dir}/TR_C_PID_{cell_line_code}_SID_0001.csv'   
+
+                # save the data
+                cleaned_patient_treatment_data.to_csv(filename, sep=';')
 
         except:
             print(f'Error for {record_id}')

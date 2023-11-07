@@ -76,7 +76,6 @@
 3;therapieciblee;4;targeted_therapy_type;aflibercept;treatment;
 3;therapieciblee;5;targeted_therapy_type;other;treatment;
 3;therapieciblee;999;targeted_therapy_type;not_reported;treatment;
-3;chimioip_type;;chip_type;;treatment;
 3;immuno;1;immunotherapy_type;nivolumab;treatment;
 3;immuno;2;immunotherapy_type;pembrolizumab;treatment;
 3;immuno;3;immunotherapy_type;ipilimumab;treatment;
