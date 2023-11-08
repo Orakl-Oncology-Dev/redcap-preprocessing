@@ -4,7 +4,7 @@ import numpy as np
 import datetime
 
 
-def utils_get_cell_line_code(redcap: pd.DataFrame,
+def get_cell_line_code(redcap: pd.DataFrame,
                        record_id: str):
     """
     Get the cell line code from the redcap data set.add
@@ -27,149 +27,200 @@ def utils_get_cell_line_code(redcap: pd.DataFrame,
 
     return cell_line_code, date_cell_line
 
-def utils_preprocess_single_patient_clinical_data(redcap: pd.DataFrame,
-                                            row: pd.Series,
-                                            column_map: dict,
-                                            redcap_CRC_conversion_table: pd.DataFrame):
+def get_content_matching_type_1(single_patient_clinical_row,
+                                redcap_CRC_conversion_table,
+                                column_name,
+                                ):
+    
+    assert column_name in redcap_CRC_conversion_table.orakloncology_name.values, 'column name not found in conversion table'
+    assert len(redcap_CRC_conversion_table[(redcap_CRC_conversion_table.orakloncology_name == column_name)&(redcap_CRC_conversion_table.matching_type == 1)]['redcap_name']) == 1, 'multiple redcap names found for column name in a type 1 match'
+
+    redcap_column_name = redcap_CRC_conversion_table[(redcap_CRC_conversion_table.orakloncology_name == column_name)&(redcap_CRC_conversion_table.matching_type == 1)]['redcap_name'].values[0]
+    content = single_patient_clinical_row[redcap_column_name]
+
+    return content
+
+def get_content_matching_type_2(single_patient_clinical_row,
+                                redcap_CRC_conversion_table,
+                                column_name,
+                                ):
+    
+    content = []
+    redcap_column_rows = redcap_CRC_conversion_table[(redcap_CRC_conversion_table.orakloncology_name == column_name)&(redcap_CRC_conversion_table.matching_type == 2)]
+
+    for index, row in redcap_column_rows.iterrows():
+
+        if single_patient_clinical_row[row['redcap_name']] == 1:
+            content.append(row['orakloncology_options'])
+
+    return ';'.join(content)
+
+def get_content_matching_type_3(single_patient_clinical_row,
+                                redcap_CRC_conversion_table,
+                                column_name,
+                                ):
+    
+    content = []
+    redcap_column_rows = redcap_CRC_conversion_table[(redcap_CRC_conversion_table.orakloncology_name == column_name)&(redcap_CRC_conversion_table.matching_type == 3)]
+
+    for index, row in redcap_column_rows.iterrows():
+
+        if row['redcap_options'] == single_patient_clinical_row[row['redcap_name']]:
+            content.append(row['orakloncology_options'])
+
+    return ';'.join(content)
+
+def get_content_matching_type_4(single_patient_clinical_row,
+                                redcap_CRC_conversion_table,
+                                column_name,
+                                ):
+    
+    content = []
+    redcap_column_rows = redcap_CRC_conversion_table[(redcap_CRC_conversion_table.orakloncology_name == column_name)&(redcap_CRC_conversion_table.matching_type == 4)]
+
+    for index, row in redcap_column_rows.iterrows():
+        
+        # test if not nan, then add to content
+        if single_patient_clinical_row[row['redcap_name']] == single_patient_clinical_row[row['redcap_name']]:
+            content.append(single_patient_clinical_row[row['redcap_name']])
+
+    return ';'.join(content)
+
+def add_content(content, prior_content):
+
+    # test if empty str
+    if prior_content == '':
+        return content
+    
+    # test if nan
+    elif prior_content != prior_content:
+        return content
+    
+    # test if empty str
+    elif content == '':
+        return prior_content
+    
+    # test if nan
+    elif content != content:
+        return prior_content
+    
+    else:
+        # test if the content and prior content are of the same type
+        assert type(content) == type(prior_content), 'content and prior content are not of the same type'
+        
+        if type(content) == str:
+            return prior_content + ';' + content
+        
+        else:
+            print(content)
+
+def get_single_patient_clinical_data(row: pd.Series,
+                                     redcap_CRC_conversion_table: pd.DataFrame):
     
     """
     Preprocess a single patient clinical data row from the redcap data set.
 
     Parameters
     ----------
-    redcap: pd.DataFrame
-        redcap data for all patients
     row: pd.Series
         row of the redcap data set
-    column_map: dict
-        mapping of the column names between redcap and orakloncology
     redcap_CRC_conversion_table: pd.DataFrame
         conversion table between redcap and orakloncology
     """
 
+    cleaned_patient_clinical_data = pd.Series('',
+                                                  index = redcap_CRC_conversion_table['orakloncology_name'].unique(),)
 
-    # get the cell line code
-    cell_line_code,date_cell_line = utils_get_cell_line_code(redcap, row['record_id'])
-    cell_line_code = cell_line_code[1:]
-    
-    clinical_data_row = row.copy()
 
     # if relevant, change the content of each row
-    for column_name in clinical_data_row.index:
-        if column_name in redcap_CRC_conversion_table['redcap_name'].values:
+    for column_name in cleaned_patient_clinical_data.index:
 
-            # limit the conversion table to the rows relative to the variable
-            restricted_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table['redcap_name'] == column_name]
+        matching_types = redcap_CRC_conversion_table[redcap_CRC_conversion_table['orakloncology_name'] == column_name]['matching_type'].unique()
 
-            # get the value in the clinical data row
-            row_value = clinical_data_row[column_name]
+        for matching_type in matching_types:
 
-            if len(restricted_conversion_table) > 1:
+            if matching_type == 1:
 
-                # get the conversion table row
-                converted_row_value = restricted_conversion_table[restricted_conversion_table['redcap_options'] == row_value]['orakloncology_options']
-                
-                # check that there is only one value
-                if len(converted_row_value) > 1:
-                    raise ValueError(f'There are {len(converted_row_value)} values for {column_name}.')
-                elif len(converted_row_value) == 0:
-                    clinical_data_row[column_name] = np.nan
-                else:
-                    # replace the value in clinical_data_row
-                    clinical_data_row[column_name] = converted_row_value.values[0]
+                content = get_content_matching_type_1(row, redcap_CRC_conversion_table, column_name)
 
+            if matching_type == 2:
 
-    # rename the columns to match target mapping
-    clinical_data_row = clinical_data_row.rename(index=column_map)
-    clinical_data_row = clinical_data_row.loc[list(column_map.values())]
-    
+                content = get_content_matching_type_2(row, redcap_CRC_conversion_table, column_name)
 
-    # add the cell line code and date
-    clinical_data_row['cell_line_code'] = cell_line_code
-    clinical_data_row['date_cell_line'] = date_cell_line
+            if matching_type == 3:
 
-    # normalize the formats
-    clinical_data_row['age_diagnosis'] = float(clinical_data_row['age_diagnosis'])
+                content = get_content_matching_type_3(row, redcap_CRC_conversion_table, column_name)
 
-    # normalize date format
-    clinical_data_row['date_birth'] = datetime.datetime.strptime(clinical_data_row['date_birth'], '%Y-%m-%d').date()
+            if matching_type == 4:
 
-    return clinical_data_row
+                content = get_content_matching_type_4(row, redcap_CRC_conversion_table, column_name)
+            
+            content= add_content(content, cleaned_patient_clinical_data.loc[column_name])
+            cleaned_patient_clinical_data.loc[column_name] = content
 
-def utils_split_clinical_data_from_redcap(redcap: pd.DataFrame,
-                 column_map: dict,
-                 redcap_CRC_conversion_table: pd.DataFrame,
-                 output_dir: str):
+    return cleaned_patient_clinical_data
+
+def split_clinical_data_from_redcap_directory(redcap_path: str,
+                       redcap_conversion_table_path: str,
+                       output_dir: str,
+                       ):
     """
-    Split the redcap data set into individual clinical data files.
+    Get the treatment data from the redcap data set.
 
     Parameters
     ----------
-    redcap: pd.DataFrame
-        redcap data set
-    column_map: dict
-        dictionary mapping redcap column names to orakl column names
+    redcap_path: str
+        path to redcap data set
+    redcap_conversion_table_path: str
+        path to redcap CRC conversion table
     output_dir: str
         output directory
     """
 
-    # create a 'clinical_data' folder if it doesn't exist
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    # Extract the clinical data row from the data set
-    redcap_clinical_data = redcap.groupby('record_id').first().reset_index()
-
-    # iterate over the rows of the clinical data set to split them
-    # and find the PDO-related information
-    for index, row in redcap_clinical_data.iterrows():
-
-        try:
-
-            clinical_data_row = utils_preprocess_single_patient_clinical_data(redcap, row, column_map, redcap_CRC_conversion_table)
-            cell_line_code = clinical_data_row['cell_line_code']
-
-            # create a file name
-            filename = f'{output_dir}/CL_C_PID_{cell_line_code}_SID_0001.csv'
-
-            # save the row as a csv file
-            clinical_data_row.to_csv(filename, index=True)
-
-        except:
-            print(f'Error for {row["record_id"]}')
-
-    return 
-
-def split_clinical_data_from_redcap_directory(redcap_filepath: str,
-                                              conversion_table_filepath: str,
-                                              output_dir: str):
-
     # Read in the data
-    redcap = pd.read_csv(redcap_filepath, sep=';')
-
-    # check that the separator is correct
-    if len(redcap.columns) == 1:
-        redcap = pd.read_csv(redcap_filepath, sep=',')
-    else:
-        pass
+    redcap = pd.read_csv(redcap_path, sep=';')
 
     # check that the table isn't empty
     if len(redcap) == 0:
         raise ValueError('The redcap table is empty.')
-    
+
     # column name mapping
-    redcap_CRC_conversion_table = pd.read_csv(conversion_table_filepath, sep=';')
+    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, sep=';')
+    redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'clinical-profile']
+    redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
 
-    # check that the conversion table is correct
-    if len(redcap_CRC_conversion_table) == 0:
-        raise ValueError('The conversion table is empty.')
-    else:
-        pass
+    # select the patient data
+    redcap_clinical_data = redcap.groupby('record_id').first().reset_index()
 
-    column_names = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'clinical-profile'][['redcap_name', 'orakloncology_name']]
-    column_map = column_names.set_index('redcap_name').to_dict()['orakloncology_name']
+    # get the unique record ids
+    record_ids = redcap_clinical_data.record_id.unique()
 
-    # split the clinical data
-    utils_split_clinical_data_from_redcap(redcap, column_map, redcap_CRC_conversion_table, output_dir)
+    # loop through all the record ids
+    for index, row in redcap_clinical_data.iterrows():
 
-    return
+        record_id = row['record_id']
+
+        try:
+
+            # get the cell line code
+            cell_line_code, date_cell_line = get_cell_line_code(redcap, record_id)
+
+            # get the single patient treatment data
+            cleaned_patient_treatment_data = get_single_patient_clinical_data(row,redcap_CRC_conversion_table)
+
+            if len(cleaned_patient_treatment_data) > 0:
+
+                # add the cell line code and date
+                cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
+                cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
+
+                # create a file name
+                filename = f'{output_dir}/CL_C_PID_{cell_line_code}_SID_0001.csv'   
+
+                # save the data
+                cleaned_patient_treatment_data.to_csv(filename, sep=';')
+
+        except:
+            print(f'Error for {record_id}')
+
+    return None
