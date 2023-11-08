@@ -11,7 +11,6 @@ def preprocess_redcap_data(redcap_filepath,
                            output_dir,
                            ):
     
-
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
