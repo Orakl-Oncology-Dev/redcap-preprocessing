@@ -45,6 +45,7 @@ def get_single_patient_molecular_data(patient_molecular_data,
 def split_molecular_data_from_redcap(redcap_path: str,
                        redcap_conversion_table_path: str,
                        output_dir: str,
+                       save_as_single_file: bool = False,
                        ):
     """
     Get the treatment data from the redcap data set.
@@ -78,6 +79,9 @@ def split_molecular_data_from_redcap(redcap_path: str,
     # get the unique record ids
     record_ids = redcap.record_id.unique()
 
+    # recap dataframe
+    cleaned_patient_molecular_data = pd.DataFrame()
+
     # loop through all the record ids
     for record_id in record_ids:
 
@@ -91,25 +95,39 @@ def split_molecular_data_from_redcap(redcap_path: str,
                                             (redcap['redcap_repeat_instrument'].isin(['molecular_profile']))]
 
             # get the single patient treatment data
-            cleaned_patient_molecular_data = get_single_patient_molecular_data(patient_molecular_data,
+            cleaned_single_patient_molecular_data = get_single_patient_molecular_data(patient_molecular_data,
                                                                                 redcap_CRC_conversion_table)
 
-            if len(cleaned_patient_molecular_data) > 0:
+            if len(cleaned_single_patient_molecular_data) > 0:
 
+                # TO IMPROVE
                 if 'CGR' in cell_line_code:
                     cell_line_code = cell_line_code.replace('CGR', 'GR')
+                elif 'PGR' in cell_line_code:
+                    cell_line_code = cell_line_code.replace('PGR', 'GR')
 
-                # add the cell line code and date
-                cleaned_patient_molecular_data['cell_line_code'] = cell_line_code
-                cleaned_patient_molecular_data['date_cell_line'] = date_cell_line
+                extracted_cell_line_codes = cell_line_code.split(';')
+                extracted_cell_line_dates = date_cell_line.split(';')
 
-                # create a file name
-                filename = f'{output_dir}/MB_C_PID_{cell_line_code}_SID_0001.csv'   
+                # if multiple treatment lines are present, save twice under different names
+                for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
 
-                # save the data
-                cleaned_patient_molecular_data.to_csv(filename, sep=';')
+                    # add the cell line code and date
+                    cleaned_single_patient_molecular_data['cell_line_code'] = cell_line_code
+                    cleaned_single_patient_molecular_data['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
+                    cleaned_single_patient_molecular_data['date_cell_line'] = cell_line_date
+
+                    if save_as_single_file:
+                        cleaned_single_patient_molecular_data = cleaned_patient_molecular_data.append(cleaned_single_patient_molecular_data)
+                    else:
+                        # create a file name
+                        filename = f'{output_dir}/MOL_C_PID_{cell_line_code}_SID_0001.csv'   
+                        # save the data
+                        cleaned_single_patient_molecular_data.to_csv(filename, sep=';')
 
         except:
             print(f'Error for {record_id}')
 
+    if save_as_single_file:
+        cleaned_patient_molecular_data.to_csv(f'{output_dir}/MOL_C_PID_ALL.csv', sep=';')
     return None

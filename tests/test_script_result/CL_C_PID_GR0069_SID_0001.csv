@@ -1,0 +1,18 @@
+;0
+sex;woman
+date_birth;1989-09-29
+date_diagnosis;2020-06-30
+age_diagnosis;31.0
+weight_diagnosis;66.0
+size_diagnosis;169.0
+medical_history;none
+patient_fate;1.0
+date_death;2022-05-18
+cause_death;progression
+patients_characteristics_complete ;2.0
+ecog_at_diag ;2
+stage_at_diagnosis;metastatic
+metastasis_at_diagnosis;"adenopathy;liver;peritoneal;ovary"
+tumor_site;right
+cell_line_code;GR0069
+date_cell_line;2023-05-25

@@ -55,6 +55,7 @@ def get_single_patient_clinical_data(row: pd.Series,
 def split_clinical_data_from_redcap_directory(redcap_path: str,
                        redcap_conversion_table_path: str,
                        output_dir: str,
+                       save_as_single_file: bool = False,
                        ):
     """
     Get the treatment data from the redcap data set.
@@ -87,6 +88,10 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
     # get the unique record ids
     record_ids = redcap_clinical_data.record_id.unique()
 
+    # recap dataframe
+    cleaned_patient_clinical_data = pd.DataFrame()
+
+
     # loop through all the record ids
     for index, row in redcap_clinical_data.iterrows():
 
@@ -98,21 +103,39 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
             cell_line_code, date_cell_line = get_cell_line_code(redcap, record_id)
 
             # get the single patient treatment data
-            cleaned_patient_treatment_data = get_single_patient_clinical_data(row,redcap_CRC_conversion_table)
+            cleaned_single_patient_clinical_data = get_single_patient_clinical_data(row,redcap_CRC_conversion_table)
 
-            if len(cleaned_patient_treatment_data) > 0:
+            if len(cleaned_single_patient_clinical_data) > 0:
 
-                # add the cell line code and date
-                cleaned_patient_treatment_data['cell_line_code'] = cell_line_code
-                cleaned_patient_treatment_data['date_cell_line'] = date_cell_line
+                # TO IMPROVE
+                if 'CGR' in cell_line_code:
+                    cell_line_code = cell_line_code.replace('CGR', 'GR')
+                elif 'PGR' in cell_line_code:
+                    cell_line_code = cell_line_code.replace('PGR', 'GR')
 
-                # create a file name
-                filename = f'{output_dir}/CL_C_PID_{cell_line_code}_SID_0001.csv'   
+                extracted_cell_line_codes = cell_line_code.split(';')
+                extracted_cell_line_dates = date_cell_line.split(';')
 
-                # save the data
-                cleaned_patient_treatment_data.to_csv(filename, sep=';')
+                # if multiple treatment lines are present, save twice under different names
+                for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
+
+                    # add the cell line code and date
+                    cleaned_single_patient_clinical_data['cell_line_code'] = cell_line_code
+                    cleaned_single_patient_clinical_data['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
+                    cleaned_single_patient_clinical_data['date_cell_line'] = cell_line_date
+
+                    if save_as_single_file:
+                        cleaned_patient_clinical_data = cleaned_patient_clinical_data.append(cleaned_single_patient_clinical_data)
+                    else:
+                        # create a file name
+                        filename = f'{output_dir}/CLI_C_PID_{cell_line_code}_SID_0001.csv'   
+                        # save the data
+                        cleaned_single_patient_clinical_data.to_csv(filename, sep=';')
 
         except:
             print(f'Error for {record_id}')
+
+    if save_as_single_file:
+        cleaned_patient_clinical_data.to_csv(f'{output_dir}/CLI_C_PID_ALL.csv', sep=';')
 
     return None
