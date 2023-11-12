@@ -122,9 +122,11 @@ def split_treatment_data_from_redcap(redcap_path: str,
                 cleaned_single_patient_treatment_data['cell_line_code'] = cell_line_code
                 cleaned_single_patient_treatment_data['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
                 cleaned_single_patient_treatment_data['date_cell_line'] = cell_line_date
+                cleaned_single_patient_treatment_data['record_id'] = record_id
+
 
                 if save_as_single_file:
-                    cleaned_single_patient_treatment_data = cleaned_patient_treatment_data.append(cleaned_single_patient_treatment_data)
+                    cleaned_patient_treatment_data = pd.concat([cleaned_patient_treatment_data, cleaned_single_patient_treatment_data])
                 else:
                     # create a file name
                     filename = f'{output_dir}/TTR_C_PID_{cell_line_code}_SID_0001.csv'   
@@ -135,5 +137,21 @@ def split_treatment_data_from_redcap(redcap_path: str,
             print(f'Error for {record_id}')
 
     if save_as_single_file:
-        cleaned_single_patient_treatment_data.to_csv(f'{output_dir}/TTR_C_PID_ALL.csv', sep=';')
+
+        # reorder the columns with record_id, cell_line_code and date_cell_line in front
+        all_columns = list(cleaned_patient_treatment_data.columns)
+
+        # Columns to be placed at the beginning
+        selected_columns = ['record_id', 'cell_line_code', 'date_cell_line']
+
+        # Filter out the selected columns from all_columns
+        other_columns = [col for col in all_columns if col not in selected_columns]
+
+        # Concatenate selected columns with other columns
+        new_column_order = selected_columns + other_columns
+
+        # Reorder the DataFrame
+        cleaned_patient_treatment_data = cleaned_patient_treatment_data[new_column_order]
+
+        cleaned_patient_treatment_data.to_csv(f'{output_dir}/TTR_C_PID_ALL.csv', sep=';')
     return None

@@ -17,7 +17,9 @@
 2;atcd_onco___9;;medical_history;lymphoma;clinical-profile;
 2;atcd_onco___10;;medical_history;none;clinical-profile;
 2;atcd_onco___99;;medical_history;other_cancer;clinical-profile;
-1;deces_ou_perte_de_vue;;patient_fate;;clinical-profile;
+3;deces_ou_perte_de_vue;1;patient_fate;dead;clinical-profile;
+3;deces_ou_perte_de_vue;2;patient_fate;alive;clinical-profile;
+3;deces_ou_perte_de_vue;3;patient_fate;lost_patient;clinical-profile;
 1;dodeath;;date_death;;clinical-profile;
 3;cause_death;1;cause_death;progression;clinical-profile;
 3;cause_death;2;cause_death;complication_treatment;clinical-profile;
