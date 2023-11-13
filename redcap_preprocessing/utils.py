@@ -1,6 +1,8 @@
 
 import pandas as pd
 import numpy as np
+import csv
+
 
 def get_cell_line_code(redcap: pd.DataFrame,
                        record_id: str):
@@ -111,3 +113,13 @@ def add_content(content, prior_content):
         
         else:
             print(content)
+
+
+def get_delimiter(csv_path):
+
+    with open(csv_path, 'r') as file:
+        sample = file.read(1024)
+
+    sniffer = csv.Sniffer()
+
+    return sniffer.sniff(sample).delimiter

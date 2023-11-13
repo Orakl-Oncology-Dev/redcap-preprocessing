@@ -1,232 +1,235 @@
-﻿matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_options;data_type;
-3;sexe;1;sex;man;clinical-profile;
-3;sexe;2;sex;woman;clinical-profile;
-1;dob;;date_birth;;clinical-profile;
-1;dod;;date_diagnosis;;clinical-profile;
-1;age_diagnosis;;age_diagnosis;;clinical-profile;
-1;poids_diag;;weight_diagnosis;;clinical-profile;
-1;taille_diag;;size_diagnosis;;clinical-profile;
-2;atcd_onco___1;;medical_history;breast;clinical-profile;
-2;atcd_onco___2;;medical_history;prostate;clinical-profile;
-2;atcd_onco___3;;medical_history;pancreas;clinical-profile;
-2;atcd_onco___4;;medical_history;stomach;clinical-profile;
-2;atcd_onco___5;;medical_history;ovary;clinical-profile;
-2;atcd_onco___6;;medical_history;endometriosis;clinical-profile;
-2;atcd_onco___7;;medical_history;lung;clinical-profile;
-2;atcd_onco___8;;medical_history;leukemia;clinical-profile;
-2;atcd_onco___9;;medical_history;lymphoma;clinical-profile;
-2;atcd_onco___10;;medical_history;none;clinical-profile;
-2;atcd_onco___99;;medical_history;other_cancer;clinical-profile;
-3;deces_ou_perte_de_vue;1;patient_fate;dead;clinical-profile;
-3;deces_ou_perte_de_vue;2;patient_fate;alive;clinical-profile;
-3;deces_ou_perte_de_vue;3;patient_fate;lost_patient;clinical-profile;
-1;dodeath;;date_death;;clinical-profile;
-3;cause_death;1;cause_death;progression;clinical-profile;
-3;cause_death;2;cause_death;complication_treatment;clinical-profile;
-3;cause_death;3;cause_death;intercurrent_cause;clinical-profile;
-3;cause_death;999;cause_death;not_reported;clinical-profile;
-1;patients_characteristics_complete;;patients_characteristics_complete ;;clinical-profile;
-3;ecog_diag;0;ecog_at_diag ;0;clinical-profile;
-3;ecog_diag;1;ecog_at_diag ;1;clinical-profile;
-3;ecog_diag;2;ecog_at_diag ;2;clinical-profile;
-3;ecog_diag;3;ecog_at_diag ;3;clinical-profile;
-3;ecog_diag;4;ecog_at_diag ;4;clinical-profile;
-3;ecog_diag;999;ecog_at_diag ;not_reported;clinical-profile;
-3;stade;1;stage_at_diagnosis;non_metastatic;clinical-profile;
-3;stade;2;stage_at_diagnosis;metastatic;clinical-profile;
-2;site_metastatique_diag___1;;metastasis_at_diagnosis;adenopathy;clinical-profile;
-2;site_metastatique_diag___2;;metastasis_at_diagnosis;lung;clinical-profile;
-2;site_metastatique_diag___3;;metastasis_at_diagnosis;liver;clinical-profile;
-2;site_metastatique_diag___4;;metastasis_at_diagnosis;suprarenalglands;clinical-profile;
-2;site_metastatique_diag___5;;metastasis_at_diagnosis;peritoneal;clinical-profile;
-2;site_metastatique_diag___6;;metastasis_at_diagnosis;bone;clinical-profile;
-2;site_metastatique_diag___7;;metastasis_at_diagnosis;ovary;clinical-profile;
-2;site_metastatique_diag___8;;metastasis_at_diagnosis;other;clinical-profile;insert name included in variable spe_site_met
-3;tum_site;1;tumor_site;right;clinical-profile;
-3;tum_site;2;tumor_site;left;clinical-profile;
-3;tum_site;3;tumor_site;rectum;clinical-profile;
-3;tum_site;999;tumor_site;not_reported;clinical-profile;
-1;redcap_repeat_instrument;;redcap_repeat_instrument;;treatment;
-1;date_sample;;date_cell_line;;;
-1;nom_lign_e;;cell_line_code;;;
-1;line_num;;line_number;;treatment;
-3;ind_line;1;line_indication;induction_or_perioperative;treatment;
-3;ind_line;2;line_indication;metastatic;treatment;
-3;ind_line;3;line_indication;intensification;treatment;
-3;ind_line;999;line_indication;unkown;treatment;
-1;ciah_yes_non;;CIAH;;treatment;
-1;chimioip_assoc;;associated_chip;;treatment;
-3;chemo_type;0;chemotherapy_type;none;treatment;
-3;chemo_type;1;chemotherapy_type;folfox;treatment;
-3;chemo_type;2;chemotherapy_type;folfiri;treatment;
-3;chemo_type;3;chemotherapy_type;folfirinox;treatment;
-3;chemo_type;4;chemotherapy_type;lv5fu;treatment;
-3;chemo_type;5;chemotherapy_type;capecitabine;treatment;
-3;chemo_type;6;chemotherapy_type;regorafenib;treatment;
-3;chemo_type;7;chemotherapy_type;lonsurf;treatment;
-3;chemo_type;8;chemotherapy_type;clinical_trial;treatment;
-3;chemo_type;9;chemotherapy_type;other;treatment;
-3;chemo_type;10;chemotherapy_type;folfiri3;treatment;
-3;chemo_type;11;chemotherapy_type;xelox;treatment;
-3;chemo_type;12;chemotherapy_type;xeliri;treatment;
-3;chemo_type;13;chemotherapy_type;irinotecan;treatment;
-3;chemo_type;999;chemotherapy_type;not_reported;treatment;
-3;therapieciblee;0;targeted_therapy_type;none;treatment;
-3;therapieciblee;1;targeted_therapy_type;bevacizumab;treatment;
-3;therapieciblee;2;targeted_therapy_type;cetuximab;treatment;
-3;therapieciblee;3;targeted_therapy_type;panitumumab;treatment;
-3;therapieciblee;4;targeted_therapy_type;aflibercept;treatment;
-3;therapieciblee;5;targeted_therapy_type;other;treatment;
-3;therapieciblee;999;targeted_therapy_type;not_reported;treatment;
-3;immuno;1;immunotherapy_type;nivolumab;treatment;
-3;immuno;2;immunotherapy_type;pembrolizumab;treatment;
-3;immuno;3;immunotherapy_type;ipilimumab;treatment;
-3;immuno;4;immunotherapy_type;other;treatment;
-3;immuno;5;immunotherapy_type;none;treatment;
-4;j1c1_met ;;first_dose_date;;treatment;
-4;date_dernier_cycle ;;last_dose_date;;treatment;
-2;arret_chimio___1 ;;stop_chemotherapy_cause;progression;treatment;
-2;arret_chimio___2;;stop_chemotherapy_cause;instensification;treatment;
-2;arret_chimio___3;;stop_chemotherapy_cause;toxicity;treatment;
-2;arret_chimio___4;;stop_chemotherapy_cause;death;treatment;
-2;arret_chimio___5;;stop_chemotherapy_cause;curative;treatment;
-2;arret_chimio___6;;stop_chemotherapy_cause;lost_patient;treatment;
-2;arret_chimio___7;;stop_chemotherapy_cause;AEG;treatment;
-2;arret_chimio___8;;stop_chemotherapy_cause;pause;treatment;
-2;arret_chimio___9;;stop_chemotherapy_cause;other;treatment;
-2;arret_chimio___10;;stop_chemotherapy_cause;progress;treatment;
-2;arret_chimio___11;;stop_chemotherapy_cause;maintenance;treatment;
-2;arret_chimio___12;;stop_chemotherapy_cause;planned_stop;treatment;
-3;neurotox;0;neurotoxicity;grade_0;treatment;
-3;neurotox;1;neurotoxicity;grade_1;treatment;
-3;neurotox;2;neurotoxicity;grade_2;treatment;
-3;neurotox;3;neurotoxicity;grade_3;treatment;
-3;neurotox;4;neurotoxicity;grade_4;treatment;
-3;neurotox;5;neurotoxicity;grade_5;treatment;
-4;dop;;progression_date;;treatment;
-2;progression_type___1;;progression_type;progression_local;treatment;
-2;progression_type___2;;progression_type;progression_metastasis;treatment;
-2;progression_type___3;;progression_type;progression_biologic;treatment;
-2;progression_type___4;;progression_type;progression_line_in_progress;treatment;
-2;progression_type___5;;progression_type;progression_none;treatment;
-2;progression_type___999;;progression_type;progression_not_specified;treatment;
-3;reponse_chimio_nadir ;1;chemotherapy_RECIST_response;stable_disease;treatment;
-3;reponse_chimio_nadir ;2;chemotherapy_RECIST_response;progressive_disease;treatment;
-3;reponse_chimio_nadir ;3;chemotherapy_RECIST_response;partial_response;treatment;
-3;reponse_chimio_nadir ;4;chemotherapy_RECIST_response;complete_response;treatment;
-3;reponse_chimio_nadir ;5;chemotherapy_RECIST_response;no_evaluation;treatment;
-1;pfs_met;;PFS;;treatment;
-2;chemoiv_ia___1;;chemotherapy_type;irinotecan;treatment;
-2;chemoiv_ia___2;;chemotherapy_type;5FU;treatment;
-2;chemoiv_ia___3;;chemotherapy_type;other;treatment;
-2;chemoiv_ia___4;;chemotherapy_type;none;treatment;
-2;chemoiv_ia___999;;chemotherapy_type;not_reported;treatment;
-4;datein_ia ;;first_dose_date;;treatment;
-4;datefin_ia;;last_dose_date;;treatment;
-4;datepd_ia;;progression_date;;treatment;
-3;chemo_ia ;1;chemotherapy_type;oxaliplatine;treatment;
-3;chemo_ia ;2;chemotherapy_type;mitomycine;treatment;
-3;chemo_ia ;3;chemotherapy_type;optiliv;treatment;
-3;chemo_ia ;4;chemotherapy_type;fudr;treatment;
-3;chemo_ia ;5;chemotherapy_type;other;treatment;
-3;chemo_ia ;999;chemotherapy_type;not_reported;treatment;
-3;recist_ia ;1;chemotherapy_RECIST_response;partial_response;treatment;
-3;recist_ia ;2;chemotherapy_RECIST_response;stable_disease;treatment;
-3;recist_ia ;3;chemotherapy_RECIST_response;progressive_disease;treatment;
-3;recist_ia ;4;chemotherapy_RECIST_response;complete_response;treatment;
-3;recist_ia ;999;chemotherapy_RECIST_response;no_evaluation;treatment;
-1;tgtxt_ia;;targeted_therapy_type;;treatment;
-1;dmolprof;;date_molecular_profile;;molecular_profile;
-1;tmb;;tumor_mutational_burden;;molecular_profile;
-1;msi;;MSI;;molecular_profile;
-3;type_echantillon;1;sample_type;tumor_tissue;molecular_profile;
-3;type_echantillon;2;sample_type;liquid_biopsy;molecular_profile;
-3;type_echantillon;3;sample_type;tumor_and_liquid_biopsy;molecular_profile;
-3;sitebiopsie;1;biopsy_site;liver;molecular_profile;
-3;sitebiopsie;2;biopsy_site;lung;molecular_profile;
-3;sitebiopsie;3;biopsy_site;bone;molecular_profile;
-3;sitebiopsie;4;biopsy_site;carcinosous;molecular_profile;
-3;sitebiopsie;5;biopsy_site;primitive;molecular_profile;
-3;sitebiopsie;6;biopsy_site;ganglion;molecular_profile;
-3;sitebiopsie;7;biopsy_site;ovary;molecular_profile;
-3;sitebiopsie;8;biopsy_site;other;molecular_profile;
-3;kras;1;kras;G12A;molecular_profile;
-3;kras;2;kras;G12C;molecular_profile;
-3;kras;3;kras;G12D;molecular_profile;
-3;kras;4;kras;G12L;molecular_profile;
-3;kras;5;kras;G12R;molecular_profile;
-3;kras;6;kras;G12V;molecular_profile;
-3;kras;7;kras;G13D;molecular_profile;
-3;kras;8;kras;Q61H;molecular_profile;
-3;kras;9;kras;Q61R;molecular_profile;
-3;kras;10;kras;P34L;molecular_profile;
-3;kras;11;kras;other;molecular_profile;
-2;mol_profile___1;;molecular_alterations;ACVR1B;molecular_profile;
-2;mol_profile___2;;molecular_alterations;AKT;molecular_profile;
-2;mol_profile___3;;molecular_alterations;APC;molecular_profile;
-2;mol_profile___4;;molecular_alterations;ARID1A;molecular_profile;
-2;mol_profile___5;;molecular_alterations;ATM;molecular_profile;
-2;mol_profile___6;;molecular_alterations;ATRX;molecular_profile;
-2;mol_profile___7;;molecular_alterations;BRAF;molecular_profile;
-2;mol_profile___8;;molecular_alterations;BRCA1/2;molecular_profile;
-2;mol_profile___9;;molecular_alterations;BRD4;molecular_profile;
-2;mol_profile___10;;molecular_alterations;BRIP1;molecular_profile;
-2;mol_profile___11;;molecular_alterations;C17orf39;molecular_profile;
-2;mol_profile___12;;molecular_alterations;CCND1/2/3;molecular_profile;
-2;mol_profile___13;;molecular_alterations;CCNE1;molecular_profile;
-2;mol_profile___14;;molecular_alterations;CDK4;molecular_profile;
-2;mol_profile___15;;molecular_alterations;CDK6;molecular_profile;
-2;mol_profile___16;;molecular_alterations;CDKN2A;molecular_profile;
-2;mol_profile___17;;molecular_alterations;CDKN2B;molecular_profile;
-2;mol_profile___18;;molecular_alterations;CRKL;molecular_profile;
-2;mol_profile___19;;molecular_alterations;CTNNB1;molecular_profile;
-2;mol_profile___20;;molecular_alterations;EGFR;molecular_profile;
-2;mol_profile___21;;molecular_alterations;FANC2;molecular_profile;
-2;mol_profile___22;;molecular_alterations;FGF;molecular_profile;
-2;mol_profile___23;;molecular_alterations;FGFR;molecular_profile;
-2;mol_profile___24;;molecular_alterations;GNAS;molecular_profile;
-2;mol_profile___25;;molecular_alterations;HER2/4;molecular_profile;
-2;mol_profile___26;;molecular_alterations;HOXA6/7;molecular_profile;
-2;mol_profile___27;;molecular_alterations;HRAS;molecular_profile;
-2;mol_profile___28;;molecular_alterations;IGF1R;molecular_profile;
-2;mol_profile___29;;molecular_alterations;INPP4B;molecular_profile;
-2;mol_profile___30;;molecular_alterations;KMD5A/6;molecular_profile;
-2;mol_profile___31;;molecular_alterations;KRAS;molecular_profile;
-2;mol_profile___32;;molecular_alterations;MCYL;molecular_profile;
-2;mol_profile___33;;molecular_alterations;MDM2;molecular_profile;
-2;mol_profile___34;;molecular_alterations;MET;molecular_profile;
-2;mol_profile___35;;molecular_alterations;MRE11A;molecular_profile;
-2;mol_profile___36;;molecular_alterations;MTAP;molecular_profile;
-2;mol_profile___37;;molecular_alterations;MTOR;molecular_profile;
-2;mol_profile___38;;molecular_alterations;MYC;molecular_profile;
-2;mol_profile___39;;molecular_alterations;NF1/2;molecular_profile;
-2;mol_profile___40;;molecular_alterations;NOTCH1/2;molecular_profile;
-2;mol_profile___41;;molecular_alterations;NRAS;molecular_profile;
-2;mol_profile___42;;molecular_alterations;PIK3CA/B/D;molecular_profile;
-2;mol_profile___43;;molecular_alterations;PP3CA;molecular_profile;
-2;mol_profile___44;;molecular_alterations;PPM1D;molecular_profile;
-2;mol_profile___45;;molecular_alterations;PTEN;molecular_profile;
-2;mol_profile___46;;molecular_alterations;RAD51C;molecular_profile;
-2;mol_profile___47;;molecular_alterations;RB1;molecular_profile;
-2;mol_profile___48;;molecular_alterations;RICTOR;molecular_profile;
-2;mol_profile___49;;molecular_alterations;RNF43;molecular_profile;
-2;mol_profile___50;;molecular_alterations;SF3B1;molecular_profile;
-2;mol_profile___51;;molecular_alterations;SMAD4;molecular_profile;
-2;mol_profile___52;;molecular_alterations;SMARCA;molecular_profile;
-2;mol_profile___53;;molecular_alterations;STK11;molecular_profile;
-2;mol_profile___54;;molecular_alterations;TERT;molecular_profile;
-2;mol_profile___55;;molecular_alterations;TET2;molecular_profile;
-2;mol_profile___56;;molecular_alterations;TP53;molecular_profile;
-2;mol_profile___57;;molecular_alterations;WHSC1L1;molecular_profile;
-2;mol_profile___58;;molecular_alterations;ZNF703;molecular_profile;
-2;mol_profile___59;;molecular_alterations;DNMT3A;molecular_profile;
-2;mol_profile___60;;molecular_alterations;MUTHY;molecular_profile;
-2;mol_profile___61;;molecular_alterations;KEAP1;molecular_profile;
-2;mol_profile___62;;molecular_alterations;MLH1;molecular_profile;
-2;mol_profile___63;;molecular_alterations;PTPN11;molecular_profile;
-2;mol_profile___64;;molecular_alterations;PALB2;molecular_profile;
-2;mol_profile___65;;molecular_alterations;CHEK2;molecular_profile;
-2;mol_profile___66;;molecular_alterations;TSC1/2;molecular_profile;
-2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile;
-2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile;
-1;type_mutation;;liquid_biopsy_analysis;;molecular_profile;
+matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_options;data_type
+3;sexe;1;sex;man;clinical-profile
+3;sexe;2;sex;woman;clinical-profile
+1;dob;;date_birth;;clinical-profile
+1;dod;;date_diagnosis;;clinical-profile
+1;age_diagnosis;;age_diagnosis;;clinical-profile
+1;poids_diag;;weight_diagnosis;;clinical-profile
+1;taille_diag;;size_diagnosis;;clinical-profile
+2;atcd_onco___1;;medical_history;breast;clinical-profile
+2;atcd_onco___2;;medical_history;prostate;clinical-profile
+2;atcd_onco___3;;medical_history;pancreas;clinical-profile
+2;atcd_onco___4;;medical_history;stomach;clinical-profile
+2;atcd_onco___5;;medical_history;ovary;clinical-profile
+2;atcd_onco___6;;medical_history;endometriosis;clinical-profile
+2;atcd_onco___7;;medical_history;lung;clinical-profile
+2;atcd_onco___8;;medical_history;leukemia;clinical-profile
+2;atcd_onco___9;;medical_history;lymphoma;clinical-profile
+2;atcd_onco___10;;medical_history;none;clinical-profile
+2;atcd_onco___99;;medical_history;other_cancer;clinical-profile
+3;deces_ou_perte_de_vue;1;patient_fate;dead;clinical-profile
+3;deces_ou_perte_de_vue;2;patient_fate;alive;clinical-profile
+3;deces_ou_perte_de_vue;3;patient_fate;lost_patient;clinical-profile
+1;dodeath;;date_death;;clinical-profile
+3;cause_death;1;cause_death;progression;clinical-profile
+3;cause_death;2;cause_death;complication_treatment;clinical-profile
+3;cause_death;3;cause_death;intercurrent_cause;clinical-profile
+3;cause_death;999;cause_death;not_reported;clinical-profile
+1;patients_characteristics_complete;;patients_characteristics_complete ;;clinical-profile
+3;ecog_diag;0;ecog_at_diag ;0;clinical-profile
+3;ecog_diag;1;ecog_at_diag ;1;clinical-profile
+3;ecog_diag;2;ecog_at_diag ;2;clinical-profile
+3;ecog_diag;3;ecog_at_diag ;3;clinical-profile
+3;ecog_diag;4;ecog_at_diag ;4;clinical-profile
+3;ecog_diag;999;ecog_at_diag ;not_reported;clinical-profile
+3;stade;1;stage_at_diagnosis;non_metastatic;clinical-profile
+3;stade;2;stage_at_diagnosis;metastatic;clinical-profile
+2;site_metastatique_diag___1;;metastasis_at_diagnosis;adenopathy;clinical-profile
+2;site_metastatique_diag___2;;metastasis_at_diagnosis;lung;clinical-profile
+2;site_metastatique_diag___3;;metastasis_at_diagnosis;liver;clinical-profile
+2;site_metastatique_diag___4;;metastasis_at_diagnosis;suprarenalglands;clinical-profile
+2;site_metastatique_diag___5;;metastasis_at_diagnosis;peritoneal;clinical-profile
+2;site_metastatique_diag___6;;metastasis_at_diagnosis;bone;clinical-profile
+2;site_metastatique_diag___7;;metastasis_at_diagnosis;ovary;clinical-profile
+2;site_metastatique_diag___8;;metastasis_at_diagnosis;other;clinical-profile
+3;tum_site;1;tumor_site;right;clinical-profile
+3;tum_site;2;tumor_site;left;clinical-profile
+3;tum_site;3;tumor_site;rectum;clinical-profile
+3;tum_site;999;tumor_site;not_reported;clinical-profile
+1;redcap_repeat_instrument;;redcap_repeat_instrument;;
+1;date_sample;;date_cell_line;;clinical-profile
+1;nom_lign_e;;cell_line_code;;clinical-profile
+1;line_num;;line_number;;treatment
+3;ind_line;1;line_indication;induction_or_perioperative;treatment
+3;ind_line;2;line_indication;metastatic;treatment
+3;ind_line;3;line_indication;intensification;treatment
+3;ind_line;999;line_indication;unkown;treatment
+1;ciah_yes_non;;CIAH;;treatment
+1;chimioip_assoc;;associated_chip;;treatment
+3;chemo_type;0;chemotherapy_type;none;treatment
+3;chemo_type;1;chemotherapy_type;folfox;treatment
+3;chemo_type;2;chemotherapy_type;folfiri;treatment
+3;chemo_type;3;chemotherapy_type;folfirinox;treatment
+3;chemo_type;4;chemotherapy_type;lv5fu;treatment
+3;chemo_type;5;chemotherapy_type;capecitabine;treatment
+3;chemo_type;6;chemotherapy_type;regorafenib;treatment
+3;chemo_type;7;chemotherapy_type;lonsurf;treatment
+3;chemo_type;8;chemotherapy_type;clinical_trial;treatment
+3;chemo_type;9;chemotherapy_type;other;treatment
+3;chemo_type;10;chemotherapy_type;folfiri3;treatment
+3;chemo_type;11;chemotherapy_type;xelox;treatment
+3;chemo_type;12;chemotherapy_type;xeliri;treatment
+3;chemo_type;13;chemotherapy_type;irinotecan;treatment
+3;chemo_type;999;chemotherapy_type;not_reported;treatment
+3;therapieciblee;0;targeted_therapy_type;none;treatment
+3;therapieciblee;1;targeted_therapy_type;bevacizumab;treatment
+3;therapieciblee;2;targeted_therapy_type;cetuximab;treatment
+3;therapieciblee;3;targeted_therapy_type;panitumumab;treatment
+3;therapieciblee;4;targeted_therapy_type;aflibercept;treatment
+3;therapieciblee;5;targeted_therapy_type;other;treatment
+3;therapieciblee;999;targeted_therapy_type;not_reported;treatment
+3;immuno;1;immunotherapy_type;nivolumab;treatment
+3;immuno;2;immunotherapy_type;pembrolizumab;treatment
+3;immuno;3;immunotherapy_type;ipilimumab;treatment
+3;immuno;4;immunotherapy_type;other;treatment
+3;immuno;5;immunotherapy_type;none;treatment
+4;j1c1_met ;;first_dose_date;;treatment
+4;date_dernier_cycle ;;last_dose_date;;treatment
+2;arret_chimio___1 ;;stop_chemotherapy_cause;progression;treatment
+2;arret_chimio___2;;stop_chemotherapy_cause;instensification;treatment
+2;arret_chimio___3;;stop_chemotherapy_cause;toxicity;treatment
+2;arret_chimio___4;;stop_chemotherapy_cause;death;treatment
+2;arret_chimio___5;;stop_chemotherapy_cause;curative;treatment
+2;arret_chimio___6;;stop_chemotherapy_cause;lost_patient;treatment
+2;arret_chimio___7;;stop_chemotherapy_cause;AEG;treatment
+2;arret_chimio___8;;stop_chemotherapy_cause;pause;treatment
+2;arret_chimio___9;;stop_chemotherapy_cause;other;treatment
+2;arret_chimio___10;;stop_chemotherapy_cause;progress;treatment
+2;arret_chimio___11;;stop_chemotherapy_cause;maintenance;treatment
+2;arret_chimio___12;;stop_chemotherapy_cause;planned_stop;treatment
+3;neurotox;0;neurotoxicity;grade_0;treatment
+3;neurotox;1;neurotoxicity;grade_1;treatment
+3;neurotox;2;neurotoxicity;grade_2;treatment
+3;neurotox;3;neurotoxicity;grade_3;treatment
+3;neurotox;4;neurotoxicity;grade_4;treatment
+3;neurotox;5;neurotoxicity;grade_5;treatment
+4;dop;;progression_date;;treatment
+2;progression_type___1;;progression_type;progression_local;treatment
+2;progression_type___2;;progression_type;progression_metastasis;treatment
+2;progression_type___3;;progression_type;progression_biologic;treatment
+2;progression_type___4;;progression_type;progression_line_in_progress;treatment
+2;progression_type___5;;progression_type;progression_none;treatment
+2;progression_type___999;;progression_type;progression_not_specified;treatment
+3;reponse_chimio_nadir ;1;chemotherapy_RECIST_response;stable_disease;treatment
+3;reponse_chimio_nadir ;2;chemotherapy_RECIST_response;progressive_disease;treatment
+3;reponse_chimio_nadir ;3;chemotherapy_RECIST_response;partial_response;treatment
+3;reponse_chimio_nadir ;4;chemotherapy_RECIST_response;complete_response;treatment
+3;reponse_chimio_nadir ;5;chemotherapy_RECIST_response;no_evaluation;treatment
+1;pfs_met;;PFS;;treatment
+2;chemoiv_ia___1;;chemotherapy_type;irinotecan;treatment
+2;chemoiv_ia___2;;chemotherapy_type;5FU;treatment
+2;chemoiv_ia___3;;chemotherapy_type;other;treatment
+2;chemoiv_ia___4;;chemotherapy_type;none;treatment
+2;chemoiv_ia___999;;chemotherapy_type;not_reported;treatment
+4;datein_ia ;;first_dose_date;;treatment
+4;datefin_ia;;last_dose_date;;treatment
+4;datepd_ia;;progression_date;;treatment
+3;chemo_ia ;1;chemotherapy_type;oxaliplatine;treatment
+3;chemo_ia ;2;chemotherapy_type;mitomycine;treatment
+3;chemo_ia ;3;chemotherapy_type;optiliv;treatment
+3;chemo_ia ;4;chemotherapy_type;fudr;treatment
+3;chemo_ia ;5;chemotherapy_type;other;treatment
+3;chemo_ia ;999;chemotherapy_type;not_reported;treatment
+3;recist_ia ;1;chemotherapy_RECIST_response;partial_response;treatment
+3;recist_ia ;2;chemotherapy_RECIST_response;stable_disease;treatment
+3;recist_ia ;3;chemotherapy_RECIST_response;progressive_disease;treatment
+3;recist_ia ;4;chemotherapy_RECIST_response;complete_response;treatment
+3;recist_ia ;999;chemotherapy_RECIST_response;no_evaluation;treatment
+1;tgtxt_ia;;targeted_therapy_type;;treatment
+1;dmolprof;;date_molecular_profile;;molecular_profile
+1;tmb;;tumor_mutational_burden;;molecular_profile
+1;msi;;MSI;;molecular_profile
+3;type_echantillon;1;sample_type;tumor_tissue;molecular_profile
+3;type_echantillon;2;sample_type;liquid_biopsy;molecular_profile
+3;type_echantillon;3;sample_type;tumor_and_liquid_biopsy;molecular_profile
+3;sitebiopsie;1;biopsy_site;liver;molecular_profile
+3;sitebiopsie;2;biopsy_site;lung;molecular_profile
+3;sitebiopsie;3;biopsy_site;bone;molecular_profile
+3;sitebiopsie;4;biopsy_site;carcinosous;molecular_profile
+3;sitebiopsie;5;biopsy_site;primitive;molecular_profile
+3;sitebiopsie;6;biopsy_site;ganglion;molecular_profile
+3;sitebiopsie;7;biopsy_site;ovary;molecular_profile
+3;sitebiopsie;8;biopsy_site;other;molecular_profile
+3;kras;1;kras;G12A;molecular_profile
+3;kras;2;kras;G12C;molecular_profile
+3;kras;3;kras;G12D;molecular_profile
+3;kras;4;kras;G12L;molecular_profile
+3;kras;5;kras;G12R;molecular_profile
+3;kras;6;kras;G12V;molecular_profile
+3;kras;7;kras;G13D;molecular_profile
+3;kras;8;kras;Q61H;molecular_profile
+3;kras;9;kras;Q61R;molecular_profile
+3;kras;10;kras;P34L;molecular_profile
+3;kras;11;kras;other;molecular_profile
+2;mol_profile___1;;molecular_alterations;ACVR1B;molecular_profile
+2;mol_profile___2;;molecular_alterations;AKT;molecular_profile
+2;mol_profile___3;;molecular_alterations;APC;molecular_profile
+2;mol_profile___4;;molecular_alterations;ARID1A;molecular_profile
+2;mol_profile___5;;molecular_alterations;ATM;molecular_profile
+2;mol_profile___6;;molecular_alterations;ATRX;molecular_profile
+2;mol_profile___7;;molecular_alterations;BRAF;molecular_profile
+2;mol_profile___8;;molecular_alterations;BRCA1/2;molecular_profile
+2;mol_profile___9;;molecular_alterations;BRD4;molecular_profile
+2;mol_profile___10;;molecular_alterations;BRIP1;molecular_profile
+2;mol_profile___11;;molecular_alterations;C17orf39;molecular_profile
+2;mol_profile___12;;molecular_alterations;CCND1/2/3;molecular_profile
+2;mol_profile___13;;molecular_alterations;CCNE1;molecular_profile
+2;mol_profile___14;;molecular_alterations;CDK4;molecular_profile
+2;mol_profile___15;;molecular_alterations;CDK6;molecular_profile
+2;mol_profile___16;;molecular_alterations;CDKN2A;molecular_profile
+2;mol_profile___17;;molecular_alterations;CDKN2B;molecular_profile
+2;mol_profile___18;;molecular_alterations;CRKL;molecular_profile
+2;mol_profile___19;;molecular_alterations;CTNNB1;molecular_profile
+2;mol_profile___20;;molecular_alterations;EGFR;molecular_profile
+2;mol_profile___21;;molecular_alterations;FANC2;molecular_profile
+2;mol_profile___22;;molecular_alterations;FGF;molecular_profile
+2;mol_profile___23;;molecular_alterations;FGFR;molecular_profile
+2;mol_profile___24;;molecular_alterations;GNAS;molecular_profile
+2;mol_profile___25;;molecular_alterations;HER2/4;molecular_profile
+2;mol_profile___26;;molecular_alterations;HOXA6/7;molecular_profile
+2;mol_profile___27;;molecular_alterations;HRAS;molecular_profile
+2;mol_profile___28;;molecular_alterations;IGF1R;molecular_profile
+2;mol_profile___29;;molecular_alterations;INPP4B;molecular_profile
+2;mol_profile___30;;molecular_alterations;KMD5A/6;molecular_profile
+2;mol_profile___31;;molecular_alterations;KRAS;molecular_profile
+2;mol_profile___32;;molecular_alterations;MCYL;molecular_profile
+2;mol_profile___33;;molecular_alterations;MDM2;molecular_profile
+2;mol_profile___34;;molecular_alterations;MET;molecular_profile
+2;mol_profile___35;;molecular_alterations;MRE11A;molecular_profile
+2;mol_profile___36;;molecular_alterations;MTAP;molecular_profile
+2;mol_profile___37;;molecular_alterations;MTOR;molecular_profile
+2;mol_profile___38;;molecular_alterations;MYC;molecular_profile
+2;mol_profile___39;;molecular_alterations;NF1/2;molecular_profile
+2;mol_profile___40;;molecular_alterations;NOTCH1/2;molecular_profile
+2;mol_profile___41;;molecular_alterations;NRAS;molecular_profile
+2;mol_profile___42;;molecular_alterations;PIK3CA/B/D;molecular_profile
+2;mol_profile___43;;molecular_alterations;PP3CA;molecular_profile
+2;mol_profile___44;;molecular_alterations;PPM1D;molecular_profile
+2;mol_profile___45;;molecular_alterations;PTEN;molecular_profile
+2;mol_profile___46;;molecular_alterations;RAD51C;molecular_profile
+2;mol_profile___47;;molecular_alterations;RB1;molecular_profile
+2;mol_profile___48;;molecular_alterations;RICTOR;molecular_profile
+2;mol_profile___49;;molecular_alterations;RNF43;molecular_profile
+2;mol_profile___50;;molecular_alterations;SF3B1;molecular_profile
+2;mol_profile___51;;molecular_alterations;SMAD4;molecular_profile
+2;mol_profile___52;;molecular_alterations;SMARCA;molecular_profile
+2;mol_profile___53;;molecular_alterations;STK11;molecular_profile
+2;mol_profile___54;;molecular_alterations;TERT;molecular_profile
+2;mol_profile___55;;molecular_alterations;TET2;molecular_profile
+2;mol_profile___56;;molecular_alterations;TP53;molecular_profile
+2;mol_profile___57;;molecular_alterations;WHSC1L1;molecular_profile
+2;mol_profile___58;;molecular_alterations;ZNF703;molecular_profile
+2;mol_profile___59;;molecular_alterations;DNMT3A;molecular_profile
+2;mol_profile___60;;molecular_alterations;MUTHY;molecular_profile
+2;mol_profile___61;;molecular_alterations;KEAP1;molecular_profile
+2;mol_profile___62;;molecular_alterations;MLH1;molecular_profile
+2;mol_profile___63;;molecular_alterations;PTPN11;molecular_profile
+2;mol_profile___64;;molecular_alterations;PALB2;molecular_profile
+2;mol_profile___65;;molecular_alterations;CHEK2;molecular_profile
+2;mol_profile___66;;molecular_alterations;TSC1/2;molecular_profile
+2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile
+2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile
+1;type_mutation;;liquid_biopsy_analysis;;molecular_profile
+3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
+3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile
+1;date_chir_premiere ;;date_primitive_surgery;;clinical-profile

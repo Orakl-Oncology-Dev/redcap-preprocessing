@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 from redcap_preprocessing.utils import get_cell_line_code, get_content_matching_type_1, get_content_matching_type_2, get_content_matching_type_3, get_content_matching_type_4, add_content
+from redcap_preprocessing.utils import get_delimiter
 
 def get_single_patient_treatment_data(patient_treatment_data,
                                       redcap_CRC_conversion_table):
@@ -81,7 +82,8 @@ def split_treatment_data_from_redcap(redcap_path: str,
         os.makedirs(output_dir)
 
     # column name mapping
-    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, sep=';')
+    conversion_table_delimiter = get_delimiter(redcap_conversion_table_path)
+    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)    
     redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'treatment']
     redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
 

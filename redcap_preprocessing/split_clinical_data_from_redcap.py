@@ -4,7 +4,7 @@ import numpy as np
 import datetime
 
 from redcap_preprocessing.utils import get_cell_line_code, get_content_matching_type_1, get_content_matching_type_2, get_content_matching_type_3, get_content_matching_type_4, add_content
-
+from redcap_preprocessing.utils import get_delimiter
 
 def get_single_patient_clinical_data(row: pd.Series,
                                      redcap_CRC_conversion_table: pd.DataFrame):
@@ -70,27 +70,25 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
         output directory
     """
 
-    # Read in the data
-    redcap = pd.read_csv(redcap_path, sep=';')
+    # detect the separator type and read the data
+    redcap_delimiter = get_delimiter(redcap_path)
+    redcap = pd.read_csv(redcap_path, delimiter=redcap_delimiter)
 
     # check that the table isn't empty
     if len(redcap) == 0:
         raise ValueError('The redcap table is empty.')
 
     # column name mapping
-    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, sep=';')
+    conversion_table_delimiter = get_delimiter(redcap_conversion_table_path)
+    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)
     redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'clinical-profile']
     redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
 
     # select the patient data
     redcap_clinical_data = redcap.groupby('record_id').first().reset_index()
 
-    # get the unique record ids
-    record_ids = redcap_clinical_data.record_id.unique()
-
     # recap dataframe
     cleaned_patient_clinical_data = pd.DataFrame()
-
 
     # loop through all the record ids
     for index, row in redcap_clinical_data.iterrows():
