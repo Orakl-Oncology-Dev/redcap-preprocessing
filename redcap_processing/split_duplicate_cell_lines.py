@@ -1,6 +1,8 @@
 import os
 import pandas as pd
 import re
+from redcap_preprocessing.utils import standardize_code
+
 
 filename = "CL_C_PID_CGR0002 ;CGR0060 _SID_0001"
 
@@ -27,9 +29,10 @@ def split_duplicate_cell_lines(path_to_files):
 
                 # read in the file
                 data_file = pd.read_csv(os.path.join(path_to_files, filename))
-                data_file
 
                 for cell_line in extracted_elements:
+
+                    cell_line = standardize_code(cell_line, 'GR')
 
                     # create a new file name
                     new_filename = filename.replace(extracted_elements[0], cell_line)

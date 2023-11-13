@@ -5,6 +5,7 @@ import datetime
 
 from redcap_preprocessing.utils import get_cell_line_code, get_content_matching_type_1, get_content_matching_type_2, get_content_matching_type_3, get_content_matching_type_4, add_content
 from redcap_preprocessing.utils import get_delimiter
+from redcap_preprocessing.utils import standardize_code
 
 def get_single_patient_clinical_data(row: pd.Series,
                                      redcap_CRC_conversion_table: pd.DataFrame):
@@ -117,6 +118,8 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
 
                 # if multiple treatment lines are present, save twice under different names
                 for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
+
+                    cell_line_code = standardize_code(cell_line_code, 'GR')
 
                     # add the cell line code and date
                     cleaned_single_patient_clinical_data['cell_line_code'] = cell_line_code
