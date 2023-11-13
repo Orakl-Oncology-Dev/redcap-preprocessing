@@ -3,8 +3,34 @@ import pandas as pd
 import numpy as np
 import csv
 
+def standardize_code(code, prefix='GR'):
 
-def get_cell_line_code(redcap: pd.DataFrame,
+    # Extract the numeric part of the code
+    numeric_part = code[len(prefix):]
+
+    # Standardize the numeric part to have 4 digits, padding with zeros if necessary
+    standardized_numeric = numeric_part.zfill(4)
+
+    # Combine back with the prefix
+    return prefix + standardized_numeric
+
+def get_cell_line_code(disease_type: str,
+                       redcap: pd.DataFrame,
+                       record_id: str):
+    
+    if disease_type == 'CRC':
+        cell_line_code, date_cell_line = get_cell_line_code_CRC(redcap, record_id)
+        prefix = 'CGR'
+    elif disease_type == 'PDAC':
+        cell_line_code, date_cell_line = get_cell_line_code_PDAC(redcap, record_id)
+        prefix = 'PGR'
+
+    # reformat cell line codes
+    cell_line_code = standardize_code(cell_line_code, prefix)
+
+    return cell_line_code, date_cell_line
+
+def get_cell_line_code_CRC(redcap: pd.DataFrame,
                        record_id: str):
     """
     Get the cell line code from the redcap data set.add
@@ -20,10 +46,35 @@ def get_cell_line_code(redcap: pd.DataFrame,
                           (redcap['redcap_repeat_instrument'] == 'organoides')]
         
     if len(selected_row) == 0:
-        raise ValueError(f'There are no PDO cell lines for record_id {record_id}.')
+        print(f'There are no PDO cell lines for record_id {record_id}.')
+        cell_line_code, date_cell_line = '', ''
     else:
         cell_line_code = ';'.join(selected_row['nom_lign_e'].unique())
         date_cell_line = ';'.join(selected_row['date_sample'].unique())
+
+    return cell_line_code, date_cell_line
+
+def get_cell_line_code_PDAC(redcap: pd.DataFrame,
+                       record_id: str):
+    """
+    Get the cell line code from the redcap data set.add
+
+    Parameters
+    ----------
+    redcap: pd.DataFrame
+        redcap data set
+    record_id: str
+    """
+
+    selected_row = redcap[(redcap['record_id'] == record_id) & 
+                          (redcap['redcap_repeat_instrument'] == 'organodes')]
+        
+    if len(selected_row) == 0:
+        print(f'There are no PDO cell lines for record_id {record_id}.')
+        cell_line_code, date_cell_line = '', ''
+    else:
+        cell_line_code = ';'.join(selected_row['namepdo'].unique())
+        date_cell_line = ';'.join(selected_row['date_pdo'].fillna('').unique())
 
     return cell_line_code, date_cell_line
 

@@ -46,6 +46,7 @@ def get_single_patient_molecular_data(patient_molecular_data,
 def split_molecular_data_from_redcap(redcap_path: str,
                        redcap_conversion_table_path: str,
                        output_dir: str,
+                       disease_type: str,
                        save_as_single_file: bool = False,
                        ):
     """
@@ -90,7 +91,7 @@ def split_molecular_data_from_redcap(redcap_path: str,
         try:
 
             # get the cell line code
-            cell_line_code, date_cell_line = get_cell_line_code(redcap, record_id)
+            cell_line_code, date_cell_line = get_cell_line_code(disease_type, redcap, record_id)
 
             # select the patient data
             patient_molecular_data = redcap[(redcap.record_id == record_id) &
@@ -124,8 +125,10 @@ def split_molecular_data_from_redcap(redcap_path: str,
                     if save_as_single_file:
                         cleaned_patient_molecular_data = pd.concat([cleaned_patient_molecular_data, cleaned_single_patient_molecular_data])
                     else:
-                        # create a file name
-                        filename = f'{output_dir}/MOL_C_PID_{cell_line_code}_SID_0001.csv'   
+                        if disease_type == 'CRC':
+                            filename = f'{output_dir}/MOL_C_PID_{cell_line_code}_SID_0001.csv'
+                        elif disease_type == 'PDAC':
+                            filename = f'{output_dir}/MOL_P_PID_{cell_line_code}_SID_0001.csv'
                         # save the data
                         cleaned_single_patient_molecular_data.to_csv(filename, sep=';')
 
@@ -149,5 +152,10 @@ def split_molecular_data_from_redcap(redcap_path: str,
         # Reorder the DataFrame
         cleaned_patient_molecular_data = cleaned_patient_molecular_data[new_column_order]
 
-        cleaned_patient_molecular_data.to_csv(f'{output_dir}/MOL_C_PID_ALL.csv', sep=';')
+        if disease_type == 'CRC':
+            filename = f'{output_dir}/MOL_C_PID_ALL.csv'
+        elif disease_type == 'PDAC':
+            filename = f'{output_dir}/MOL_P_PID_ALL.csv'
+
+        cleaned_patient_molecular_data.to_csv(filename, sep=';')
     return None
