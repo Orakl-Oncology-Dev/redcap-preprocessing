@@ -112,6 +112,8 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
     # recap dataframe
     cleaned_patient_treatment_data = pd.DataFrame()
+    # index for patients w/o cell lines
+    i = 0
 
     # loop through all the record ids
     for record_id in record_ids:
@@ -120,6 +122,7 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
             # get the cell line code
             cell_line_code, date_cell_line = get_cell_line_code(disease_type, redcap, record_id)
+            print((record_id,cell_line_code))
 
             # select the patient data
             patient_treatment_data = redcap[(redcap.record_id == record_id) &
@@ -143,8 +146,14 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
                 # if multiple treatment lines are present, save twice under different names
                 for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
-
-                    cell_line_code = standardize_code(cell_line_code, 'GR')
+                    
+                    print((record_id,cell_line_code))
+                    if len(cell_line_code)>0:
+                        cell_line_code = standardize_code(cell_line_code, 'GR')
+                    else:
+                        cell_line_code = 'XX' + f'{i:04d}'
+                        i += 1
+                    print((record_id,cell_line_code))
 
                     # add the cell line code and date
                     cleaned_single_patient_treatment_data['cell_line_code'] = cell_line_code

@@ -25,10 +25,13 @@ def get_cell_line_code(disease_type: str,
         cell_line_code, date_cell_line = get_cell_line_code_PDAC(redcap, record_id)
         prefix = 'PGR'
 
-    # reformat cell line codes
-    cell_line_code = standardize_code(cell_line_code, prefix)
-
-    return cell_line_code, date_cell_line
+    if len(cell_line_code) == 0:
+        print(f'There are no PDO cell lines for record_id {record_id}.')
+        return '', ''
+    else:
+        # reformat cell line codes
+        cell_line_code = standardize_code(cell_line_code, prefix)
+        return cell_line_code, date_cell_line
 
 def get_cell_line_code_CRC(redcap: pd.DataFrame,
                        record_id: str):

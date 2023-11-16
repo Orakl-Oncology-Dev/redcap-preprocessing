@@ -116,7 +116,9 @@ def split_molecular_data_from_redcap(redcap_path: str,
                 # if multiple treatment lines are present, save twice under different names
                 for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
 
+                    print(len(cell_line_code))
                     cell_line_code = standardize_code(cell_line_code, 'GR')
+                    print(len(cell_line_code))
 
                     # add the cell line code and date
                     cleaned_single_patient_molecular_data['cell_line_code'] = cell_line_code
@@ -139,6 +141,10 @@ def split_molecular_data_from_redcap(redcap_path: str,
             print(f'Error for {record_id}')
 
     if save_as_single_file:
+
+        if len(cleaned_patient_molecular_data) == 0:
+            print('The cleaned_patient_molecular_data is empty.')
+            return None
 
         # reorder the columns with record_id, cell_line_code and date_cell_line in front
         all_columns = list(cleaned_patient_molecular_data.columns)
