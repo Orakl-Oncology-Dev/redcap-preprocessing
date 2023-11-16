@@ -1,0 +1,206 @@
+;record_id;cell_line_code;date_cell_line;line_number;line_indication;CIAH;associated_chip;chemotherapy_type;targeted_therapy_type;immunotherapy_type;first_dose_date;last_dose_date;stop_chemotherapy_cause;neurotoxicity;progression_date;progression_type;chemotherapy_RECIST_response;PFS;sister_cell_line_codes
+1;26;GR0069;2023-05-25;1.0;induction_or_perioperative;0.0;0.0;folfirinox;none;none;2020-07-29;2021-01-28;"curative;maintenance";grade_2;2021-04-28;progression_metastasis;partial_response;9.0;
+2;26;GR0069;2023-05-25;1.0;induction_or_perioperative;0.0;0.0;folfiri;bevacizumab;none;2020-12-30;2021-05-05;"progression;instensification";grade_0;2021-04-28;progression_metastasis;partial_response;3.9;
+3;26;GR0069;2023-05-25;2.0;intensification;1.0;0.0;folfirinox;bevacizumab;none;2021-09-30;2022-01-13;progression;grade_1;2022-01-18;progression_metastasis;stable_disease;3.6;
+4;26;GR0069;2023-05-25;3.0;metastatic;0.0;0.0;folfiri3;aflibercept;none;2022-01-26;2022-03-23;"progression;AEG";grade_1;2022-04-01;progression_metastasis;progressive_disease;2.1;
+5;26;GR0069;2023-05-25;;;;;"oxaliplatine;folfiri";Bevacizumab;;2021-06-25;2021-08-06;;;2021-08-31;;stable_disease;;
+15;38;GR0001;2019-06-24;1.0;;;;folfox;none;;2018-11-22;2019-03-05;"progression;instensification";;2019-03-06;progression_local;progressive_disease;3.4;
+23;39;GR0002 ;2019-09-03;1.0;;;;folfiri;none;;2018-05-15;2018-06-26;curative;;2018-09-18;progression_metastasis;partial_response;4.1;GR0060 
+24;39;GR0002 ;2019-09-03;2.0;;;;irinotecan;panitumumab;;2018-09-11;2019-02-12;curative;;2019-08-01;progression_metastasis;complete_response;10.6;GR0060 
+25;39;GR0002 ;2019-09-03;3.0;;;;irinotecan;panitumumab;;2018-09-19;2019-02-01;pause;;2019-08-01;progression_metastasis;complete_response;10.4;GR0060 
+26;39;GR0002 ;2019-09-03;;;;;;;;;;;;;;;;GR0060 
+27;39;GR0002 ;2019-09-03;4.0;;;;folfox;panitumumab;;2020-03-24;2020-12-21;maintenance;;2021-05-19;progression_metastasis;partial_response;13.8;GR0060 
+28;39;GR0002 ;2019-09-03;5.0;;;;capecitabine;bevacizumab;;2021-01-15;2021-01-16;toxicity;;;progression_none;no_evaluation;;GR0060 
+29;39;GR0002 ;2019-09-03;6.0;;;;folfox;panitumumab;;2021-02-01;2021-08-17;progression;;2021-08-20;progression_metastasis;stable_disease;6.6;GR0060 
+30;39;GR0002 ;2019-09-03;7.0;;;;lonsurf;none;;2021-09-08;2021-11-05;progression;;2021-11-05;progression_metastasis;stable_disease;1.9;GR0060 
+31;39;GR0002 ;2019-09-03;8.0;;;;regorafenib;none;;2021-11-05;2021-12-24;progression;;2021-12-24;progression_metastasis;progressive_disease;1.6;GR0060 
+32;39;GR0002 ;2019-09-03;9.0;;;;clinical_trial;none;;2022-03-08;2022-04-05;progression;;2022-04-08;progression_metastasis;progressive_disease;1.0;GR0060 
+33;39;GR0002 ;2019-09-03;10.0;;;;clinical_trial;none;;2022-04-18;2022-06-13;progression;;2022-06-24;progression_metastasis;progressive_disease;2.2;GR0060 
+34;39;GR0002 ;2019-09-03;11.0;;;;clinical_trial;none;;2022-06-28;;in_progress;;;;;;GR0060 
+23;39;GR0060 ;2022-02-07;1.0;;;;folfiri;none;;2018-05-15;2018-06-26;curative;;2018-09-18;progression_metastasis;partial_response;4.1;GR0002 
+24;39;GR0060 ;2022-02-07;2.0;;;;irinotecan;panitumumab;;2018-09-11;2019-02-12;curative;;2019-08-01;progression_metastasis;complete_response;10.6;GR0002 
+25;39;GR0060 ;2022-02-07;3.0;;;;irinotecan;panitumumab;;2018-09-19;2019-02-01;pause;;2019-08-01;progression_metastasis;complete_response;10.4;GR0002 
+26;39;GR0060 ;2022-02-07;;;;;;;;;;;;;;;;GR0002 
+27;39;GR0060 ;2022-02-07;4.0;;;;folfox;panitumumab;;2020-03-24;2020-12-21;maintenance;;2021-05-19;progression_metastasis;partial_response;13.8;GR0002 
+28;39;GR0060 ;2022-02-07;5.0;;;;capecitabine;bevacizumab;;2021-01-15;2021-01-16;toxicity;;;progression_none;no_evaluation;;GR0002 
+29;39;GR0060 ;2022-02-07;6.0;;;;folfox;panitumumab;;2021-02-01;2021-08-17;progression;;2021-08-20;progression_metastasis;stable_disease;6.6;GR0002 
+30;39;GR0060 ;2022-02-07;7.0;;;;lonsurf;none;;2021-09-08;2021-11-05;progression;;2021-11-05;progression_metastasis;stable_disease;1.9;GR0002 
+31;39;GR0060 ;2022-02-07;8.0;;;;regorafenib;none;;2021-11-05;2021-12-24;progression;;2021-12-24;progression_metastasis;progressive_disease;1.6;GR0002 
+32;39;GR0060 ;2022-02-07;9.0;;;;clinical_trial;none;;2022-03-08;2022-04-05;progression;;2022-04-08;progression_metastasis;progressive_disease;1.0;GR0002 
+33;39;GR0060 ;2022-02-07;10.0;;;;clinical_trial;none;;2022-04-18;2022-06-13;progression;;2022-06-24;progression_metastasis;progressive_disease;2.2;GR0002 
+34;39;GR0060 ;2022-02-07;11.0;;;;clinical_trial;none;;2022-06-28;;in_progress;;;;;;GR0002 
+45;40;GR0004;2019-10-23;1.0;;0.0;;folfirinox;none;;2018-10-15;2019-03-15;"curative;maintenance";;2019-11-08;progression_metastasis;stable_disease;12.8;
+46;40;GR0004;2019-10-23;2.0;;0.0;;folfox;none;;2019-11-28;2020-01-24;planned_stop;;2020-10-23;progression_not_specified;no_evaluation;10.8;
+57;42;GR0006;2020-03-12;1.0;;0.0;0.0;folfox;cetuximab;;2019-06-16;2019-09-12;"toxicity;other";;2019-09-25;progression_metastasis;partial_response;3.3;
+58;42;GR0006;2020-03-12;2.0;;0.0;;folfox;cetuximab;;2019-12-24;;in_progress;;;progression_none;no_evaluation;;
+66;43;GR0007;2020-06-22;1.0;;;;folfirinox;panitumumab;;2019-12-31;2020-02-11;"toxicity;curative";;;progression_none;partial_response;;
+67;43;GR0007;2020-06-22;2.0;;;;folfox;none;;2020-04-16;2020-05-14;"toxicity;curative";;;progression_none;partial_response;;
+68;43;GR0007;2020-06-22;3.0;;;;folfox;none;;2020-08-03;2020-10-19;maintenance;;2023-02-15;progression_none;complete_response;30.4;
+69;43;GR0007;2020-06-22;4.0;;0.0;0.0;folfiri;panitumumab;none;2023-06-07;;in_progress;;;;;;
+79;44;GR0008;2020-09-16;1.0;;0.0;;folfox;none;;2021-03-01;2021-05-25;maintenance;;;progression_none;stable_disease;;
+80;44;GR0008;2020-09-16;2.0;;0.0;;xelox;none;;2021-06-07;2021-07-07;toxicity;;;progression_none;stable_disease;;
+93;45;GR0009;2020-09-24;;;;;;;;;;;;;;;;
+102;46;GR0010;2020-09-25;1.0;;0.0;;folfox;none;;2019-04-01;2020-08-22;curative;;2021-09-15;progression_metastasis;stable_disease;29.5;
+103;46;GR0010;2020-09-25;;;;;;;;;;;;;;;;
+104;46;GR0010;2020-09-25;2.0;;0.0;;folfox;bevacizumab;;2021-09-15;2022-03-15;in_progress;;2022-03-15;progression_metastasis;stable_disease;5.9;
+105;46;GR0010;2020-09-25;;;;;;;;;;;;;;;;
+118;48;GR0013;2020-10-13;1.0;induction_or_perioperative;1.0;0.0;folfirinox;panitumumab;none;2020-04-07;2020-06-15;"instensification;curative";grade_1;;progression_none;stable_disease;;
+119;48;GR0013;2020-10-13;1.0;induction_or_perioperative;1.0;0.0;folfiri;panitumumab;none;2020-12-01;2021-07-08;"curative;pause";grade_0;;progression_none;complete_response;;
+120;48;GR0013;2020-10-13;;;;;;;;;;;;2021-04-29;;;;
+121;48;GR0013;2020-10-13;;;;;"oxaliplatine;folfiri";Panitumumab;;2020-07-02;2020-09-04;;;;;partial_response;;
+122;48;GR0013;2020-10-13;;;;;"mitomycine;folfiri";Panitumumab;;2020-10-29;2020-11-19;;;;;complete_response;;
+131;49;GR0014;2020-10-21;1.0;induction_or_perioperative;0.0;0.0;folfiri;bevacizumab;none;2017-08-15;2018-12-19;"curative;pause";grade_0;2019-07-10;progression_metastasis;complete_response;22.8;
+132;49;GR0014;2020-10-21;2.0;induction_or_perioperative;1.0;0.0;folfox;bevacizumab;none;2019-07-15;2019-12-18;"curative;pause";grade_0;2020-09-11;progression_metastasis;stable_disease;13.9;
+133;49;GR0014;2020-10-21;4.0;;0.0;0.0;folfox;bevacizumab;none;;;in_progress;;;;;;
+134;49;GR0014;2020-10-21;;;;;"oxaliplatine;5FU";;;2020-11-26;2021-03-18;;;;;complete_response;;
+150;51;GR0021;2020-11-20;1.0;;0.0;;folfox;none;;2020-12-14;2021-06-10;toxicity;;;progression_none;stable_disease;;
+158;52;GR0023;2020-11-26;1.0;induction_or_perioperative;1.0;0.0;folfox;panitumumab;none;2019-09-10;2020-03-12;curative;grade_2;2021-03-01;progression_metastasis;partial_response;17.7;
+159;52;GR0023;2020-11-26;1.0;induction_or_perioperative;1.0;0.0;capecitabine;none;none;2020-12-18;2021-03-05;progression;grade_1;2021-03-01;progression_metastasis;complete_response;2.4;
+160;52;GR0023;2020-11-26;2.0;metastatic;0.0;0.0;folfiri;panitumumab;none;2021-04-21;2022-02-28;"progression;toxicity";grade_0;2022-02-23;progression_metastasis;partial_response;10.1;
+161;52;GR0023;2020-11-26;3.0;metastatic;0.0;0.0;regorafenib;none;none;2022-05-16;2022-08-15;"progression;toxicity";grade_0;2022-08-16;progression_metastasis;progressive_disease;3.0;
+162;52;GR0023;2020-11-26;4.0;metastatic;0.0;0.0;lonsurf;none;none;2022-11-07;;in_progress;grade_0;;;;;
+163;52;GR0023;2020-11-26;;;;;"oxaliplatine;5FU";;;2020-05-26;2020-09-08;;;;;complete_response;;
+173;54;GR0025;2020-12-01;1.0;;0.0;;folfirinox;panitumumab;;2019-07-17;2020-05-18;curative;;2020-05-15;progression_metastasis;partial_response;10.0;
+174;54;GR0025;2020-12-01;2.0;;0.0;;lv5fu;panitumumab;;2020-08-03;2020-09-30;curative;;;progression_none;no_evaluation;;
+175;54;GR0025;2020-12-01;3.0;;0.0;;lv5fu;none;;2021-01-25;2021-04-15;maintenance;;2021-06-21;progression_metastasis;stable_disease;4.8;
+176;54;GR0025;2020-12-01;4.0;;0.0;;folfiri;none;;2021-08-11;2021-10-12;in_progress;;;progression_none;stable_disease;;
+187;55;GR0027;2020-12-16;1.0;;0.0;;folfirinox;cetuximab;;2019-11-15;2020-11-05;curative;;;progression_none;partial_response;;
+188;55;GR0027;2020-12-16;2.0;;0.0;;irinotecan;cetuximab;;2022-05-15;;in_progress;;;progression_none;no_evaluation;;
+199;56;GR0029;2021-01-08;1.0;;0.0;;folfirinox;bevacizumab;;2019-01-22;2019-04-03;toxicity;;2020-02-15;progression_metastasis;partial_response;12.8;
+200;56;GR0029;2021-01-08;2.0;;0.0;;folfiri;bevacizumab;;2019-05-14;2019-09-15;maintenance;;2020-02-15;progression_metastasis;stable_disease;9.1;
+201;56;GR0029;2021-01-08;3.0;;0.0;;lv5fu;bevacizumab;;2020-04-14;2020-07-15;"progression;toxicity";;2020-07-30;progression_metastasis;stable_disease;3.5;
+202;56;GR0029;2021-01-08;4.0;;0.0;;folfox;none;;2020-08-03;2021-05-31;pause;;2021-05-31;progression_metastasis;stable_disease;9.9;
+203;56;GR0029;2021-01-08;5.0;;0.0;;clinical_trial;none;;2020-09-21;2020-11-23;progression;;2020-11-23;progression_metastasis;progressive_disease;2.1;
+204;56;GR0029;2021-01-08;6.0;;0.0;;;none;;2021-08-12;2021-09-09;death;;;progression_none;no_evaluation;;
+213;58;GR0073;2022-04-12;1.0;;0.0;;folfirinox;bevacizumab;;2020-11-20;2021-10-25;progression;;2021-10-29;progression_metastasis;stable_disease;11.3;
+214;58;GR0073;2022-04-12;2.0;;0.0;;folfox;bevacizumab;;2021-11-10;;progression;;2022-01-10;progression_metastasis;progressive_disease;2.0;
+215;58;GR0073;2022-04-12;3.0;;0.0;;lonsurf;none;;2022-01-24;;progression;;2022-03-10;progression_metastasis;progressive_disease;1.5;
+219;88;GR0030;2021-01-12;1.0;;0.0;;folfox;none;;2019-12-11;2020-04-15;instensification;;2020-12-09;progression_metastasis;partial_response;12.0;
+220;88;GR0030;2021-01-12;2.0;;0.0;;folfiri;aflibercept;;2020-05-07;2020-12-17;progression;;2020-12-09;progression_metastasis;stable_disease;7.1;
+221;88;GR0030;2021-01-12;3.0;;0.0;;clinical_trial;none;;2021-01-14;2021-03-16;progression;;2021-03-09;progression_metastasis;progressive_disease;1.8;
+222;88;GR0030;2021-01-12;4.0;;0.0;;;none;;2021-03-17;2021-04-15;toxicity;;2021-04-15;progression_not_specified;progressive_disease;1.0;
+223;88;GR0030;2021-01-12;5.0;;0.0;;lonsurf;none;;2021-04-29;2021-05-15;"toxicity;death";;;progression_none;no_evaluation;;
+229;89;GR0032;2021-02-09;1.0;;0.0;;folfox;panitumumab;;2019-08-30;2020-06-15;progression;;2020-06-15;progression_metastasis;stable_disease;9.5;
+230;89;GR0032;2021-02-09;2.0;;0.0;;folfiri;bevacizumab;;2020-01-03;2020-12-30;progression;;2021-01-12;progression_metastasis;stable_disease;12.3;
+231;89;GR0032;2021-02-09;3.0;;0.0;;clinical_trial;none;;2021-02-23;2021-03-16;progression;;2021-04-12;progression_metastasis;progressive_disease;1.6;
+232;89;GR0032;2021-02-09;4.0;;0.0;;folfox;cetuximab;;2021-04-30;;in_progress;;2021-08-26;progression_metastasis;stable_disease;3.9;
+240;90;GR0034;2021-03-12;1.0;;0.0;;folfox;bevacizumab;;2020-10-07;2020-11-15;progression;;2020-11-15;progression_metastasis;progressive_disease;1.3;
+241;90;GR0034;2021-03-12;2.0;;0.0;;;cetuximab;;2020-11-16;;in_progress;;;progression_none;stable_disease;;
+246;91;GR0036;2021-04-02;1.0;;0.0;;capecitabine;none;;2017-04-13;2017-08-19;pause;;2018-03-21;progression_none;stable_disease;11.2;
+247;91;GR0036;2021-04-02;2.0;;0.0;;folfiri;aflibercept;;2018-04-30;2018-09-12;curative;;;progression_none;stable_disease;;
+248;91;GR0036;2021-04-02;3.0;;0.0;;clinical_trial;none;;2019-01-30;2020-06-11;progression;;2020-06-10;progression_metastasis;stable_disease;16.3;
+249;91;GR0036;2021-04-02;4.0;;0.0;;lonsurf;none;;2020-06-22;2020-07-17;"progression;toxicity";;2020-07-17;progression_metastasis;progressive_disease;0.8;
+250;91;GR0036;2021-04-02;5.0;;0.0;;folfiri;bevacizumab;;2020-08-11;2021-01-15;"progression;toxicity;AEG";;2021-01-12;progression_metastasis;stable_disease;5.1;
+251;91;GR0036;2021-04-02;6.0;;0.0;;folfox;none;;2021-01-15;2021-04-02;progression;;2021-04-02;progression_metastasis;progressive_disease;2.5;
+252;91;GR0036;2021-04-02;7.0;;0.0;;regorafenib;none;;2021-04-05;2021-04-20;AEG;;;progression_none;no_evaluation;;
+264;92;GR0039;2021-06-08;1.0;induction_or_perioperative;1.0;0.0;folfirinox;none;none;2014-09-12;2014-11-13;"instensification;curative";grade_0;2016-04-21;progression_metastasis;complete_response;19.3;
+265;92;GR0039;2021-06-08;3.0;metastatic;0.0;0.0;folfiri;cetuximab;none;2017-05-05;2017-10-30;progression;grade_0;2017-10-24;progression_metastasis;stable_disease;5.7;
+266;92;GR0039;2021-06-08;4.0;metastatic;0.0;0.0;xeliri;cetuximab;none;2017-11-09;2018-08-17;progression;grade_0;2018-08-30;progression_biologic;stable_disease;9.7;
+267;92;GR0039;2021-06-08;5.0;metastatic;0.0;0.0;clinical_trial;other;none;2018-09-17;2018-12-28;progression;grade_0;2019-01-10;progression_metastasis;stable_disease;3.8;
+268;92;GR0039;2021-06-08;6.0;metastatic;0.0;0.0;xeliri;panitumumab;none;2019-01-29;;;;2020-03-31;progression_biologic;stable_disease;14.0;
+269;92;GR0039;2021-06-08;7.0;metastatic;0.0;0.0;xelox;bevacizumab;none;2020-05-05;2020-11-23;progression;grade_1;2020-11-23;progression_metastasis;partial_response;6.6;
+270;92;GR0039;2021-06-08;8.0;metastatic;0.0;0.0;clinical_trial;other;pembrolizumab;2020-12-10;2021-03-04;progression;grade_0;2021-03-03;progression_metastasis;stable_disease;2.7;
+271;92;GR0039;2021-06-08;9.0;metastatic;0.0;0.0;none;panitumumab;other;2021-03-08;2021-05-31;progression;grade_0;2021-05-28;progression_metastasis;progressive_disease;2.7;
+272;92;GR0039;2021-06-08;10.0;metastatic;0.0;0.0;xelox;bevacizumab;none;2021-06-14;2021-11-29;progression;grade_0;2022-01-12;progression_metastasis;stable_disease;7.0;
+273;92;GR0039;2021-06-08;11.0;metastatic;0.0;0.0;lonsurf;none;none;2022-02-01;2022-02-27;"progression;death";grade_0;2022-02-23;progression_not_specified;no_evaluation;0.7;
+274;92;GR0039;2021-06-08;;;;;;;;;;;;;;;;
+275;92;GR0039;2021-06-08;;;;;;;;;;;;;;;;
+276;92;GR0039;2021-06-08;;;;;;;;2022-01-27;;;;;;;;
+277;92;GR0039;2021-06-08;;;;;"oxaliplatine;folfiri";Cetuximab;;2014-12-04;2015-01-02;;;;;complete_response;;
+278;92;GR0039;2021-06-08;;;;;"oxaliplatine;folfiri";Cetuximab;;2015-04-17;2015-06-26;;;;;complete_response;;
+279;92;GR0039;2021-06-08;;;;;"oxaliplatine;folfiri";Cetuximab;;2016-05-12;2016-10-25;;;;;partial_response;;
+292;93;GR0040;2021-06-08;1.0;;0.0;;folfirinox;bevacizumab;;2021-02-08;2021-03-23;curative;;2021-05-25;progression_metastasis;progressive_disease;3.5;GR0118
+293;93;GR0040;2021-06-08;2.0;;0.0;;;cetuximab;;2021-06-15;2021-08-05;progression;;2021-08-05;progression_metastasis;progressive_disease;1.7;GR0118
+294;93;GR0040;2021-06-08;3.0;;0.0;;clinical_trial;none;;2021-09-01;2022-03-08;progression;;2022-03-08;progression_metastasis;stable_disease;6.2;GR0118
+295;93;GR0040;2021-06-08;4.0;;0.0;;folfiri;aflibercept;;2022-03-15;2022-09-30;progression;;2022-09-23;progression_metastasis;stable_disease;6.3;GR0118
+292;93;GR0118;2023-04-20;1.0;;0.0;;folfirinox;bevacizumab;;2021-02-08;2021-03-23;curative;;2021-05-25;progression_metastasis;progressive_disease;3.5;GR0040
+293;93;GR0118;2023-04-20;2.0;;0.0;;;cetuximab;;2021-06-15;2021-08-05;progression;;2021-08-05;progression_metastasis;progressive_disease;1.7;GR0040
+294;93;GR0118;2023-04-20;3.0;;0.0;;clinical_trial;none;;2021-09-01;2022-03-08;progression;;2022-03-08;progression_metastasis;stable_disease;6.2;GR0040
+295;93;GR0118;2023-04-20;4.0;;0.0;;folfiri;aflibercept;;2022-03-15;2022-09-30;progression;;2022-09-23;progression_metastasis;stable_disease;6.3;GR0040
+303;94;GR0041;2021-06-15;1.0;;0.0;;folfox;none;;2016-04-15;2016-12-15;curative;;2017-10-10;progression_metastasis;stable_disease;17.8;
+304;94;GR0041;2021-06-15;2.0;;0.0;;folfiri;cetuximab;;2017-11-15;2018-02-06;"progression;toxicity";;2018-02-06;progression_metastasis;progressive_disease;2.7;
+305;94;GR0041;2021-06-15;3.0;;0.0;;;bevacizumab;;2018-03-29;2018-12-15;progression;;2018-12-15;progression_metastasis;stable_disease;8.6;
+306;94;GR0041;2021-06-15;4.0;;0.0;;none;panitumumab;;2019-01-15;2019-07-15;progression;;2019-07-15;progression_metastasis;stable_disease;5.9;
+307;94;GR0041;2021-06-15;5.0;;0.0;;lonsurf;none;;2019-09-02;2020-06-15;progression;;2020-06-15;progression_metastasis;stable_disease;9.4;
+308;94;GR0041;2021-06-15;6.0;;0.0;;regorafenib;none;;2020-06-15;2020-10-15;progression;;2020-10-15;progression_metastasis;stable_disease;4.0;
+309;94;GR0041;2021-06-15;7.0;;0.0;;folfox;bevacizumab;;2020-10-30;2021-05-15;progression;;2021-05-15;progression_metastasis;stable_disease;6.5;
+310;94;GR0041;2021-06-15;8.0;;0.0;;irinotecan;panitumumab;;2021-06-14;2021-06-14;AEG;;;progression_not_specified;no_evaluation;;
+321;95;GR0044;2021-11-16;1.0;;0.0;;folfox;bevacizumab;;2016-03-15;2016-06-15;progression;;2016-06-15;progression_metastasis;progressive_disease;3.0;
+322;95;GR0044;2021-11-16;2.0;;0.0;;folfiri;bevacizumab;;2016-07-15;2017-02-15;curative;;;progression_none;stable_disease;;
+323;95;GR0044;2021-11-16;3.0;;0.0;;folfiri;bevacizumab;;2021-06-15;2021-10-15;curative;;;progression_none;stable_disease;;
+324;95;GR0044;2021-11-16;4.0;;0.0;;clinical_trial;none;;2021-11-22;2021-12-29;progression;;2021-12-27;progression_metastasis;progressive_disease;1.1;
+325;95;GR0044;2021-11-16;5.0;;0.0;;;none;;2022-01-03;2022-01-25;progression;;2022-01-04;progression_metastasis;progressive_disease;0.0;
+326;95;GR0044;2021-11-16;6.0;;0.0;;lonsurf;none;;2022-02-15;2022-06-16;death;;;progression_not_specified;no_evaluation;;
+335;96;GR0046;2021-11-26;1.0;;0.0;;clinical_trial;none;;2020-08-26;2021-06-03;progression;;2021-06-14;progression_metastasis;progressive_disease;9.6;
+336;96;GR0046;2021-11-26;2.0;;0.0;;regorafenib;cetuximab;;2021-06-17;2021-10-15;progression;;2021-10-14;progression_metastasis;progressive_disease;3.9;
+337;96;GR0046;2021-11-26;3.0;;0.0;;folfox;bevacizumab;;2021-10-30;2021-11-15;curative;;;progression_none;no_evaluation;;
+338;96;GR0046;2021-11-26;4.0;;0.0;;clinical_trial;none;;2021-12-14;2022-01-30;death;;2022-01-12;progression_metastasis;progressive_disease;1.0;
+343;97;GR0047;2021-12-01;1.0;;0.0;;folfirinox;bevacizumab;;2020-05-27;2020-09-03;curative;;;progression_none;stable_disease;;GR0076
+344;97;GR0047;2021-12-01;2.0;;0.0;;capecitabine;bevacizumab;;2020-10-20;2021-03-19;progression;;2021-03-19;progression_metastasis;progressive_disease;4.9;GR0076
+345;97;GR0047;2021-12-01;3.0;;0.0;;xeliri;bevacizumab;;2021-04-13;2022-01-10;"progression;toxicity";;2022-01-10;progression_metastasis;progressive_disease;8.9;GR0076
+346;97;GR0047;2021-12-01;4.0;;0.0;;xelox;bevacizumab;;2022-02-02;2022-09-29;progression;;2022-09-29;progression_metastasis;progressive_disease;7.9;GR0076
+347;97;GR0047;2021-12-01;5.0;;0.0;;regorafenib;none;;2022-10-03;;in_progress;;;progression_line_in_progress;no_evaluation;;GR0076
+343;97;GR0076;2022-05-11;1.0;;0.0;;folfirinox;bevacizumab;;2020-05-27;2020-09-03;curative;;;progression_none;stable_disease;;GR0047
+344;97;GR0076;2022-05-11;2.0;;0.0;;capecitabine;bevacizumab;;2020-10-20;2021-03-19;progression;;2021-03-19;progression_metastasis;progressive_disease;4.9;GR0047
+345;97;GR0076;2022-05-11;3.0;;0.0;;xeliri;bevacizumab;;2021-04-13;2022-01-10;"progression;toxicity";;2022-01-10;progression_metastasis;progressive_disease;8.9;GR0047
+346;97;GR0076;2022-05-11;4.0;;0.0;;xelox;bevacizumab;;2022-02-02;2022-09-29;progression;;2022-09-29;progression_metastasis;progressive_disease;7.9;GR0047
+347;97;GR0076;2022-05-11;5.0;;0.0;;regorafenib;none;;2022-10-03;;in_progress;;;progression_line_in_progress;no_evaluation;;GR0047
+357;98;GR0049;2021-12-10;1.0;;0.0;;folfiri;aflibercept;;2020-04-15;2020-09-30;progression;;2020-10-12;progression_metastasis;progressive_disease;5.9;
+358;98;GR0049;2021-12-10;2.0;;0.0;;;cetuximab;;2020-10-15;2021-05-30;progression;;2021-05-31;progression_metastasis;progressive_disease;7.5;
+359;98;GR0049;2021-12-10;3.0;;0.0;;lonsurf;none;;2021-06-15;2021-09-15;progression;;2021-09-01;progression_metastasis;progressive_disease;2.6;
+360;98;GR0049;2021-12-10;4.0;;0.0;;clinical_trial;none;;2021-10-15;2021-11-29;progression;;2021-12-07;progression_metastasis;progressive_disease;1.7;
+361;98;GR0049;2021-12-10;5.0;;0.0;;regorafenib;none;;2021-12-29;2022-03-15;progression;;2022-03-15;progression_metastasis;progressive_disease;2.5;
+362;98;GR0049;2021-12-10;;;;;;;;;;;;;;;;
+368;99;GR0050;2021-12-14;1.0;induction_or_perioperative;0.0;0.0;folfox;panitumumab;none;2019-03-13;2019-12-30;curative;grade_0;2020-04-15;progression_metastasis;partial_response;13.1;
+369;99;GR0050;2021-12-14;2.0;metastatic;0.0;0.0;lv5fu;panitumumab;;2020-04-30;2020-08-15;progression;grade_0;2020-08-15;progression_metastasis;progressive_disease;3.5;
+370;99;GR0050;2021-12-14;3.0;metastatic;0.0;0.0;folfiri;bevacizumab;none;2020-09-01;2020-10-30;progression;grade_0;2020-10-30;progression_metastasis;progressive_disease;1.9;
+371;99;GR0050;2021-12-14;4.0;metastatic;0.0;0.0;folfox;panitumumab;none;2020-11-18;2020-12-30;progression;grade_0;2020-12-30;progression_metastasis;progressive_disease;1.4;
+372;99;GR0050;2021-12-14;5.0;metastatic;0.0;0.0;regorafenib;none;none;2021-02-01;2021-05-15;progression;grade_0;2021-05-15;progression_metastasis;progressive_disease;3.4;
+373;99;GR0050;2021-12-14;6.0;metastatic;0.0;0.0;lonsurf;none;none;2021-05-25;2021-07-03;progression;grade_0;2021-07-15;progression_metastasis;progressive_disease;1.7;
+374;99;GR0050;2021-12-14;8.0;metastatic;0.0;0.0;;panitumumab;none;2021-12-16;2022-01-21;"progression;death;AEG";grade_0;2022-01-15;progression_metastasis;progressive_disease;1.0;
+375;99;GR0050;2021-12-14;;;;;;;;;;;;;;;;
+376;99;GR0050;2021-12-14;;;;;"oxaliplatine;5FU";;;2021-08-27;2021-11-09;;;2021-11-15;;progressive_disease;;
+383;100;GR0054;2022-01-11;1.0;;0.0;;folfirinox;bevacizumab;;2021-06-15;2021-11-15;"progression;toxicity";;2021-11-15;progression_metastasis;progressive_disease;5.0;
+384;100;GR0054;2022-01-11;2.0;;0.0;;folfiri;aflibercept;;2021-12-02;2022-03-15;"progression;toxicity;AEG";;2022-03-15;progression_not_specified;progressive_disease;3.4;
+390;101;GR0058;2022-01-28;1.0;;0.0;;folfox;;;2017-09-30;2020-02-15;progression;;2020-02-15;progression_metastasis;progressive_disease;28.5;
+391;101;GR0058;2022-01-28;2.0;;0.0;;folfiri;bevacizumab;;2020-02-15;2020-09-15;curative;;;progression_none;stable_disease;;
+392;101;GR0058;2022-01-28;3.0;;0.0;;xeliri;none;;2020-09-15;2021-01-15;"pause;maintenance";;2021-05-15;progression_metastasis;progressive_disease;8.0;
+393;101;GR0058;2022-01-28;4.0;;0.0;;folfiri;aflibercept;;2021-05-15;2022-02-14;progression;;2022-02-14;progression_metastasis;progressive_disease;9.0;
+394;101;GR0058;2022-01-28;5.0;;0.0;;lonsurf;none;;2022-02-14;2022-06-02;progression;;2022-06-02;progression_metastasis;progressive_disease;3.5;
+401;102;GR0061;2022-02-07;1.0;;0.0;;folfiri;aflibercept;;2019-03-15;;progression;;;progression_not_specified;progressive_disease;;
+402;102;GR0061;2022-02-07;2.0;;0.0;;regorafenib;none;;;2021-10-07;progression;;2021-10-01;progression_metastasis;progressive_disease;;
+403;102;GR0061;2022-02-07;3.0;;0.0;;lonsurf;none;;2021-10-11;;progression;;;progression_not_specified;no_evaluation;;
+409;103;GR0062;2022-02-10;1.0;;0.0;;folfirinox;none;;2020-11-15;2021-02-15;progression;;2021-02-15;progression_metastasis;progressive_disease;3.0;
+410;103;GR0062;2022-02-10;2.0;;0.0;;folfiri;cetuximab;;2021-03-15;2021-05-15;progression;;2021-05-15;progression_metastasis;progressive_disease;2.0;
+411;103;GR0062;2022-02-10;3.0;;0.0;;lonsurf;none;;2021-05-15;2021-07-15;progression;;2021-07-15;progression_metastasis;progressive_disease;2.0;
+412;103;GR0062;2022-02-10;4.0;;0.0;;regorafenib;none;;2021-08-15;2022-01-15;progression;;2022-01-15;progression_metastasis;progressive_disease;5.0;
+413;103;GR0062;2022-02-10;5.0;;0.0;;clinical_trial;none;;2022-05-17;2022-05-23;toxicity;;;progression_none;no_evaluation;;
+418;104;GR0074;2022-04-29;1.0;;0.0;;folfox;bevacizumab;;2020-09-07;2021-02-15;progression;;2021-02-16;progression_metastasis;progressive_disease;5.3;
+419;104;GR0074;2022-04-29;2.0;;0.0;;folfiri;bevacizumab;;2021-02-25;2021-08-19;progression;;2021-09-09;progression_metastasis;progressive_disease;6.4;
+420;104;GR0074;2022-04-29;3.0;;0.0;;folfox;none;;2021-09-17;2021-10-14;progression;;2021-11-17;progression_metastasis;progressive_disease;2.0;
+421;104;GR0074;2022-04-29;4.0;;0.0;;regorafenib;none;;2021-12-09;2022-01-27;progression;;2022-01-27;progression_metastasis;progressive_disease;1.6;
+422;104;GR0074;2022-04-29;5.0;;0.0;;lonsurf;none;;2022-02-07;2022-03-18;progression;;2022-03-24;progression_metastasis;progressive_disease;1.5;
+428;105;GR0087;2022-09-06;1.0;;0.0;;folfirinox;bevacizumab;;2021-03-18;2022-07-15;progression;;2022-07-15;progression_metastasis;progressive_disease;15.9;
+429;105;GR0087;2022-09-06;2.0;;0.0;;regorafenib;none;;2022-07-27;2022-07-27;toxicity;;;progression_none;no_evaluation;;
+430;105;GR0087;2022-09-06;3.0;;0.0;;lonsurf;none;;2022-08-24;;in_progress;;;progression_none;no_evaluation;;
+434;108;GR0091;2022-10-21;1.0;;0.0;0.0;folfiri;bevacizumab;none;2021-03-12;2021-08-18;progression;;2021-09-13;;partial_response;6.1;
+435;108;GR0091;2022-10-21;2.0;;0.0;0.0;folfox;bevacizumab;;2021-09-24;2021-10-08;progression;;2021-11-15;;;1.7;
+436;108;GR0091;2022-10-21;3.0;;;;regorafenib;;;;;toxicity;;;;;;
+437;108;GR0091;2022-10-21;4.0;;;;lonsurf;;;;;progression;;;;;;
+446;471;GR0072;2022-04-06;1.0;induction_or_perioperative;1.0;0.0;folfirinox;bevacizumab;none;2019-11-06;2020-07-09;"progression;curative";grade_2;2020-10-27;progression_metastasis;partial_response;11.7;
+447;471;GR0072;2022-04-06;2.0;metastatic;0.0;0.0;folfiri;bevacizumab;none;2020-11-18;2021-07-01;progression;grade_0;2021-06-28;progression_metastasis;partial_response;7.3;
+448;471;GR0072;2022-04-06;3.0;metastatic;0.0;0.0;folfox;bevacizumab;none;2021-07-15;2022-03-24;progression;grade_2;2022-03-25;"progression_metastasis;progression_biologic";stable_disease;8.3;
+449;471;GR0072;2022-04-06;4.0;metastatic;0.0;0.0;lonsurf;none;none;2022-04-07;2022-05-30;progression;grade_2;2022-05-30;progression_metastasis;progressive_disease;1.7;
+450;471;GR0072;2022-04-06;5.0;metastatic;0.0;0.0;;none;none;2022-06-13;2022-08-04;"death;AEG";;;;no_evaluation;;
+451;471;GR0072;2022-04-06;;;;;"oxaliplatine;5FU";;;2020-10-01;2020-10-16;;;2020-10-27;;progressive_disease;;
+460;572;GR0089;2022-09-27;1.0;metastatic;0.0;0.0;folfirinox;bevacizumab;none;2021-08-27;2022-05-04;progression;grade_3;2022-05-04;progression_metastasis;partial_response;8.2;
+461;572;GR0089;2022-09-27;2.0;metastatic;0.0;0.0;folfiri;bevacizumab;none;2022-05-11;2022-06-24;progression;grade_0;2022-07-04;progression_metastasis;progressive_disease;1.8;
+462;572;GR0089;2022-09-27;3.0;metastatic;0.0;0.0;lonsurf;none;none;2022-07-18;2022-09-15;death;grade_0;2022-10-21;;;3.1;
+468;573;GR0090;2022-10-21;1.0;induction_or_perioperative;0.0;0.0;folfox;none;none;2021-09-27;2021-12-09;curative;grade_1;2022-03-03;progression_metastasis;stable_disease;5.2;
+469;573;GR0090;2022-10-21;2.0;unkown;0.0;0.0;folfiri;aflibercept;none;2022-03-22;2022-09-14;progression;grade_0;2022-09-20;progression_metastasis;stable_disease;6.0;
+470;573;GR0090;2022-10-21;3.0;unkown;0.0;0.0;folfox;bevacizumab;none;2022-10-06;2022-12-02;progression;grade_2;2022-12-05;progression_metastasis;progressive_disease;2.0;
+471;573;GR0090;2022-10-21;4.0;unkown;0.0;0.0;lonsurf;bevacizumab;none;2022-12-15;2023-05-22;progression;grade_0;2023-05-26;progression_metastasis;stable_disease;5.3;
+472;573;GR0090;2022-10-21;;;;;"oxaliplatine;5FU;other";;;;;;;;;;;
+613;682;GR0114;2023-03-24;1.0;unkown;0.0;0.0;folfox;none;none;2021-11-04;2022-02-01;progression;;2022-04-22;progression_metastasis;stable_disease;5.6;
+614;682;GR0114;2023-03-24;2.0;unkown;0.0;0.0;folfiri;aflibercept;none;2022-04-29;2022-10-14;progression;;2022-10-14;progression_metastasis;stable_disease;5.5;
+615;682;GR0114;2023-03-24;3.0;unkown;0.0;0.0;folfox;bevacizumab;;2022-10-28;2023-01-15;other;grade_3;;;;;

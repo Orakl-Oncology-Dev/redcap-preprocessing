@@ -6,13 +6,13 @@ from redcap_preprocessing import split_treatment_data_from_redcap
 from redcap_preprocessing import split_molecular_data_from_redcap
 
 def preprocess_redcap_data(redcap_filepath: str,
-                           output_dir: str,
                            disease_type: str,
-                           save_as_single_file: bool = False
+                           save_as_single_file: bool = False,
+                           output_dir = None,
                            ):
     
     # check that the disease type is valid
-    assert disease_type is in ['CRC', 'PDAC']
+    assert disease_type in ['CRC', 'PDAC']
 
     if output_dir is None:
         output_dir = os.path.join(os.path.dirname(redcap_filepath), 'preprocessed_redcap_data')
