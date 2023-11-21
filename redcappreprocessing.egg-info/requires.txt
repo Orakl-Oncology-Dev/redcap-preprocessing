@@ -1,0 +1,6 @@
+Flask
+Werkzeug
+pytest
+pandas
+numpy
+datetime

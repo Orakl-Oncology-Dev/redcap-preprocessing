@@ -47,5 +47,8 @@ def download_file(filename):
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'preprocessed_redcap_data', filename)
     return send_file(file_path, as_attachment=True)
 
+def run():
+    app.run(debug=True)
+
 if __name__ == '__main__':
     app.run(debug=True)

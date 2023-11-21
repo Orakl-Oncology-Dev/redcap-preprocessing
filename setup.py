@@ -7,10 +7,15 @@ def read_requirements():
         return req.read().strip().split('\n')
 
 setup(
-    name='my_package',
+    name='redcappreprocessing',
     version='0.1',
     packages=find_packages(),
     install_requires=read_requirements(),
+    entry_points={
+        'console_scripts': [
+            'start-myapp=redcap_preprocessing.app:run',
+        ],
+    },
     author='Gustave Ronteix',
     author_email='gustave.ronteix@orakl-oncology.com',
     description='Save us from RedCap',

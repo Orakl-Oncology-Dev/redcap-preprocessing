@@ -1,0 +1,2 @@
+[console_scripts]
+start-myapp = redcap_preprocessing.app:run
