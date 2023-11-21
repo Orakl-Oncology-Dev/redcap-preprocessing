@@ -1,6 +1,0 @@
-record_id;redcap_repeat_instrument;line_number;line_indication;chemotherapy_type;targeted_therapy_type;immunotherapy_type;first_dose_date;last_dose_date;progression_date;stop_chemotherapy_cause;neurotoxicity;progression_type;chemotherapy_RECIST_response;PFS
-26;ligne_mtastatique_de_traitement;1;induction_or_perioperative;folfirinox;none;none;29/07/2020;28/01/2021;28/04/2021;stop_chemotherapy_cause_curative;grade_2;progression_metastasis;partial_response;273
-26;ligne_mtastatique_de_traitement;1;induction_or_perioperative;folfiri;bevacizumab;none;30/12/2020;05/05/2021;28/04/2021;stop_chemotherapy_cause_progression;none;progression_metastasis;partial_response;119
-26;ligne_mtastatique_de_traitement;2;intensification;folfirinox;bevacizumab;none;30/09/2021;13/01/2022;18/01/2022;stop_chemotherapy_cause_progression;grade_1;progression_metastasis;stable_disease;110
-26;ligne_mtastatique_de_traitement;3;metastatic;folfiri3;aflibercept;none;26/01/2022;23/03/2022;01/04/2022;stop_chemotherapy_cause_progression;grade_1;progression_metastasis;progressive_disease;65
-26;hai_chemotherapy;;;folfiri,oxaliplatine;bevacizumab;none;25/06/2021;06/08/2021;31/08/2021;;;;stable_disease;67

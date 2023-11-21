@@ -1,2 +1,0 @@
-;record_id;cell_line_code;date_cell_line;sex;date_birth;date_diagnosis;age_diagnosis;weight_diagnosis;size_diagnosis;medical_history;patient_fate;date_death;cause_death;patients_characteristics_complete ;ecog_at_diag ;stage_at_diagnosis;metastasis_at_diagnosis;tumor_site;redcap_repeat_instrument;primitive_surgery;date_primitive_surgery;sister_cell_line_codes
-0;26;GR0069;2023-05-25;woman;1989-09-29;2020-06-30;31.0;66.0;169.0;none;dead;2022-05-18;progression;2.0;2;metastatic;"adenopathy;liver;peritoneal;ovary";right;ligne_mtastatique_de_traitement;yes;2020-11-04;
