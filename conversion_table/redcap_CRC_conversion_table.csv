@@ -229,6 +229,10 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 2;mol_profile___66;;molecular_alterations;TSC1/2;molecular_profile
 2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile
 2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile
+1;tmb;;TMB;;molecular_profile
+3;msi;1;MSI;MSI;molecular_profile
+3;msi;2;MSI;MSS;molecular_profile
+3;msi;3;MSI;not_reported;molecular_profile
 1;type_mutation;;liquid_biopsy_analysis;;molecular_profile
 3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
 3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile

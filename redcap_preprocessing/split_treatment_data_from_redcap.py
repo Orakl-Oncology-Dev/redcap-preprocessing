@@ -147,13 +147,11 @@ def split_treatment_data_from_redcap(redcap_path: str,
                 # if multiple treatment lines are present, save twice under different names
                 for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
                     
-                    print((record_id,cell_line_code))
                     if len(cell_line_code)>0:
                         cell_line_code = standardize_code(cell_line_code, 'GR')
                     else:
                         cell_line_code = 'XX' + f'{i:04d}'
                         i += 1
-                    print((record_id,cell_line_code))
 
                     # add the cell line code and date
                     cleaned_single_patient_treatment_data['cell_line_code'] = cell_line_code

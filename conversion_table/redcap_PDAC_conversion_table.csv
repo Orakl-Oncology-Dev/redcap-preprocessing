@@ -92,8 +92,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;reponse_chimio_nadir;4;chemotherapy_RECIST_response;complete_response;treatment
 3;reponse_chimio_nadir;5;chemotherapy_RECIST_response;no_evaluation;treatment
 1;dmolprof;;date_molecular_profile;;molecular_profile
-1;tmb;;tumor_mutational_burden;;molecular_profile
-1;msi;;MSI;;molecular_profile
+1;tmb;;TMB;;molecular_profile
 3;type_echantillon;1;sample_type;tumor_tissue;molecular_profile
 3;type_echantillon;2;sample_type;liquid_biopsy;molecular_profile
 3;type_echantillon;3;sample_type;tumor_and_liquid_biopsy;molecular_profile
@@ -178,6 +177,9 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile
 2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile
 1;type_mutation;;liquid_biopsy_analysis;;molecular_profile
+3;msi;1;MSI;MSI;molecular_profile
+3;msi;2;MSI;MSS;molecular_profile
+3;msi;3;MSI;not_reported;molecular_profile
 3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
 3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile
 1;date_chir_premiere ;;date_primitive_surgery;;clinical-profile
