@@ -8,7 +8,7 @@ from redcap_preprocessing.utils import get_delimiter
 from redcap_preprocessing.utils import standardize_code
 
 def get_single_patient_clinical_data(row: pd.Series,
-                                     redcap_CRC_conversion_table: pd.DataFrame):
+                                     redcap_conversion_table: pd.DataFrame):
     
     """
     Preprocess a single patient clinical data row from the redcap data set.
@@ -21,35 +21,36 @@ def get_single_patient_clinical_data(row: pd.Series,
         conversion table between redcap and orakloncology
     """
 
-    cleaned_patient_clinical_data = pd.Series('',
-                                                  index = redcap_CRC_conversion_table['orakloncology_name'].unique(),)
+    cleaned_patient_clinical_data = pd.DataFrame('',
+                                                 index = [row['record_id']],
+                                                 columns = redcap_conversion_table['orakloncology_name'].unique(),)
 
 
     # if relevant, change the content of each row
-    for column_name in cleaned_patient_clinical_data.index:
+    for column_name in cleaned_patient_clinical_data.columns:
 
-        matching_types = redcap_CRC_conversion_table[redcap_CRC_conversion_table['orakloncology_name'] == column_name]['matching_type'].unique()
+        matching_types = redcap_conversion_table[redcap_conversion_table['orakloncology_name'] == column_name]['matching_type'].unique()
 
         for matching_type in matching_types:
 
             if matching_type == 1:
 
-                content = get_content_matching_type_1(row, redcap_CRC_conversion_table, column_name)
+                content = get_content_matching_type_1(row, redcap_conversion_table, column_name)
 
             if matching_type == 2:
 
-                content = get_content_matching_type_2(row, redcap_CRC_conversion_table, column_name)
+                content = get_content_matching_type_2(row, redcap_conversion_table, column_name)
 
             if matching_type == 3:
 
-                content = get_content_matching_type_3(row, redcap_CRC_conversion_table, column_name)
+                content = get_content_matching_type_3(row, redcap_conversion_table, column_name)
 
             if matching_type == 4:
 
-                content = get_content_matching_type_4(row, redcap_CRC_conversion_table, column_name)
+                content = get_content_matching_type_4(row, redcap_conversion_table, column_name)
             
-            content= add_content(content, cleaned_patient_clinical_data.loc[column_name])
-            cleaned_patient_clinical_data.loc[column_name] = content
+            content= add_content(content, cleaned_patient_clinical_data.loc[row['record_id'],column_name])
+            cleaned_patient_clinical_data.loc[row['record_id'], column_name] = content
 
     return cleaned_patient_clinical_data
 
@@ -82,9 +83,9 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
 
     # column name mapping
     conversion_table_delimiter = get_delimiter(redcap_conversion_table_path)
-    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)
-    redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'clinical-profile']
-    redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
+    redcap_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)
+    redcap_conversion_table = redcap_conversion_table[redcap_conversion_table.data_type == 'clinical-profile']
+    redcap_conversion_table['redcap_name'] = redcap_conversion_table['redcap_name'].str.strip()
 
     # select the patient data
     redcap_clinical_data = redcap.groupby('record_id').first().reset_index()
@@ -105,7 +106,7 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
             cell_line_code, date_cell_line = get_cell_line_code(disease_type, redcap, record_id)
 
             # get the single patient treatment data
-            cleaned_single_patient_clinical_data = get_single_patient_clinical_data(row,redcap_CRC_conversion_table)
+            cleaned_single_patient_clinical_data = get_single_patient_clinical_data(row,redcap_conversion_table)
 
             if len(cleaned_single_patient_clinical_data) > 0:
 
@@ -134,7 +135,7 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
                     cleaned_single_patient_clinical_data['record_id'] = record_id
 
                     if save_as_single_file:
-                        cleaned_patient_clinical_data = pd.concat([cleaned_patient_clinical_data,cleaned_single_patient_clinical_data], axis = 1)
+                        cleaned_patient_clinical_data = pd.concat([cleaned_patient_clinical_data,cleaned_single_patient_clinical_data])
                     else:
                         if disease_type == 'CRC':
                             filename = f'{output_dir}/CLI_C_PID_{cell_line_code}_SID_0001.csv'
