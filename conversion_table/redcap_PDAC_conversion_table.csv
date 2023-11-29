@@ -26,6 +26,14 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;cause_death;3;cause_death;intercurrent_cause;clinical-profile
 3;cause_death;999;cause_death;not_reported;clinical-profile
 1;patients_characteristics_complete;;patients_characteristics_complete ;;clinical-profile
+3;escat;0;ESCAT;no_mutation;molecular_profile
+3;escat;1;ESCAT;ESCAT_1;molecular_profile
+3;escat;2;ESCAT;ESCAT_2;molecular_profile
+3;escat;3;ESCAT;ESCAT_3;molecular_profile
+3;escat;4;ESCAT;ESCAT_4;molecular_profile
+3;escat;5;ESCAT;ESCAT_5;molecular_profile
+3;escat;6;ESCAT;ESCAT_X;molecular_profile
+3;escat;7;ESCAT;to_be_determined;molecular_profile
 3;ecog_diag;0;ecog_at_diag ;0;clinical-profile
 3;ecog_diag;1;ecog_at_diag ;1;clinical-profile
 3;ecog_diag;2;ecog_at_diag ;2;clinical-profile
@@ -51,6 +59,11 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;panc_aspect;2;pancreas_aspect;isodense;clinical-profile
 3;panc_aspect;3;pancreas_aspect;hyperdense;clinical-profile
 3;panc_aspect;4;pancreas_aspect;not_described;clinical-profile
+3;line;0;prior_lines_treatment;0;clinical-profile
+3;line;1;prior_lines_treatment;L1;clinical-profile
+3;line;2;prior_lines_treatment;L2;clinical-profile
+3;line;3;prior_lines_treatment;L3;clinical-profile
+3;line;4;prior_lines_treatment;L4_or_more;clinical-profile
 1;redcap_repeat_instrument;;redcap_repeat_instrument;;
 1;date_pdo;;date_cell_line;;clinical-profile
 1;namepdo;;cell_line_code;;clinical-profile
@@ -92,94 +105,105 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;reponse_chimio_nadir;4;chemotherapy_RECIST_response;complete_response;treatment
 3;reponse_chimio_nadir;5;chemotherapy_RECIST_response;no_evaluation;treatment
 1;dmolprof;;date_molecular_profile;;molecular_profile
-1;tmb;;TMB;;molecular_profile
-3;type_echantillon;1;sample_type;tumor_tissue;molecular_profile
-3;type_echantillon;2;sample_type;liquid_biopsy;molecular_profile
-3;type_echantillon;3;sample_type;tumor_and_liquid_biopsy;molecular_profile
+1;tmb;;tumor_mutational_burden;;molecular_profile
+2;type_echantillon___1;;sample_type;tumor_tissue;molecular_profile
+2;type_echantillon___2;;sample_type;liquid_biopsy;molecular_profile
 1;site_biopsy ;;biopsy_site;;molecular_profile
-3;kras;1;kras;G12A;molecular_profile
-3;kras;2;kras;G12C;molecular_profile
-3;kras;3;kras;G12D;molecular_profile
-3;kras;4;kras;G12L;molecular_profile
-3;kras;5;kras;G12R;molecular_profile
-3;kras;6;kras;G12V;molecular_profile
-3;kras;7;kras;G13D;molecular_profile
-3;kras;8;kras;Q61H;molecular_profile
-3;kras;9;kras;Q61R;molecular_profile
-3;kras;10;kras;P34L;molecular_profile
-3;kras;11;kras;other;molecular_profile
-2;mol_profile___1;;molecular_alterations;ACVR1B;molecular_profile
-2;mol_profile___2;;molecular_alterations;AKT;molecular_profile
-2;mol_profile___3;;molecular_alterations;APC;molecular_profile
-2;mol_profile___4;;molecular_alterations;ARID1A;molecular_profile
-2;mol_profile___5;;molecular_alterations;ATM;molecular_profile
-2;mol_profile___6;;molecular_alterations;ATRX;molecular_profile
-2;mol_profile___7;;molecular_alterations;BRAF;molecular_profile
-2;mol_profile___8;;molecular_alterations;BRCA1/2;molecular_profile
-2;mol_profile___9;;molecular_alterations;BRD4;molecular_profile
-2;mol_profile___10;;molecular_alterations;BRIP1;molecular_profile
-2;mol_profile___11;;molecular_alterations;C17orf39;molecular_profile
-2;mol_profile___12;;molecular_alterations;CCND1/2/3;molecular_profile
-2;mol_profile___13;;molecular_alterations;CCNE1;molecular_profile
-2;mol_profile___14;;molecular_alterations;CDK4;molecular_profile
-2;mol_profile___15;;molecular_alterations;CDK6;molecular_profile
-2;mol_profile___16;;molecular_alterations;CDKN2A;molecular_profile
-2;mol_profile___17;;molecular_alterations;CDKN2B;molecular_profile
-2;mol_profile___18;;molecular_alterations;CRKL;molecular_profile
-2;mol_profile___19;;molecular_alterations;CTNNB1;molecular_profile
-2;mol_profile___20;;molecular_alterations;EGFR;molecular_profile
-2;mol_profile___21;;molecular_alterations;FANC2;molecular_profile
-2;mol_profile___22;;molecular_alterations;FGF;molecular_profile
-2;mol_profile___23;;molecular_alterations;FGFR;molecular_profile
-2;mol_profile___24;;molecular_alterations;GNAS;molecular_profile
-2;mol_profile___25;;molecular_alterations;HER2/4;molecular_profile
-2;mol_profile___26;;molecular_alterations;HOXA6/7;molecular_profile
-2;mol_profile___27;;molecular_alterations;HRAS;molecular_profile
-2;mol_profile___28;;molecular_alterations;IGF1R;molecular_profile
-2;mol_profile___29;;molecular_alterations;INPP4B;molecular_profile
-2;mol_profile___30;;molecular_alterations;KMD5A/6;molecular_profile
-2;mol_profile___31;;molecular_alterations;KRAS;molecular_profile
-2;mol_profile___32;;molecular_alterations;MCYL;molecular_profile
-2;mol_profile___33;;molecular_alterations;MDM2;molecular_profile
-2;mol_profile___34;;molecular_alterations;MET;molecular_profile
-2;mol_profile___35;;molecular_alterations;MRE11A;molecular_profile
-2;mol_profile___36;;molecular_alterations;MTAP;molecular_profile
-2;mol_profile___37;;molecular_alterations;MTOR;molecular_profile
-2;mol_profile___38;;molecular_alterations;MYC;molecular_profile
-2;mol_profile___39;;molecular_alterations;NF1/2;molecular_profile
-2;mol_profile___40;;molecular_alterations;NOTCH1/2;molecular_profile
-2;mol_profile___41;;molecular_alterations;NRAS;molecular_profile
-2;mol_profile___42;;molecular_alterations;PIK3CA/B/D;molecular_profile
-2;mol_profile___43;;molecular_alterations;PP3CA;molecular_profile
-2;mol_profile___44;;molecular_alterations;PPM1D;molecular_profile
-2;mol_profile___45;;molecular_alterations;PTEN;molecular_profile
-2;mol_profile___46;;molecular_alterations;RAD51C;molecular_profile
-2;mol_profile___47;;molecular_alterations;RB1;molecular_profile
-2;mol_profile___48;;molecular_alterations;RICTOR;molecular_profile
-2;mol_profile___49;;molecular_alterations;RNF43;molecular_profile
-2;mol_profile___50;;molecular_alterations;SF3B1;molecular_profile
-2;mol_profile___51;;molecular_alterations;SMAD4;molecular_profile
-2;mol_profile___52;;molecular_alterations;SMARCA;molecular_profile
-2;mol_profile___53;;molecular_alterations;STK11;molecular_profile
-2;mol_profile___54;;molecular_alterations;TERT;molecular_profile
-2;mol_profile___55;;molecular_alterations;TET2;molecular_profile
-2;mol_profile___56;;molecular_alterations;TP53;molecular_profile
-2;mol_profile___57;;molecular_alterations;WHSC1L1;molecular_profile
-2;mol_profile___58;;molecular_alterations;ZNF703;molecular_profile
-2;mol_profile___59;;molecular_alterations;DNMT3A;molecular_profile
-2;mol_profile___60;;molecular_alterations;MUTHY;molecular_profile
-2;mol_profile___61;;molecular_alterations;KEAP1;molecular_profile
-2;mol_profile___62;;molecular_alterations;MLH1;molecular_profile
-2;mol_profile___63;;molecular_alterations;PTPN11;molecular_profile
-2;mol_profile___64;;molecular_alterations;PALB2;molecular_profile
-2;mol_profile___65;;molecular_alterations;CHEK2;molecular_profile
-2;mol_profile___66;;molecular_alterations;TSC1/2;molecular_profile
-2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile
-2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile
-1;type_mutation;;liquid_biopsy_analysis;;molecular_profile
+3;kras;1;kras;G12A ;molecular_profile
+3;kras;2;kras;G12C ;molecular_profile
+3;kras;3;kras;G12D ;molecular_profile
+3;kras;4;kras;G12L ;molecular_profile
+3;kras;5;kras;G12R ;molecular_profile
+3;kras;6;kras;G12V ;molecular_profile
+3;kras;7;kras;G13D ;molecular_profile
+3;kras;8;kras;Q61H ;molecular_profile
+3;kras;9;kras;Q61R ;molecular_profile
+3;kras;10;kras;P34L ;molecular_profile
+3;kras;12;kras;Q61K ;molecular_profile
+3;kras;11;kras;Other ;molecular_profile
+2;mol_profile___1;;molecular_alterations;ACVR1B ;molecular_profile
+2;mol_profile___2;;molecular_alterations;AKT ;molecular_profile
+2;mol_profile___3;;molecular_alterations;APC ;molecular_profile
+2;mol_profile___4;;molecular_alterations;ARID1A ;molecular_profile
+2;mol_profile___5;;molecular_alterations;ATM ;molecular_profile
+2;mol_profile___6;;molecular_alterations;ATRX ;molecular_profile
+2;mol_profile___7;;molecular_alterations;BRAF ;molecular_profile
+2;mol_profile___8;;molecular_alterations;BRCA1/2 ;molecular_profile
+2;mol_profile___9;;molecular_alterations;BRD4 ;molecular_profile
+2;mol_profile___10;;molecular_alterations;BRIP1 ;molecular_profile
+2;mol_profile___11;;molecular_alterations;C17orf39 ;molecular_profile
+2;mol_profile___12;;molecular_alterations;CCND1/2/3 ;molecular_profile
+2;mol_profile___13;;molecular_alterations;CCNE1 ;molecular_profile
+2;mol_profile___14;;molecular_alterations;CDK4 ;molecular_profile
+2;mol_profile___15;;molecular_alterations;CDK6 ;molecular_profile
+2;mol_profile___16;;molecular_alterations;CDKN2A ;molecular_profile
+2;mol_profile___17;;molecular_alterations;CDKN2B ;molecular_profile
+2;mol_profile___18;;molecular_alterations;CRKL ;molecular_profile
+2;mol_profile___19;;molecular_alterations;CTNNB1 ;molecular_profile
+2;mol_profile___20;;molecular_alterations;EGFR ;molecular_profile
+2;mol_profile___21;;molecular_alterations;FANC2 ;molecular_profile
+2;mol_profile___22;;molecular_alterations;FGF ;molecular_profile
+2;mol_profile___23;;molecular_alterations;FGFR ;molecular_profile
+2;mol_profile___24;;molecular_alterations;GNAS ;molecular_profile
+2;mol_profile___25;;molecular_alterations;HER2/4 ;molecular_profile
+2;mol_profile___26;;molecular_alterations;HOXA6/7 ;molecular_profile
+2;mol_profile___27;;molecular_alterations;HRAS ;molecular_profile
+2;mol_profile___28;;molecular_alterations;IGF1R ;molecular_profile
+2;mol_profile___29;;molecular_alterations;INPP4B ;molecular_profile
+2;mol_profile___30;;molecular_alterations;KMD5A/6 ;molecular_profile
+2;mol_profile___31;;molecular_alterations;KRAS ;molecular_profile
+2;mol_profile___32;;molecular_alterations;MCYL ;molecular_profile
+2;mol_profile___33;;molecular_alterations;MDM2 ;molecular_profile
+2;mol_profile___34;;molecular_alterations;MET ;molecular_profile
+2;mol_profile___35;;molecular_alterations;MRE11A ;molecular_profile
+2;mol_profile___36;;molecular_alterations;MTAP ;molecular_profile
+2;mol_profile___37;;molecular_alterations;MTOR ;molecular_profile
+2;mol_profile___38;;molecular_alterations;MYC ;molecular_profile
+2;mol_profile___39;;molecular_alterations;NF1/2 ;molecular_profile
+2;mol_profile___40;;molecular_alterations;NOTCH1/2 ;molecular_profile
+2;mol_profile___41;;molecular_alterations;NRAS ;molecular_profile
+2;mol_profile___42;;molecular_alterations;PIK3CA/B/D ;molecular_profile
+2;mol_profile___43;;molecular_alterations;PP3CA ;molecular_profile
+2;mol_profile___44;;molecular_alterations;PPM1D ;molecular_profile
+2;mol_profile___45;;molecular_alterations;PTEN ;molecular_profile
+2;mol_profile___46;;molecular_alterations;RAD51C ;molecular_profile
+2;mol_profile___47;;molecular_alterations;RB1 ;molecular_profile
+2;mol_profile___48;;molecular_alterations;RICTOR ;molecular_profile
+2;mol_profile___49;;molecular_alterations;RNF43 ;molecular_profile
+2;mol_profile___50;;molecular_alterations;SF3B1 ;molecular_profile
+2;mol_profile___51;;molecular_alterations;SMAD4 ;molecular_profile
+2;mol_profile___52;;molecular_alterations;SMARCA ;molecular_profile
+2;mol_profile___53;;molecular_alterations;STK11 ;molecular_profile
+2;mol_profile___54;;molecular_alterations;TERT ;molecular_profile
+2;mol_profile___55;;molecular_alterations;TET2 ;molecular_profile
+2;mol_profile___56;;molecular_alterations;TP53 ;molecular_profile
+2;mol_profile___57;;molecular_alterations;WHSC1L1 ;molecular_profile
+2;mol_profile___58;;molecular_alterations;ZNF703 ;molecular_profile
+2;mol_profile___59;;molecular_alterations;No mutations found ;molecular_profile
+2;mol_profile___60;;molecular_alterations;MUTHY ;molecular_profile
+2;mol_profile___61;;molecular_alterations;KEAP1 ;molecular_profile
+2;mol_profile___62;;molecular_alterations;MLH1 ;molecular_profile
+2;mol_profile___63;;molecular_alterations;PTPN11 ;molecular_profile
+2;mol_profile___64;;molecular_alterations;PALB2 ;molecular_profile
+2;mol_profile___65;;molecular_alterations;DNMT3A ;molecular_profile
+2;mol_profile___66;;molecular_alterations;CHEK2 ;molecular_profile
+2;mol_profile___67;;molecular_alterations;CDH1 ;molecular_profile
+2;mol_profile___68;;molecular_alterations;EP300 ;molecular_profile
+2;mol_profile___69;;molecular_alterations;MYB ;molecular_profile
+2;mol_profile___70;;molecular_alterations;RAD21 ;molecular_profile
+2;mol_profile___71;;molecular_alterations;BCOR ;molecular_profile
+2;mol_profile___72;;molecular_alterations;TSC1/2 ;molecular_profile
+2;mol_profile___73;;molecular_alterations;NTRK ;molecular_profile
+2;mol_profile___74;;molecular_alterations;EPHB4 ;molecular_profile
+2;mol_profile___75;;molecular_alterations;ALK ;molecular_profile
+2;mol_profile___76;;molecular_alterations;AXL ;molecular_profile
+2;mol_profile___77;;molecular_alterations;MERTK ;molecular_profile
+2;mol_profile___78;;molecular_alterations;IRS2 ;molecular_profile
+2;mol_profile___79;;molecular_alterations;maP2K4/6 ;molecular_profile
 3;msi;1;MSI;MSI;molecular_profile
 3;msi;2;MSI;MSS;molecular_profile
 3;msi;3;MSI;not_reported;molecular_profile
+1;precision_mutation;;precision_mutation ;;molecular_profile
 3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
 3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile
 1;date_chir_premiere ;;date_primitive_surgery;;clinical-profile

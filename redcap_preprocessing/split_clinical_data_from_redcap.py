@@ -49,7 +49,6 @@ def get_single_patient_clinical_data(row: pd.Series,
 
                 content = get_content_matching_type_4(row, redcap_conversion_table, column_name)
             
-            content= add_content(content, cleaned_patient_clinical_data.loc[row['record_id'],column_name])
             cleaned_patient_clinical_data.loc[row['record_id'], column_name] = content
 
     return cleaned_patient_clinical_data

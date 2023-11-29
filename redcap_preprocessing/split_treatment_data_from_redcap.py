@@ -122,7 +122,6 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
             # get the cell line code
             cell_line_code, date_cell_line = get_cell_line_code(disease_type, redcap, record_id)
-            print((record_id,cell_line_code))
 
             # select the patient data
             patient_treatment_data = redcap[(redcap.record_id == record_id) &

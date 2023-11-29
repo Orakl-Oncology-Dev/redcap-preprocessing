@@ -7,11 +7,11 @@ from redcap_preprocessing.utils import get_delimiter
 from redcap_preprocessing.utils import standardize_code
 
 def get_single_patient_molecular_data(patient_molecular_data,
-                                      redcap_CRC_conversion_table):
+                                      redcap_conversion_table):
 
     cleaned_patient_molecular_data = pd.DataFrame('',
                                                 index = patient_molecular_data.index,
-                                                columns = redcap_CRC_conversion_table['orakloncology_name'].unique(),)
+                                                columns = redcap_conversion_table['orakloncology_name'].unique(),)
 
     # Select single therapy row
     for index, row in patient_molecular_data.iterrows():
@@ -19,25 +19,25 @@ def get_single_patient_molecular_data(patient_molecular_data,
         # loop through all the columns in the redcap table
         for column_name in cleaned_patient_molecular_data.columns:
 
-            matching_types = redcap_CRC_conversion_table[redcap_CRC_conversion_table['orakloncology_name'] == column_name]['matching_type'].unique()
+            matching_types = redcap_conversion_table[redcap_conversion_table['orakloncology_name'] == column_name]['matching_type'].unique()
 
             for matching_type in matching_types:
 
                 if matching_type == 1:
 
-                    content = get_content_matching_type_1(row, redcap_CRC_conversion_table, column_name)
+                    content = get_content_matching_type_1(row, redcap_conversion_table, column_name)
 
                 if matching_type == 2:
 
-                    content = get_content_matching_type_2(row, redcap_CRC_conversion_table, column_name)
+                    content = get_content_matching_type_2(row, redcap_conversion_table, column_name)
 
                 if matching_type == 3:
 
-                    content = get_content_matching_type_3(row, redcap_CRC_conversion_table, column_name)
+                    content = get_content_matching_type_3(row, redcap_conversion_table, column_name)
 
                 if matching_type == 4:
 
-                    content = get_content_matching_type_4(row, redcap_CRC_conversion_table, column_name)
+                    content = get_content_matching_type_4(row, redcap_conversion_table, column_name)
                 
                 content= add_content(content, cleaned_patient_molecular_data.loc[index, column_name])
                 cleaned_patient_molecular_data.loc[index, column_name] = content
@@ -76,31 +76,35 @@ def split_molecular_data_from_redcap(redcap_path: str,
 
     # column name mapping
     conversion_table_delimiter = get_delimiter(redcap_conversion_table_path)
-    redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)
-    redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'molecular_profile']
-    redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
+    redcap_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)
+    redcap_conversion_table = redcap_conversion_table[redcap_conversion_table.data_type == 'molecular_profile']
+    redcap_conversion_table['redcap_name'] = redcap_conversion_table['redcap_name'].str.strip()
 
     # get the unique record ids
     record_ids = redcap.record_id.unique()
 
     # recap dataframe
     cleaned_patient_molecular_data = pd.DataFrame()
+    i = 0
 
     # loop through all the record ids
     for record_id in record_ids:
 
-        try:
+        if True:
 
             # get the cell line code
             cell_line_code, date_cell_line = get_cell_line_code(disease_type, redcap, record_id)
 
-            # select the patient data
-            patient_molecular_data = redcap[(redcap.record_id == record_id) &
-                                            (redcap['redcap_repeat_instrument'].isin(['molecular_profile']))]
+            if disease_type == 'CRC':
+                patient_molecular_data = redcap[(redcap.record_id == record_id) &
+                                                (redcap['redcap_repeat_instrument'].isin(['molecular_profile']))]
+            elif disease_type == 'PDAC':
+                patient_molecular_data = redcap[(redcap.record_id == record_id) &
+                                                (redcap['redcap_repeat_instrument'].isna())]
 
             # get the single patient treatment data
             cleaned_single_patient_molecular_data = get_single_patient_molecular_data(patient_molecular_data,
-                                                                                redcap_CRC_conversion_table)
+                                                                                      redcap_conversion_table)
 
             if len(cleaned_single_patient_molecular_data) > 0:
 
@@ -139,8 +143,8 @@ def split_molecular_data_from_redcap(redcap_path: str,
                         # save the data
                         cleaned_single_patient_molecular_data.to_csv(filename, sep=';')
 
-        except:
-            print(f'Error for {record_id}')
+        #except:
+        #    print(f'Error for {record_id}')
 
     if save_as_single_file:
 
