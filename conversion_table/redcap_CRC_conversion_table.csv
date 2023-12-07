@@ -46,9 +46,20 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;tum_site;2;tumor_site;left;clinical-profile
 3;tum_site;3;tumor_site;rectum;clinical-profile
 3;tum_site;999;tumor_site;not_reported;clinical-profile
+1;ca19_9_diag;;ca19_9_diag;;clinical-profile
 1;redcap_repeat_instrument;;redcap_repeat_instrument;;
+3;type_sample ;1;PDO_generation_source;biopsy;clinical-profile
+3;type_sample ;2;PDO_generation_source;ascitis;clinical-profile
+3;type_sample ;3;PDO_generation_source;surgery;clinical-profile
+3;type_sample ;4;PDO_generation_source;pleural_effusion;clinical-profile
+3;biopsie_site ;1;PDO_generation_biopsy_localisation;liver;clinical-profile
+3;biopsie_site ;2;PDO_generation_biopsy_localisation;peritoneum;clinical-profile
+3;biopsie_site ;3;PDO_generation_biopsy_localisation;node;clinical-profile
+3;biopsie_site ;4;PDO_generation_biopsy_localisation;lung;clinical-profile
+3;biopsie_site ;5;PDO_generation_biopsy_localisation;other;clinical-profile
 1;date_sample;;date_cell_line;;clinical-profile
 1;nom_lign_e;;cell_line_code;;clinical-profile
+1;nb_lignes_avant_sample ;;lines_before_biopsy;;clinical-profile
 1;line_num;;line_number;;treatment
 3;ind_line;1;line_indication;induction_or_perioperative;treatment
 3;ind_line;2;line_indication;metastatic;treatment
@@ -228,7 +239,6 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 2;mol_profile___66;;molecular_alterations;TSC1/2;molecular_profile
 2;mol_profile___67;;molecular_alterations;ASXL1;molecular_profile
 2;mol_profile___68;;molecular_alterations;GNAQ;molecular_profile
-1;tmb;;TMB;;molecular_profile
 3;msi;1;MSI;MSI;molecular_profile
 3;msi;2;MSI;MSS;molecular_profile
 3;msi;3;MSI;not_reported;molecular_profile

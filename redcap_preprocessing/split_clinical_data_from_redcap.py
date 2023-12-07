@@ -132,6 +132,7 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
                     cleaned_single_patient_clinical_data['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
                     cleaned_single_patient_clinical_data['date_cell_line'] = cell_line_date
                     cleaned_single_patient_clinical_data['record_id'] = record_id
+                    cleaned_single_patient_clinical_data['disease_type'] = disease_type
 
                     if save_as_single_file:
                         cleaned_patient_clinical_data = pd.concat([cleaned_patient_clinical_data,cleaned_single_patient_clinical_data])

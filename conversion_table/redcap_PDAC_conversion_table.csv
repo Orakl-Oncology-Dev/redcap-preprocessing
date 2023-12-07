@@ -26,6 +26,8 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;cause_death;3;cause_death;intercurrent_cause;clinical-profile
 3;cause_death;999;cause_death;not_reported;clinical-profile
 1;patients_characteristics_complete;;patients_characteristics_complete ;;clinical-profile
+1;ca19_9_diag;;ca19_9_diag;;clinical-profile
+1;site_biopsy ;;biopsy_site;;clinical-profile
 3;escat;0;ESCAT;no_mutation;molecular_profile
 3;escat;1;ESCAT;ESCAT_1;molecular_profile
 3;escat;2;ESCAT;ESCAT_2;molecular_profile
@@ -108,7 +110,16 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 1;tmb;;tumor_mutational_burden;;molecular_profile
 2;type_echantillon___1;;sample_type;tumor_tissue;molecular_profile
 2;type_echantillon___2;;sample_type;liquid_biopsy;molecular_profile
-1;site_biopsy ;;biopsy_site;;molecular_profile
+3;typesample_pdo ;1;PDO_generation_source;biopsy;clinical-profile
+3;typesample_pdo ;2;PDO_generation_source;ascitis;clinical-profile
+3;typesample_pdo ;3;PDO_generation_source;surgery;clinical-profile
+3;typesample_pdo ;4;PDO_generation_source;pleural_effusion;clinical-profile
+3;sitebiopsy_pdo ;1;PDO_generation_biopsy_localisation;liver;clinical-profile
+3;sitebiopsy_pdo ;2;PDO_generation_biopsy_localisation;peritoneum;clinical-profile
+3;sitebiopsy_pdo ;3;PDO_generation_biopsy_localisation;bone;clinical-profile
+3;sitebiopsy_pdo ;4;PDO_generation_biopsy_localisation;lung;clinical-profile
+3;sitebiopsy_pdo ;5;PDO_generation_biopsy_localisation;primary_tumour;clinical-profile
+3;sitebiopsy_pdo ;6;PDO_generation_biopsy_localisation;other;clinical-profile
 3;kras;1;kras;G12A ;molecular_profile
 3;kras;2;kras;G12C ;molecular_profile
 3;kras;3;kras;G12D ;molecular_profile
