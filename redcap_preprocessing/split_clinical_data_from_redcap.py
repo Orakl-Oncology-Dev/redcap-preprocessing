@@ -149,7 +149,7 @@ def split_clinical_data_from_redcap_directory(redcap_path: str,
 
     if save_as_single_file:
 
-        cleaned_patient_clinical_data = cleaned_patient_clinical_data.T
+        cleaned_patient_clinical_data = cleaned_patient_clinical_data
 
         # reorder the columns with record_id, cell_line_code and date_cell_line in front
         all_columns = list(cleaned_patient_clinical_data.columns)
