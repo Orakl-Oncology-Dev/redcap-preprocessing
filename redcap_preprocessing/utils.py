@@ -75,6 +75,9 @@ def get_cell_line_code_PDAC(redcap: pd.DataFrame,
     if len(selected_row) == 0:
         print(f'There are no PDO cell lines for record_id {record_id}.')
         cell_line_code, date_cell_line = '', ''
+    elif selected_row['namepdo'].isna().all():
+        print(f'There are no PDO cell lines for record_id {record_id}.')
+        cell_line_code, date_cell_line = '', ''
     else:
         cell_line_code = ';'.join(selected_row['namepdo'].unique())
         date_cell_line = ';'.join(selected_row['date_pdo'].fillna('').unique())

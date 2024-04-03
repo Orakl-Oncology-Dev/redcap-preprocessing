@@ -47,7 +47,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;tum_site;3;tumor_site;rectum;clinical-profile
 3;tum_site;999;tumor_site;not_reported;clinical-profile
 1;ca19_9_diag;;ca19_9_diag;;clinical-profile
-1;redcap_repeat_instrument;;redcap_repeat_instrument;;
+1;redcap_repeat_instrument;;redcap_repeat_instrument;;treatment
 3;type_sample ;1;PDO_generation_source;biopsy;clinical-profile
 3;type_sample ;2;PDO_generation_source;ascitis;clinical-profile
 3;type_sample ;3;PDO_generation_source;surgery;clinical-profile
@@ -115,6 +115,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;neurotox;4;neurotoxicity;grade_4;treatment
 3;neurotox;5;neurotoxicity;grade_5;treatment
 4;dop;;progression_date;;treatment
+4;date_recist_ia;;date_RECIST_evaluation;;treatment
 2;progression_type___1;;progression_type;progression_local;treatment
 2;progression_type___2;;progression_type;progression_metastasis;treatment
 2;progression_type___3;;progression_type;progression_biologic;treatment
@@ -135,6 +136,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 4;datein_ia ;;first_dose_date;;treatment
 4;datefin_ia;;last_dose_date;;treatment
 4;datepd_ia;;progression_date;;treatment
+4;date_extraheppd_ciah;;progression_date;;treatment
 3;chemo_ia ;1;chemotherapy_type;oxaliplatine;treatment
 3;chemo_ia ;2;chemotherapy_type;mitomycine;treatment
 3;chemo_ia ;3;chemotherapy_type;optiliv;treatment

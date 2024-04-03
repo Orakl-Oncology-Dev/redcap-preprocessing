@@ -52,6 +52,7 @@ def get_single_patient_treatment_data(patient_treatment_data,
                     content = get_content_matching_type_4(row, redcap_CRC_conversion_table, column_name)
 
 
+
                 # special case for chemotherapy_type
                 if disease_type == 'CRC':
                     if (column_name == 'chemotherapy_type')&(content == 'other'):
@@ -188,6 +189,15 @@ def split_treatment_data_from_redcap(redcap_path: str,
         # Reorder the DataFrame
         cleaned_patient_treatment_data = cleaned_patient_treatment_data[new_column_order]
 
+        # go and get the date of death from clincial data frame
+        if disease_type == 'CRC':
+            clinical_data = pd.read_csv(f'{output_dir}/CLI_C_PID_ALL.csv', sep=';')
+        elif disease_type == 'PDAC':
+            clinical_data = pd.read_csv(f'{output_dir}/CLI_P_PID_ALL.csv', sep=';')
+
+        # do something cleaner for data coming from multiple modalities
+        cleaned_patient_treatment_data = add_death_date(cleaned_patient_treatment_data, clinical_data)
+
         if disease_type == 'CRC':
             filename = f'{output_dir}/TTR_C_PID_ALL.csv'
         elif disease_type == 'PDAC':
@@ -195,3 +205,16 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
         cleaned_patient_treatment_data.to_csv(filename, sep=';')
     return None
+
+
+def add_death_date(treatment_data, clinical_data):
+    
+    # get the death date
+    death_date = clinical_data[['record_id', 'date_death']]
+
+    # merge the data
+    treatment_data = pd.merge(treatment_data, death_date, on='record_id', how='left')
+
+
+
+    return treatment_data
