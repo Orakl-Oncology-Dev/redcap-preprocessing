@@ -60,6 +60,22 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 1;date_sample;;date_cell_line;;clinical-profile
 1;nom_lign_e;;cell_line_code;;clinical-profile
 1;nb_lignes_avant_sample ;;lines_before_biopsy;;clinical-profile
+4;datedebutneoadj;;first_dose_date;;treatment
+4;datefinneoadj;;last_dose_date;;treatment
+3;radioneoadj;0;radio_neoadjuvant;No;treatment
+3;radioneoadj;1;radio_neoadjuvant;Yes;treatment
+3;chimioneoadj;0;chimio_neoadjuvant;No;treatment
+3;chimioneoadj;1;chimio_neoadjuvant;Yes;treatment
+3;chimioneoadj_type;0;chemotherapy_type;none;treatment
+3;chimioneoadj_type;1;chemotherapy_type;folfox;treatment
+3;chimioneoadj_type;2;chemotherapy_type;xelox;treatment
+3;chimioneoadj_type;3;chemotherapy_type;lv5fu;treatment
+3;chimioneoadj_type;4;chemotherapy_type;capecitabine;treatment
+3;chimioneoadj_type;5;chemotherapy_type;other;treatment
+3;chimioneoadj_type;6;chemotherapy_type;clinical_trial;treatment
+3;chimioneoadj_type;7;chemotherapy_type;folfirinox;treatment
+4;autrechemoneoadj;;other_chemotherapy_type;;treatment
+4;bras_essai_clinique_met;;other_chemotherapy_type;;treatment
 1;line_num;;line_number;;treatment
 3;ind_line;1;line_indication;induction_or_perioperative;treatment
 3;ind_line;2;line_indication;metastatic;treatment
@@ -257,3 +273,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
 3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile
 1;date_chir_premiere ;;date_primitive_surgery;;clinical-profile
+3;cause_death;1;cause_death;progression;clinical-profile
+3;cause_death;2;cause_death;complication;clinical-profile
+3;cause_death;3;cause_death;other_cause;clinical-profile
+3;cause_death;999;cause_death;not_reported;clinical-profile

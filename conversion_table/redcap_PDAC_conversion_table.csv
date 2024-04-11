@@ -66,7 +66,7 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;line;2;prior_lines_treatment;L2;clinical-profile
 3;line;3;prior_lines_treatment;L3;clinical-profile
 3;line;4;prior_lines_treatment;L4_or_more;clinical-profile
-1;redcap_repeat_instrument;;redcap_repeat_instrument;;
+1;redcap_repeat_instrument;;redcap_repeat_instrument;;treatment
 1;date_pdo;;date_cell_line;;clinical-profile
 1;namepdo;;cell_line_code;;clinical-profile
 1;line_num;;line_number;;treatment
@@ -84,8 +84,29 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;chemo_type;11;chemotherapy_type;other;treatment
 3;chemo_type;12;chemotherapy_type;gemcitabine,paclitaxel;treatment
 3;chemo_type;13;chemotherapy_type;olaparib;treatment
-4;j1c1_met ;;first_dose_date;;treatment
+3;pec_initiale_non_met;1;pre_metastasis_treatment;surgery;treatment
+3;pec_initiale_non_met;2;pre_metastasis_treatment;chemotherapy;treatment
+3;pec_initiale_non_met;3;pre_metastasis_treatment;radiotherapy;treatment
+3;chimio_localise;1;chemotherapy_type;folfirinox;treatment
+3;chimio_localise;2;chemotherapy_type;folfirinox_modified;treatment
+3;chimio_localise;3;chemotherapy_type;folfox;treatment
+3;chimio_localise;4;chemotherapy_type;folfiri;treatment
+3;chimio_localise;5;chemotherapy_type;gemcitabine;treatment
+3;chimio_localise;6;chemotherapy_type;gemcitabine,nab-paclitaxel;treatment
+3;chimio_localise;7;chemotherapy_type;clinical_trial;treatment
+3;chimio_localise;8;chemotherapy_type;other;treatment
+4;spe_autre_localis;;other_chemotherapy_type;;treatment
+4;spe_autre_met;;other_chemotherapy_type;;treatment
+4;j1c1_met;;first_dose_date;;treatment
 4;date_dernier_cycle;;last_dose_date;;treatment
+4;j1c1_chimio_1ere;;first_dose_date;;treatment
+4;date_chir_post_chimio;;last_dose_date;;treatment
+4;nb_chimio_1ere;;number_chemo_cycles;;treatment
+3;r_ponse_ct_adj;1;chemotherapy_RECIST_response;stable_disease;treatment
+3;r_ponse_ct_adj;2;chemotherapy_RECIST_response;progressive_disease;treatment
+3;r_ponse_ct_adj;3;chemotherapy_RECIST_response;partial_response;treatment
+3;r_ponse_ct_adj;4;chemotherapy_RECIST_response;complete_response;treatment
+3;r_ponse_ct_adj;5;chemotherapy_RECIST_response;no_evaluation;treatment
 3;arret_chimio;1;stop_chemotherapy_cause;progression;treatment
 3;arret_chimio;2;stop_chemotherapy_cause;instensification;treatment
 3;arret_chimio;3;stop_chemotherapy_cause;toxicity;treatment
@@ -215,6 +236,15 @@ matching_type;redcap_name;redcap_options;orakloncology_name;orakloncology_option
 3;msi;2;MSI;MSS;molecular_profile
 3;msi;3;MSI;not_reported;molecular_profile
 1;precision_mutation;;precision_mutation ;;molecular_profile
-3;pec_initiale_non_met ;1;primitive_surgery;yes;clinical-profile
-3;pec_initiale_non_met ;2;primitive_surgery;no;clinical-profile
-1;date_chir_premiere ;;date_primitive_surgery;;clinical-profile
+
+2;date_chir_premiere ;;date_primitive_surgery;;clinical-profile
+3;cause_death;1;cause_death;progression;clinical-profile
+3;cause_death;2;cause_death;complication;clinical-profile
+3;cause_death;3;cause_death;other_cause;clinical-profile
+3;cause_death;999;cause_death;not_reported;clinical-profile
+3;chir_post_chimio;1;primitive_surgery;yes;clinical-profile
+3;chir_post_chimio;2;primitive_surgery;no;clinical-profile
+3;cause_death;1;cause_death;progression;clinical-profile
+3;cause_death;2;cause_death;complication;clinical-profile
+3;cause_death;3;cause_death;other_cause;clinical-profile
+3;cause_death;999;cause_death;not_reported;clinical-profile

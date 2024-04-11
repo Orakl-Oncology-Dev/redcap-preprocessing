@@ -141,6 +141,9 @@ def get_content_matching_type_4(single_patient_clinical_row,
         if single_patient_clinical_row[row['redcap_name']] == single_patient_clinical_row[row['redcap_name']]:
             content.append(single_patient_clinical_row[row['redcap_name']])
 
+    # convert all list elements to string
+    content = [str(i) for i in content]
+    
     return ';'.join(content)
 
 def add_content(content, prior_content):

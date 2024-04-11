@@ -51,8 +51,6 @@ def get_single_patient_treatment_data(patient_treatment_data,
 
                     content = get_content_matching_type_4(row, redcap_CRC_conversion_table, column_name)
 
-
-
                 # special case for chemotherapy_type
                 if disease_type == 'CRC':
                     if (column_name == 'chemotherapy_type')&(content == 'other'):
@@ -69,6 +67,12 @@ def get_single_patient_treatment_data(patient_treatment_data,
                 
                 content= add_content(content, cleaned_patient_treatment_data.loc[index, column_name])
                 cleaned_patient_treatment_data.loc[index, column_name] = content
+
+    # add treatment type            
+    cleaned_patient_treatment_data['treatment_type'] = patient_treatment_data['redcap_repeat_instrument'].replace('ligne_mtastatique_de_traitement', 'metastatic').replace('hai_chemotherapy', 'hai').replace('', 'neo_adjuvant')
+
+    # if neo_adjuvant, change stop cause
+    cleaned_patient_treatment_data.loc[cleaned_patient_treatment_data['treatment_type'] == 'neo_adjuvant', 'stop_chemotherapy_cause'] = 'surgery'
 
     return cleaned_patient_treatment_data
     
@@ -93,6 +97,7 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
     # Read in the data
     redcap = pd.read_csv(redcap_path, sep=';')
+    redcap['redcap_repeat_instrument'] = redcap['redcap_repeat_instrument'].fillna('')
 
     # check that the table isn't empty
     if len(redcap) == 0:
@@ -126,7 +131,7 @@ def split_treatment_data_from_redcap(redcap_path: str,
 
             # select the patient data
             patient_treatment_data = redcap[(redcap.record_id == record_id) &
-                                            (redcap['redcap_repeat_instrument'].isin(['ligne_mtastatique_de_traitement', 'hai_chemotherapy']))]
+                                            (redcap['redcap_repeat_instrument'].isin(['','ligne_mtastatique_de_traitement', 'hai_chemotherapy']))]
             
             # test if there is any data, otherwise skip
             if len(patient_treatment_data) > 0:
