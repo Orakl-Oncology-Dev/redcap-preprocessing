@@ -2,6 +2,8 @@
 import pandas as pd
 import numpy as np
 import csv
+from dateutil import parser
+from datetime import datetime
 
 def standardize_code(code, prefix='GR'):
 
@@ -183,3 +185,47 @@ def get_delimiter(csv_path):
     sniffer = csv.Sniffer()
 
     return sniffer.sniff(sample).delimiter
+
+def normalize_date(date_str):
+
+    if date_str != date_str:
+        return ''
+    elif date_str == 'nan':
+        return ''
+    elif date_str == 'NaT':
+        return ''
+    elif date_str == '0000-00-00':
+        return ''
+    elif date_str == '':
+        return ''
+    elif date_str == 'None':
+        return ''
+    elif date_str == None:
+        return ''
+    
+    date_str = date_str.split(';')[0]
+    date_str = date_str.replace(';', '').replace(' ', '')
+    
+    try:
+        # Try to parse the date from YYYY-MM-DD format
+        date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+    except ValueError:
+        # Fallback: Try to parse the date from DD/MM/YYYY if the initial format fails
+        date_obj = datetime.strptime(date_str, '%d/%m/%Y')
+
+    # Convert the date object to DD/MM/YYYY format
+    new_date_str = date_obj.strftime('%d/%m/%Y')
+    
+    return new_date_str
+
+def format_dates(df):
+
+    for column in df.columns:
+
+        if 'date' in column.lower():
+
+            print(f'Formatting dates in column {column}')
+            print(df[column])
+            df[column] = df[column].apply(normalize_date)
+
+    return df

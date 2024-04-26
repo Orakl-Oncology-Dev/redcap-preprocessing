@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np
 import os
+import chardet
 
 from redcap_preprocessing.utils import get_cell_line_code, get_content_matching_type_1, get_content_matching_type_2, get_content_matching_type_3, get_content_matching_type_4, add_content
 from redcap_preprocessing.utils import get_delimiter
 from redcap_preprocessing.utils import standardize_code
+from redcap_preprocessing.utils import format_dates
 
 def get_single_patient_treatment_data(patient_treatment_data,
                                       redcap_CRC_conversion_table,
@@ -95,8 +97,29 @@ def split_treatment_data_from_redcap(redcap_path: str,
         output directory
     """
 
+    def detect_encoding(file_path):
+        with open(file_path, 'rb') as file:
+            result = chardet.detect(file.read())
+        return result['encoding']
+
+    file_encoding = detect_encoding(redcap_path)
+    print("Detected encoding:", file_encoding)
+
+    # detect the separator type and read the data
+    redcap_delimiter = get_delimiter(redcap_path)
+    redcap = pd.read_csv(redcap_path, delimiter=redcap_delimiter, encoding="unicode_escape")
+
+    # some of the redcap files are not encoded in unicode_escape
+    try:
+        redcap = pd.read_csv(redcap_path, delimiter=redcap_delimiter, encoding="unicode_escape")
+        # get the unique record ids
+        record_ids = redcap.record_id.unique()
+    except:
+        redcap = pd.read_csv(redcap_path, delimiter=redcap_delimiter, encoding=file_encoding)
+        # get the unique record ids
+        record_ids = redcap.record_id.unique()
+
     # Read in the data
-    redcap = pd.read_csv(redcap_path, sep=';')
     redcap['redcap_repeat_instrument'] = redcap['redcap_repeat_instrument'].fillna('')
 
     # check that the table isn't empty
@@ -112,9 +135,6 @@ def split_treatment_data_from_redcap(redcap_path: str,
     redcap_CRC_conversion_table = pd.read_csv(redcap_conversion_table_path, delimiter=conversion_table_delimiter)    
     redcap_CRC_conversion_table = redcap_CRC_conversion_table[redcap_CRC_conversion_table.data_type == 'treatment']
     redcap_CRC_conversion_table['redcap_name'] = redcap_CRC_conversion_table['redcap_name'].str.strip()
-
-    # get the unique record ids
-    record_ids = redcap.record_id.unique()
 
     # recap dataframe
     cleaned_patient_treatment_data = pd.DataFrame()
@@ -149,9 +169,16 @@ def split_treatment_data_from_redcap(redcap_path: str,
                 extracted_cell_line_codes = cell_line_code.split(';')
                 extracted_cell_line_dates = date_cell_line.split(';')
 
+
+
                 # if multiple treatment lines are present, save twice under different names
                 for cell_line_code, cell_line_date in zip(extracted_cell_line_codes, extracted_cell_line_dates):
                     
+                    # we had bugs when single patient had multiple cell lines
+                    # needed to correct this by running all the normalizations on a virgin table
+                    # for that patient
+                    cleaned_single_patient_treatment_data_unique_cell_line = cleaned_single_patient_treatment_data.copy()
+
                     if len(cell_line_code)>0:
                         cell_line_code = standardize_code(cell_line_code, 'GR')
                     else:
@@ -159,20 +186,22 @@ def split_treatment_data_from_redcap(redcap_path: str,
                         i += 1
 
                     # add the cell line code and date
-                    cleaned_single_patient_treatment_data['cell_line_code'] = cell_line_code
-                    cleaned_single_patient_treatment_data['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
-                    cleaned_single_patient_treatment_data['date_cell_line'] = cell_line_date
-                    cleaned_single_patient_treatment_data['record_id'] = record_id
+                    cleaned_single_patient_treatment_data_unique_cell_line['cell_line_code'] = cell_line_code
+                    cleaned_single_patient_treatment_data_unique_cell_line['sister_cell_line_codes'] = ';'.join([element for element in extracted_cell_line_codes if element != cell_line_code])
+                    cleaned_single_patient_treatment_data_unique_cell_line['date_cell_line'] = cell_line_date
+                    cleaned_single_patient_treatment_data_unique_cell_line['record_id'] = record_id
+
+                    cleaned_single_patient_treatment_data_unique_cell_line = format_dates(cleaned_single_patient_treatment_data_unique_cell_line)
 
                     if save_as_single_file:
-                        cleaned_patient_treatment_data = pd.concat([cleaned_patient_treatment_data, cleaned_single_patient_treatment_data])
+                        cleaned_patient_treatment_data = pd.concat([cleaned_patient_treatment_data, cleaned_single_patient_treatment_data_unique_cell_line])
                     else:
                         # create a file name
                         if disease_type == 'CRC':
                             filename = f'{output_dir}/TTR_C_PID_{cell_line_code}_SID_0001.csv'
                         elif disease_type == 'PDAC':
                             filename = f'{output_dir}/TTR_P_PID_{cell_line_code}_SID_0001.csv'
-                        cleaned_single_patient_treatment_data.to_csv(filename, sep=';')
+                        cleaned_single_patient_treatment_data_unique_cell_line.to_csv(filename, sep=';')
 
         #except:
         #    print(f'Error for {record_id}')
